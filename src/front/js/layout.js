@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
+import { Featured } from "./pages/featured";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
@@ -17,7 +18,7 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
@@ -26,8 +27,19 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Featured />} path="/featured" />
+                        {/* <Route element={<Single />} path="/single/:theid" /> */}
+                        {/* <Route element={Guests} path="/guests" />
+                        <Route element={WhatToDo} path="/what-to-do" />
+                        <Route element={Vendors} path="/vendors" />
+                        <Route element={Schedule} path="/schedule" />
+                        <Route element={Transportation} path="/transportation" />
+                        <Route element={Hotels} path="/hotels" />
+                        <Route element={ImportantDates} path="/important-dates" />
+                        <Route element={GuestForm} path="/guest-form" />
+                        <Route element={VendorForm} path="/vendor-form" />
+                        <Route element={AboutContact} path="/about-contact" />
+                        <Route element={FAQ} path="/FAQ" /> */}
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
