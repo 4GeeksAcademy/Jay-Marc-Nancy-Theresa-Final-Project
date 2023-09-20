@@ -5,3 +5,31 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+/* body {
+    background: rgb(34, 193, 195);
+    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(45, 253, 184, 0.7875525210084033) 100%);
+    color: #000000;
+} */
+
+body {
+    background: rgb(34, 193, 195);
+    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(10, 77, 54, 1) 100%);
+}
+
+.blurb-container {
+    margin: auto;
+    width: 50%;
+    padding: 3%;
+    text-align: center;
+}
+
+#primaryNav {
+    height: 80px;
+    /* background: rgb(34, 193, 195);
+    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(45, 253, 184, 0.7875525210084033) 100%);
+    border-color: #0a4d36; */
+    background: rgb(34, 193, 195);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(10, 77, 54, 1) 100%);
+    color: rgb(10, 10, 10);
+    margin-bottom: 50px;
+}
