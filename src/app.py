@@ -64,12 +64,13 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
-#Nelson Chang: endpoints THINK OF A BETTER ENDPOINT/THINK ABOUT FILE USE, ALSO: events are not defined
-@app.route('/api/events', methods=['GET'])
+#Nelson Chang: ALSO: events are not defined
+@app.route('/calendar', methods=['GET'])
 def get_events():
     #need to define events here 
     #events = 
-    return jsonify(events), 200
+    #return jsonify(events), 200
+    pass
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
