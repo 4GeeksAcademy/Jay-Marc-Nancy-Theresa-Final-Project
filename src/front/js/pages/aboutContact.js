@@ -174,6 +174,10 @@ export const AboutContact = props => {
                 </div>
             </div>
 
+            {/* <div className="mtgcard">
+                <img className="mtglogo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdesignlooter.com%2Fimages%2Fmagic-the-gathering-svg-1.png&f=1&nofb=1&ipt=ca09e3b8959128f35f34882de27562c59f0604c28aeeee6efc6d39c2a72183ff&ipo=images" />
+            </div> */}
+
 
         </>
     );
