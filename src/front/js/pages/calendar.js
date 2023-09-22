@@ -9,6 +9,10 @@ import "../../../../data.json";
 export const Calendar = () => {
 	const { store, actions } = useContext(Context);
 
+    useEffect(() => {
+        actions.getEvents();   
+    })
+
 	return (
         <div className="container">
             {/* <Navbar /> */}
@@ -23,23 +27,24 @@ export const Calendar = () => {
             <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabIndex="0">
             {/* Page View */}
-            <div class="container">
-                <div class="row-odd">
-                    <div class="col-2">
+            <div className="container">
+                <div className="row-odd">
+                    <div className="col-2">
                     One of three columns
                     </div>
-                    <div class="col-8">
-                        <div className="event-panel ep1">
-                            {/* <image className="event-banner event-onomatopoeia">POW</image> */}
-                            <div className="event-banner">Dummy Title</div>
-                            <div className="event event-date">Dummy Date</div> 
-                            <div className="event event-start-time">Dummy Start</div>
-                            <div className="event event-end-time">Dummy End</div>
-                            <div className="event event-location">Dummy Location</div>
-                            <div className="event event-description">Dummy Desc</div>
+                    <div className="col-8">
+                    {store.events.map((event, index) => 
+                        <div className="event-panel ep1" key={index}>
+                            <div className="event-banner">Title: {event.event_name}</div>
+                            <div className="event event-date">Date: {event.date}</div> 
+                            <div className="event event-start-time">Start: {event.start_time}</div>
+                            <div className="event event-end-time">End: {event.end_time}</div>
+                            <div className="event event-location">Location: {event.location}</div>
+                            <div className="event event-description">Description: {event.description}</div>
                         </div>
+                        )}
                     </div>
-                    <div class="col-2">
+                    <div className="col-2">
                     Three of three columns
                     </div>
                 </div>
@@ -47,48 +52,29 @@ export const Calendar = () => {
             </div>
             {/* Table View */}
             <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
-                <div class="row row-odd">
-                    <div class="col-2">
-                        Dummy Date
+            {store.events.map((event, index) => 
+                <div className="row row-odd" key={index}>
+                    <div className="col-2">
+                        {event.date}
                     </div>
-                    <div class="col-2">
-                        Dummy Start
+                    <div className="col-2">
+                        {event.start_time}
                     </div>
-                    <div class="col-2">
-                        Dummy End
+                    <div className="col-2">
+                        {event.end_time}
                     </div>
-                    <div class="col-2">
-                        Dummy Title
+                    <div className="col-2">
+                        {event.event_name}
                     </div>
-                    <div class="col-2">
-                        Dummy Location
+                    <div className="col-2">
+                        {event.location}
                     </div>
-                    <div class="col-2">
-                        Dummy Description
-                    </div>
-                </div>
-                <div class="row row-even">
-                    <div class="col-2">
-                        Dummy Date
-                    </div>
-                    <div class="col-2">
-                        Dummy Start
-                    </div>
-                    <div class="col-2">
-                        Dummy End
-                    </div>
-                    <div class="col-2">
-                        Dummy Title
-                    </div>
-                    <div class="col-2">
-                        Dummy Location
-                    </div>
-                    <div class="col-2">
-                        Dummy Description
+                    <div className="col-2">
+                        {event.description}
                     </div>
                 </div>
+            )}
             </div>
-            {/* <div>{store.events.map((event_name, index) => <Card key={index} event_name={event_name} index={index}/>)}</div> */}
             </div>
         </div>
     );
