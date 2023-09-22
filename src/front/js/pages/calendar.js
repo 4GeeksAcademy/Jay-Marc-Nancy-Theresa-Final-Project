@@ -34,13 +34,13 @@ export const Calendar = () => {
                     </div>
                     <div className="col-8">
                     {store.events.map((event, index) => 
-                        <div className="event-panel ep1" key={index}>
+                        <div className="event event-panel" key={index}>
                             <div className="event-banner"><b>Title:</b> {event.event_name}</div>
-                            <div className="event event-date"><b>Date:</b> {event.date}</div> 
-                            <div className="event event-start-time"><b>Start:</b> {event.start_time}</div>
-                            <div className="event event-end-time"><b>End:</b> {event.end_time}</div>
-                            <div className="event event-location"><b>Location:</b> {event.location}</div>
-                            <div className="event event-description"><b>Description:</b> {event.description}</div>
+                            <div className="event-date"><b>Date:</b> {event.date}</div> 
+                            <div className="event-start-time"><b>Start:</b> {event.start_time}</div>
+                            <div className="event-end-time"><b>End:</b> {event.end_time}</div>
+                            <div className="event-location"><b>Location:</b> {event.location}</div>
+                            <div className="event-description"><b>Description:</b> {event.description}</div>
                         </div>
                         )}
                     </div>
@@ -73,7 +73,7 @@ export const Calendar = () => {
                 </div>
             </div>
             {store.events.map((event, index) => 
-                <div className="row row-odd" key={index}>
+                <div className="row row-odd event" key={index}>
                     <div className="col-2">
                         {event.date}
                     </div>
