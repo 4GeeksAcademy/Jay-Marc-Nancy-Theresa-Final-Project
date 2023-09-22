@@ -1,13 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Bangers);
-
 .event-panel {
-    margin: 25px;
+    margin: 5px;
+    padding: 5px;
     width: 250px;
     height: 250px;
     background:#fff;
     border: solid black;
     border-color: black;
-    float: left; 
 }
 
 .event-panel, .ep1 {
