@@ -35,12 +35,12 @@ export const Calendar = () => {
                     <div className="col-8">
                     {store.events.map((event, index) => 
                         <div className="event-panel ep1" key={index}>
-                            <div className="event-banner">Title: {event.event_name}</div>
-                            <div className="event event-date">Date: {event.date}</div> 
-                            <div className="event event-start-time">Start: {event.start_time}</div>
-                            <div className="event event-end-time">End: {event.end_time}</div>
-                            <div className="event event-location">Location: {event.location}</div>
-                            <div className="event event-description">Description: {event.description}</div>
+                            <div className="event-banner"><b>Title:</b> {event.event_name}</div>
+                            <div className="event event-date"><b>Date:</b> {event.date}</div> 
+                            <div className="event event-start-time"><b>Start:</b> {event.start_time}</div>
+                            <div className="event event-end-time"><b>End:</b> {event.end_time}</div>
+                            <div className="event event-location"><b>Location:</b> {event.location}</div>
+                            <div className="event event-description"><b>Description:</b> {event.description}</div>
                         </div>
                         )}
                     </div>
