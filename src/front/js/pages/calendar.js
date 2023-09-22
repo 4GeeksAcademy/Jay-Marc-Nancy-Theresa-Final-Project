@@ -52,15 +52,35 @@ export const Calendar = () => {
             </div>
             {/* Table View */}
             <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
+            <div className="row row-key">
+                <div className="col-2">
+                    Date
+                </div>
+                <div className="col-1">
+                    Start 
+                </div>
+                <div className="col-1">
+                    End 
+                </div>
+                <div className="col-2">
+                    Event
+                </div>
+                <div className="col-2">
+                    Location
+                </div>
+                <div className="col-4">
+                    Description
+                </div>
+            </div>
             {store.events.map((event, index) => 
                 <div className="row row-odd" key={index}>
                     <div className="col-2">
                         {event.date}
                     </div>
-                    <div className="col-2">
+                    <div className="col-1">
                         {event.start_time}
                     </div>
-                    <div className="col-2">
+                    <div className="col-1">
                         {event.end_time}
                     </div>
                     <div className="col-2">
@@ -69,7 +89,7 @@ export const Calendar = () => {
                     <div className="col-2">
                         {event.location}
                     </div>
-                    <div className="col-2">
+                    <div className="col-4">
                         {event.description}
                     </div>
                 </div>
