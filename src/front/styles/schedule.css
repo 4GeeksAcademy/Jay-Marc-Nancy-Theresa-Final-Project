@@ -11,23 +11,12 @@
 }
 
 .event-panel, .ep1 {
-    width: 60%;
-    border-width: 3px 3px 5px 5px;
-    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-2deg);
+    width: 90%;
+    /* border-width: 3px 3px 5px 5px; */
+    /* border-radius: 4% 95% 6% 95%/95% 4% 92% 5%; */
+    /* transform: rotate(-2deg); */
 }
 
-.event-banner {
-    font-family: 'Bangers', cursive;
-    font-size: 25px;
-    transform: rotate(2deg);
-    margin: 15px;
-    padding: 0 5px;
-    float: left;
-    width: 100%;
-}
-
-.event {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    padding-left: 8px;
+.row-even {
+    background-color: lightsteelblue;
 }
