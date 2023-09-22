@@ -2,7 +2,7 @@
     margin: 5px;
     padding: 5px;
     width: 250px;
-    height: 250px;
+    height: 200px;
     background:#fff;
     /* border: solid black;
     border-color: black; */
@@ -25,4 +25,8 @@
 
 .row-even {
     background-color: lightsteelblue;
+}
+
+::after {
+    width: 10%;
 }

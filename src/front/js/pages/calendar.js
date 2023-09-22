@@ -16,6 +16,7 @@ export const Calendar = () => {
 	return (
         <div className="container">
             {/* <Navbar /> */}
+            <h1>Schedule</h1>
             <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
                 <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Page</button>
@@ -30,7 +31,7 @@ export const Calendar = () => {
             <div className="container">
                 <div className="row-odd">
                     <div className="col-2">
-                    One of three columns
+                    {/* One of three columns */}
                     </div>
                     <div className="col-8">
                     {store.events.map((event, index) => 
@@ -45,7 +46,7 @@ export const Calendar = () => {
                         )}
                     </div>
                     <div className="col-2">
-                    Three of three columns
+                    {/* Three of three columns */}
                     </div>
                 </div>
             </div>
@@ -73,8 +74,42 @@ export const Calendar = () => {
                 </div>
             </div>
             {store.events.map((event, index) => 
-                <div className="row row-odd event" key={index}>
-                    <div className="col-2">
+                <div className="row row-odd accordian-event" key={index}>
+
+<div class="accordion" id="accordionExample">
+<div class="accordion-item">
+    <h2 class="accordion-header" id={event.id}>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${event.id}`} aria-expanded="false" aria-controls={event.id}>
+        <div className="row">
+            <div className="col-3">
+                {event.date}
+            </div>
+            <div className="col-3">
+                {event.start_time}
+            </div>
+            <div className="col-3">
+                {event.end_time}
+            </div>
+            <div className="col-3">
+                {event.event_name}
+            </div>
+        </div>
+      </button>
+    </h2>
+    <div id={event.id} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <div className="col-2">
+                        {event.location}
+                    </div>
+                    <div className="col-4">
+                        {event.description}
+                    </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+                    {/* <div className="col-2">
                         {event.date}
                     </div>
                     <div className="col-1">
@@ -91,7 +126,7 @@ export const Calendar = () => {
                     </div>
                     <div className="col-4">
                         {event.description}
-                    </div>
+                    </div> */}
                 </div>
             )}
             </div>
