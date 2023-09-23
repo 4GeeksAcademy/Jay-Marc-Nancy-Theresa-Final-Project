@@ -35,6 +35,7 @@ export const Calendar = () => {
                     </div>
                     <div className="col-8">
                     {store.events.map((event, index) => 
+                    
                         <div className="event event-panel" key={index}>
                             <div className="event-banner"><b>Title:</b> {event.event_name}</div>
                             <div className="event-date"><b>Date:</b> {event.date}</div> 
@@ -79,7 +80,7 @@ export const Calendar = () => {
 <div class="accordion" id="accordionExample">
 <div class="accordion-item">
     <h2 class="accordion-header" id={event.id}>
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dynamicId" aria-expanded="false" aria-controls={event.id}>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
         <div className="row">
             <div className="col-3 accordion-element-spacing">
                 {event.date}
@@ -96,7 +97,7 @@ export const Calendar = () => {
         </div>
       </button>
     </h2>
-    <div id="dynamicId" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div id={String('collapsebox' + event.id)} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
       <div className="col-2 full-accordion">
                         {event.location}
