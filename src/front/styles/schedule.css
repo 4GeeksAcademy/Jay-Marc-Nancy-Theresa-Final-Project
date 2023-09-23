@@ -27,6 +27,19 @@
     background-color: lightsteelblue;
 }
 
-::after {
-    width: 10%;
+.table-head {
+    padding-left: 3rem;
+}
+.accordion-element-spacing {
+    display: inline-block;
+    width: auto;
+}
+.full-accordion {
+    display: inline-block;
+    width: auto;
+}
+
+.full-accordion-description {
+    padding-left: 5%;
+    overflow-wrap: normal;
 }

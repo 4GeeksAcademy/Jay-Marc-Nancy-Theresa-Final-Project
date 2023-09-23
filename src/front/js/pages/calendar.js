@@ -54,24 +54,24 @@ export const Calendar = () => {
             {/* Table View */}
             <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
             <div className="row row-key">
-                <div className="col-2">
+                <div className="col-3 accordion-element-spacing table-head">
                     Date
                 </div>
-                <div className="col-1">
+                <div className="col-3 accordion-element-spacing table-head">
                     Start 
                 </div>
-                <div className="col-1">
+                <div className="col-3 accordion-element-spacing table-head">
                     End 
                 </div>
-                <div className="col-2">
+                <div className="col-3 accordion-element-spacing table-head">
                     Event
                 </div>
-                <div className="col-2">
+                {/* <div className="col-2">
                     Location
                 </div>
                 <div className="col-4">
                     Description
-                </div>
+                </div> */}
             </div>
             {store.events.map((event, index) => 
                 <div className="row row-odd accordian-event" key={index}>
@@ -79,29 +79,29 @@ export const Calendar = () => {
 <div class="accordion" id="accordionExample">
 <div class="accordion-item">
     <h2 class="accordion-header" id={event.id}>
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${event.id}`} aria-expanded="false" aria-controls={event.id}>
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dynamicId" aria-expanded="false" aria-controls={event.id}>
         <div className="row">
-            <div className="col-3">
+            <div className="col-3 accordion-element-spacing">
                 {event.date}
             </div>
-            <div className="col-3">
+            <div className="col-3 accordion-element-spacing">
                 {event.start_time}
             </div>
-            <div className="col-3">
+            <div className="col-3 accordion-element-spacing">
                 {event.end_time}
             </div>
-            <div className="col-3">
+            <div className="col-3 accordion-element-spacing">
                 {event.event_name}
             </div>
         </div>
       </button>
     </h2>
-    <div id={event.id} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+    <div id="dynamicId" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-      <div className="col-2">
+      <div className="col-2 full-accordion">
                         {event.location}
                     </div>
-                    <div className="col-4">
+                    <div className="col-6 full-accordion full-accordion-description">
                         {event.description}
                     </div>
       </div>
