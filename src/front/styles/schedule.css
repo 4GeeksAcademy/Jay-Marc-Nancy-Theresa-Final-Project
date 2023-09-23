@@ -7,27 +7,22 @@
     /* border: solid black;
     border-color: black; */
 }
-
 .event-panel {
     width: 90%;
     /* border-width: 3px 3px 5px 5px; */
     /* border-radius: 4% 95% 6% 95%/95% 4% 92% 5%; */
     /* transform: rotate(-2deg); */
 }
-
 .row-key {
     font-weight: bold;
     padding: 0.5rem;
 }
-
 .event:hover {
 	background-color: #E8F0E4;
 }
-
 .row-even {
     background-color: lightsteelblue;
 }
-
 .table-head {
     padding-left: 3rem;
 }
@@ -39,12 +34,10 @@
     display: inline-block;
     width: auto;
 }
-
 .full-accordion-description {
     padding-left: 5%;
     overflow-wrap: normal;
 }
-
 .accordion-button.collapsed:hover {
     background-color: #E8F0E4;
 }
