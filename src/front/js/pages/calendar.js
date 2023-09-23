@@ -67,67 +67,41 @@ export const Calendar = () => {
                 <div className="col-3 accordion-element-spacing table-head">
                     Event
                 </div>
-                {/* <div className="col-2">
-                    Location
-                </div>
-                <div className="col-4">
-                    Description
-                </div> */}
             </div>
             {store.events.map((event, index) => 
                 <div className="row row-odd accordian-event" key={index}>
-
-<div class="accordion" id="accordionExample">
-<div class="accordion-item">
-    <h2 class="accordion-header" id={event.id}>
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
-        <div className="row">
-            <div className="col-3 accordion-element-spacing">
-                {event.date}
-            </div>
-            <div className="col-3 accordion-element-spacing">
-                {event.start_time}
-            </div>
-            <div className="col-3 accordion-element-spacing">
-                {event.end_time}
-            </div>
-            <div className="col-3 accordion-element-spacing">
-                {event.event_name}
-            </div>
-        </div>
-      </button>
-    </h2>
-    <div id={String('collapsebox' + event.id)} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      <div className="col-2 full-accordion">
-                        {event.location}
+                    <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id={event.id}>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
+                            <div className="row">
+                                <div className="col-3 accordion-element-spacing">
+                                    {event.date}
+                                </div>
+                                <div className="col-3 accordion-element-spacing">
+                                    {event.start_time}
+                                </div>
+                                <div className="col-3 accordion-element-spacing">
+                                    {event.end_time}
+                                </div>
+                                <div className="col-3 accordion-element-spacing">
+                                    {event.event_name}
+                                </div>
+                            </div>
+                        </button>
+                        </h2>
+                        <div id={String('collapsebox' + event.id)} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div className="col-2 full-accordion">
+                                        {event.location}
+                                </div>
+                                <div className="col-6 full-accordion full-accordion-description">
+                                    {event.description}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-6 full-accordion full-accordion-description">
-                        {event.description}
                     </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-                    {/* <div className="col-2">
-                        {event.date}
-                    </div>
-                    <div className="col-1">
-                        {event.start_time}
-                    </div>
-                    <div className="col-1">
-                        {event.end_time}
-                    </div>
-                    <div className="col-2">
-                        {event.event_name}
-                    </div>
-                    <div className="col-2">
-                        {event.location}
-                    </div>
-                    <div className="col-4">
-                        {event.description}
-                    </div> */}
                 </div>
             )}
             </div>
