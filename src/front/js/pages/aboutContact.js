@@ -96,8 +96,9 @@ export const AboutContact = props => {
     {/* collapsable content */}
                         <div className="collapse mb-3" id="mission-statement-collapse-component">
                             <div className="card card-body">
-                                <p></p>
-
+                                <p>The Worst Convention EverCon is decicated to exposing geeks and non-geeks alike to a welcoming and inclusive experience highlighting an array of artists, comics, exhibits and more.</p>
+                                <p>Plus we really wanted to make a rad project that could highlight and express everything we learned and our front and back-end capabilities.</p>
+                                <h5>Yes, this is a shameless attempt to intice you into hiring us as junior developers!</h5>
                             </div>
                         </div>
 
