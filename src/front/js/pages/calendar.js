@@ -16,7 +16,17 @@ export const Calendar = () => {
 	return (
         <div className="container">
             {/* <Navbar /> */}
-            <h1>Schedule</h1>
+            {/* make jumbotron a component for this file and for vendors */}
+            <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
+                <img src="https://images.unsplash.com/photo-1555725305-e823b44548de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"></img>
+                <div className="jumbotronContent">
+                    <h1 className="display-4">Schedule</h1>
+                    <p className="lead">Learn and Grow</p>
+                    <hr className="my-4"></hr>
+                    <p>Expand your horizons with a wide range of informative panels and workshops. Discover the secrets of comic book creation, explore the latest trends in pop culture, and gain insights into the worlds of gaming, sci-fi, and fantasy.</p>
+                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
+            </div>
             <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
                 <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Page</button>
