@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 import "../../styles/schedule.css";
-import "../../../../data.json";
-
+import data from "../../../../data.json";
+// console.log(data)
 
 export const Calendar = () => {
 	const { store, actions } = useContext(Context);
@@ -34,8 +34,7 @@ export const Calendar = () => {
                     {/* One of three columns */}
                     </div>
                     <div className="col-8">
-                    {store.events.map((event, index) => 
-                    
+                    {data.events.map((event, index) =>              
                         <div className="event event-panel" key={index}>
                             <div className="event-banner"><b>Title:</b> {event.event_name}</div>
                             <div className="event-date"><b>Date:</b> {event.date}</div> 
@@ -68,12 +67,13 @@ export const Calendar = () => {
                     Event
                 </div>
             </div>
-            {store.events.map((event, index) => 
+            <div className="table-wrapper">
+            {data.events.map((event, index) => 
                 <div className="row row-odd accordian-event" key={index}>
-                    <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id={event.id}>
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
+                    <div className="accordion" id="accordionExample">
+                    <div className="accordion-item">
+                        <h2 className="accordion-header" id={event.id}>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
                             <div className="row">
                                 <div className="col-3 accordion-element-spacing">
                                     {event.date}
@@ -104,6 +104,7 @@ export const Calendar = () => {
                     </div>
                 </div>
             )}
+            </div>
             </div>
             </div>
         </div>

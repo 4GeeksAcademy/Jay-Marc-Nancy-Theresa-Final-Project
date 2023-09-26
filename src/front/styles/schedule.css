@@ -20,9 +20,10 @@
 .event:hover {
 	background-color: #E8F0E4;
 }
-.row-even {
-    background-color: lightsteelblue;
-}
+/* .button.accordion-button.collapsed:nth-child(even) {
+    background-color: blue !important;
+} */
+
 .table-head {
     padding-left: 3rem;
 }
@@ -44,6 +45,16 @@
 .accordion-button:not(.collapsed) {
     color: #37472f;
     background-color: #c9dac1;
+}
+.accordion-button:not(.collapsed)::after {
+    content: "\02C5";
+    color: #37472f;
+    background: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    scale: 1.7 .9;
+    font-weight: 100;
 }
 .accordion-button:focus {
     z-index: 3;
