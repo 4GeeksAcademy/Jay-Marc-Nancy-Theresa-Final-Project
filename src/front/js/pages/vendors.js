@@ -12,11 +12,14 @@ export const Vendors = props => {
     return (
         <div className="container">
             <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
-                <h1 className="display-4">Vendors</h1>
-                <p className="lead">Explore a Universe of Treasures</p>
-                <hr className="my-4"></hr>
-                <p>Welcome to the Vendor Hall of our Comic Book Convention! Prepare to embark on a thrilling journey through a galaxy of unique and captivating finds. Our carefully curated vendors offer a diverse array of treasures, from rare comic books and collectibles to one-of-a-kind art pieces and memorabilia.</p>
-                <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                <img src="https://images.unsplash.com/photo-1496494218905-aa0568688625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"></img>
+                <div className="test">
+                    <h1 className="display-4">Vendors</h1>
+                    <p className="lead">Explore a Universe of Treasures</p>
+                    <hr className="my-4"></hr>
+                    <p>Welcome to the Vendor Hall of our Comic Book Convention! Prepare to embark on a thrilling journey through a galaxy of unique and captivating finds. Our carefully curated vendors offer a diverse array of treasures, from rare comic books and collectibles to one-of-a-kind art pieces and memorabilia.</p>
+                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </div>
             </div>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
