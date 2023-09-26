@@ -13,7 +13,7 @@ export const Vendors = props => {
         <div className="container">
             <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
                 <img src="https://images.unsplash.com/photo-1496494218905-aa0568688625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"></img>
-                <div className="test">
+                <div className="jumbotronContent">
                     <h1 className="display-4">Vendors</h1>
                     <p className="lead">Explore a Universe of Treasures</p>
                     <hr className="my-4"></hr>

@@ -10,7 +10,7 @@
     height: 100%;
     object-fit: cover;
 }
-.vendorJumbotron .test {
+.vendorJumbotron .jumbotronContent {
     position: relative;
     z-index: 10;
 }
