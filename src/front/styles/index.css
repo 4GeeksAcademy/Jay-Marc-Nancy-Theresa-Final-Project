@@ -2,13 +2,7 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
-/* .mtgcard {
-    height: 900px;
-    width: 1440px;
-    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F5e%2F11%2F86%2F5e11863267b5d05624bd087f19d123ef.jpg&f=1&nofb=1&ipt=ab219a187dde42ecc74f8eed52307b4b1ed5c3ba25fd909470977a0497b81922&ipo=images");
+.aboutDropdownHeader {
+    text-transform: capitalize !important;
+    color: fuchsia !important;
 }
-
-.mtglogo {
-    width: 600px;
-    margin: 325px 0px 0px 275px;
-} */
