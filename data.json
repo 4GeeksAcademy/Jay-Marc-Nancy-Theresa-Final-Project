@@ -2,7 +2,7 @@
     {
         "id": 1,
         "event_name": "Opening Ceremony",
-        "date": "2023-10-20",
+        "date": "2024-05-23",
         "start_time": "10:00 AM",
         "end_time": "11:00 AM",
         "location": "Main Stage",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "event_name": "Comic Book Panel",
-        "date": "2023-10-20",
+        "date": "2024-05-23",
         "start_time": "10:00 AM",
         "end_time": "11:30 AM",
         "location": "Main Hall",
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "event_name": "Artist Alley",
-        "date": "2023-10-20",
+        "date": "2024-05-23",
         "start_time": "12:00 PM",
         "end_time": "5:00 PM",
         "location": "Exhibition Hall",
@@ -29,7 +29,7 @@
     {
         "id": 4,
         "event_name": "Cosplay Contest",
-        "date": "2023-10-21",
+        "date": "2024-05-24",
         "start_time": "2:00 PM",
         "end_time": "4:30 PM",
         "location": "Cosplay Stage",
@@ -38,7 +38,7 @@
     {
     "id": 5,
     "event_name": "Superhero Movie Screening",
-    "date": "2023-10-21",
+    "date": "2024-05-24",
     "start_time": "7:00 PM",
     "end_time": "10:00 PM",
     "location": "Cinema Hall",
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "event_name": "Comic Book Collectors' Auction",
-        "date": "2023-10-22",
+        "date": "2024-05-24",
         "start_time": "11:00 AM",
         "end_time": "1:30 PM",
         "location": "Auction Hall",
@@ -56,7 +56,7 @@
     {
         "id": 7,
         "event_name": "Interactive Workshop: Character Design",
-        "date": "2023-10-22",
+        "date": "2024-05-25",
         "start_time": "3:00 PM",
         "end_time": "4:30 PM",
         "location": "Workshop Room A",
@@ -65,7 +65,7 @@
     {
         "id": 8,
         "event_name": "Superhero Meet and Greet",
-        "date": "2023-10-14",
+        "date": "2024-05-25",
         "start_time": "11:00 AM",
         "end_time": "12:30 PM",
         "location": "Heroes Hall",
@@ -74,7 +74,7 @@
     {
         "id": 9,
         "event_name": "Sci-Fi Writers Panel",
-        "date": "2023-10-15",
+        "date": "2024-05-25",
         "start_time": "2:00 PM",
         "end_time": "3:30 PM",
         "location": "Panel Room B",
@@ -83,7 +83,7 @@
     {
         "id": 10,
         "event_name": "Gaming Tournament",
-        "date": "2023-10-15",
+        "date": "2024-05-26",
         "start_time": "4:00 PM",
         "end_time": "7:00 PM",
         "location": "Gaming Arena",
@@ -92,7 +92,7 @@
     {
         "id": 11,
         "event_name": "Closing Ceremony",
-        "date": "2023-10-16",
+        "date": "2024-05-26",
         "start_time": "6:00 PM",
         "end_time": "7:30 PM",
         "location": "Main Stage",
