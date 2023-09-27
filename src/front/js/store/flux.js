@@ -1,18 +1,25 @@
+import "../../../../data.json";
+// const fs = require("fs");
+// const get = require("lodash.get");
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
+			// message: null,
+			// demo: [
+			// 	{
+			// 		title: "FIRST",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	},
+			// 	{
+			// 		title: "SECOND",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	}
+			// ],
+			events: [ 
+				// empty array for creating new events via form
 			]
 		},
 		actions: {
@@ -46,6 +53,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			}, 
+			
+			getEvents: () => {
+				fetch("../../../../data.json") //need to edit the link
+				.then((resp) => resp.json())
+				.then((data) => {
+					console.log("myString: ", data)
+					setStore({ events: data.events })
+				} )
+				//console log data
 			}
 		}
 	};

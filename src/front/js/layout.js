@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
+import { Schedule } from "./pages/schedule";
 import { Featured } from "./pages/featured";
 import { Guests } from "./pages/guests";
 import { WhatToDo } from "./pages/whatToDo";
@@ -17,8 +18,8 @@ import { Signup } from "./pages/signup";
 import { Private } from "./pages/private";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
-// import { Demo } from "./pages/demo";
-// import { Single } from "./pages/single";
+
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -38,7 +39,8 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route element={<Home />} path="/" />
+                        <Route element={<Home />} path="/" />                      
+
                         <Route element={<Featured />} path="/featured" />
                         {/* <Route element={<Single />} path="/single/:theid" /> */}
                         <Route element={<Guests />} path="/guests" />
@@ -53,6 +55,7 @@ const Layout = () => {
                         <Route element={<Private />} path="/private" />
                         <Route element={<AboutContact />} path="/about-contact" />
                         <Route element={<FAQ />} path="/FAQ" />
+
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

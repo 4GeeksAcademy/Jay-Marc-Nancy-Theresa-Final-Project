@@ -18,8 +18,9 @@ ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+app.config["DEBUG"] = True
 
-# database condiguration
+# database configuration
 db_url = os.getenv("DATABASE_URL")
 if db_url is not None:
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url.replace("postgres://", "postgresql://")
@@ -63,6 +64,13 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
+#Nelson Chang: ALSO: events are not defined
+@app.route('/calendar', methods=['GET'])
+def get_events():
+    #need to define events here 
+    #events = 
+    #return jsonify(events), 200
+    pass
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
