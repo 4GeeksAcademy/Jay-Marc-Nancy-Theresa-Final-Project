@@ -2,6 +2,10 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
+.aboutDropdownHeader {
+    text-transform: capitalize !important;
+    color: fuchsia !important;
+}
 
 .hotelIMG {
     width: 100%;
