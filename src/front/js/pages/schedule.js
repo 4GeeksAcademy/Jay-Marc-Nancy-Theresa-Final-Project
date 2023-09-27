@@ -14,7 +14,6 @@ export const Calendar = () => {
 
 	return (
         <div className="container">
-            {<Navbar />}
             {/* make jumbotron a component for this file and for vendors */}
             <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
                 <img src="https://images.unsplash.com/photo-1555725305-e823b44548de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"></img>

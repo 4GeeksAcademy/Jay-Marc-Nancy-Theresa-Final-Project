@@ -4,7 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Schedule } from "./pages/schedule";
 import { Featured } from "./pages/featured";
 import { Guests } from "./pages/guests";
 import { WhatToDo } from "./pages/whatToDo";
