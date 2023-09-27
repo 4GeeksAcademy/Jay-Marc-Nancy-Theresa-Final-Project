@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
-export const GuestForm = props => {
+export const Login = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
 
