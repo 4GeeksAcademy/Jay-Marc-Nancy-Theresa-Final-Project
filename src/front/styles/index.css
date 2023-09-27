@@ -6,3 +6,18 @@
     text-transform: capitalize !important;
     color: fuchsia !important;
 }
+
+.hotelIMG {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.hotelCardContainer {
+    border: solid 4px black !important;
+    border-radius: 15px;
+}
+
+.hotelCardHeader {
+    text-transform: capitalize !important;
+}
