@@ -79,7 +79,7 @@ export const Calendar = () => {
             </div>
             <div className="table-wrapper">
             {data.events.map((event, index) => 
-                <div className="row row-odd accordian-event" key={index}>
+                <div className="row accordion-event" key={index}>
                     <div className="accordion" id="accordionExample">
                     <div className="accordion-item">
                         <h2 className="accordion-header" id={event.id}>

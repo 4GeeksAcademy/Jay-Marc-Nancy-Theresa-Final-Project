@@ -20,11 +20,12 @@
     width: 250px;
     height: 200px;
     background:#fff;
+    width: 100%;
     /* border: solid black;
     border-color: black; */
 }
-.event-panel {
-    width: 90%;
+.event-panel:nth-child(even) {
+    background-color: #f6fcf4;
     /* border-width: 3px 3px 5px 5px; */
     /* border-radius: 4% 95% 6% 95%/95% 4% 92% 5%; */
     /* transform: rotate(-2deg); */
@@ -33,13 +34,15 @@
     font-weight: bold;
     padding: 0.5rem;
 }
+.accordion-event:nth-child(even) .accordion .accordion-item .accordion-button {
+    background-color: #f6fcf4;
+}
+.accordion-event:nth-child(even) .accordion .accordion-item .accordion-button:hover {
+	background-color: #E8F0E4;
+}
 .event:hover {
 	background-color: #E8F0E4;
 }
-/* .button.accordion-button.collapsed:nth-child(even) {
-    background-color: blue !important;
-} */
-
 .table-head {
     padding-left: 3rem;
 }
