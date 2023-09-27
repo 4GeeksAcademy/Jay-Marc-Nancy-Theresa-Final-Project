@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 import stormtroopers from "../../img/stormtroopers.jpg";
 import conlogo from "../../img/conlogo.png";
+import CountdownTimer from "../component/countdownTimer";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -11,10 +12,11 @@ export const Home = () => {
 	return (
 		<div className="wrapper" style={{ textAlign: "center" }}>
 			<div className="row">
-				<div className="col-4">
-					<p className="countdown-timer my-3">102 Days 15 Hours 26 Minutes</p>
+				<div className="col-5">
+
+					<CountdownTimer />
 				</div>
-				<div className="col-8">
+				<div className="col-7">
 					<img src={conlogo} className="homeImage" alt="banner" />
 				</div>
 
