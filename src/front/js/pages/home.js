@@ -2,26 +2,37 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
+import stormtroopers from "../../img/stormtroopers.jpg";
+import conlogo from "../../img/conlogo.png";
+import CountdownTimer from "../component/countdownTimer";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="wrapper" style={{ textAlign: "center" }}>
-			<div className="container-fluid banner">
-				<img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/comic-con-design-template-a4d098fe3d831d0861dc0d22b533c0cf_screen.jpg?ts=1620897200" alt="banner" />
+			<div className="row">
+				<div className="col-5">
+
+					<CountdownTimer />
+				</div>
+				<div className="col-7">
+					<img src={conlogo} className="homeImage" alt="banner" />
+				</div>
+
 
 			</div>
-			<div className="countdown-timer my-3">102 Days 15 Hours 26 Minutes</div>
+
 			<div>
-				<button className="btn btn-caution mx-3">
+				<img src={stormtroopers} className="homeImage" alt="banner" />
+				<button className="btn btn-light mx-3">
 					<Link to="/guest-form"></Link>
 					Purchase Tickets!
 				</button>
-				<button className="btn btn-caution mx-3">
+				<button className="btn btn-light mx-3">
 					<Link to="/transportation"></Link>
 					Plan Your Trip!</button>
-				<button className="btn btn-caution mx-3">
+				<button className="btn btn-light mx-3">
 					<Link to="/guest-form"></Link>
 					Join the Mailing List!</button>
 			</div>
