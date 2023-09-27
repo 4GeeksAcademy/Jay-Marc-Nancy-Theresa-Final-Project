@@ -72,7 +72,7 @@ export const AboutContact = props => {
                                 <p><strong>Nancy</strong>, for the record, has read the documentation. Nancy is dilligent and unwavering in the face of a challenge. Nancy is a level-capped necromancer, an avid gamer, artist, dog mom, and doesn't realize it (this was written while we were coding), but the full reason our backend exists and works.</p>
                                 <p><strong>Theresa</strong> is a polymath and multipotentialite (my words, not hers) who speaks more languages than most senior devs can program in. Theresa only rolls d20, is stylistically in an ascended realm of her own, and was born with a passive +4 to all attributes. If you see an impressive layout or unique design -- it likely has Theresa's signature on it.</p> 
                                 <p><strong>Marc</strong> is an unintentional workaholic who always pushes through. Marc takes great interest in understanding the inner workings and behind the scenes of code. The instant he gets traction and inspiration you can be sure the flow of code will break the dam. Marc pushed more code while he had COVID than I did when I accidentally took my wifes adderal.</p>   
-                                <p><strong>Jay</strong> is unremarkable, but takes full responsibility for this page and this description. Jay always takes an interest in other peoples projects, likes to theorycraft how a feature might work, and loves to debug and problem solve. Jay is probably responsible for finding the misplaced comma or missing closing bracked that crashed the whole project (and possibly responsible for it being there in the first place). </p>                          
+                                <p><strong>Jay</strong> is unremarkable, but takes full responsibility for this page and this description. Jay always takes an interest in other peoples projects, likes to theorycraft how a feature might work, and loves to debug and problem solve. Jay is probably responsible for finding the misplaced comma or missing closing bracket that crashed the whole project (and possibly responsible for it being there in the first place). </p>                          
                             </div>
                         </div>
 
@@ -122,7 +122,9 @@ export const AboutContact = props => {
     {/* collapsable content */}
                         <div className="collapse mb-3" id="whats-next-collapse-component">
                             <div className="card card-body">
-                                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                <p>After hosting the greatest convention of all time (a.k.a. the Worst Convention EverCon) Marc, Theresa, Nancy, and Jay will simply walk into Mordor and cast the one ring into the fires of Mount Doom.</p>
+                                <p>Once the convention and festivities have concluded we plan to host a forum to crowd-source information via various polls and elaboration topics in order to get a ground-level insight into what our friends, peers, and guests are looking for, what can be improved, and what hit the mark.</p>
+                                <p>After enough information is gathered we will host a digital conference that will serve to reiterate the poll findings and promote discussion and questions. Future iterations and versions of the conference will aim to be open-source where fans and attendees can "meet the geeks", contribute, and help us build the future. We will be accepting of all sorts of productive feedback to further provide future attendees with the upgrades and features they deserve on behalf of their collective Asgardian birthright.</p>
                             </div>
                         </div> 
 
@@ -141,6 +143,7 @@ export const AboutContact = props => {
 
             <div className="container border border-danger">
                 <form action="#" method="get" enctype="text/plain">
+                    <h1>Placeholder Email Form</h1>
                     <label for="exampleFormControlInput1" className="form-label">Name:</label>
                         <div className="row">
                             <div className="col text-start">
@@ -156,34 +159,8 @@ export const AboutContact = props => {
                     <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Hello Fellow Nerds.." />
                     <label for="exampleFormControlTextarea1" className="form-label">Message:</label>
                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your email message here!"></textarea>
-                    <input type="submit" value="Send" />
+                    <input type="submit" value="Send Email" />
                 </form>
-            </div>  
-
-
-
-
-            <div className="container text-center">
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Launch demo modal
-                </button>
-                <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div className="modal-body">
-                                ...
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </>
     );
