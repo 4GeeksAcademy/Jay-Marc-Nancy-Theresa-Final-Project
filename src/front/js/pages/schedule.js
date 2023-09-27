@@ -5,7 +5,7 @@ import "../../styles/schedule.css";
 import data from "../../../../data.json";
 // console.log(data)
 
-export const Calendar = () => {
+export const Schedule = () => {
 	const { store, actions } = useContext(Context);
 
     useEffect(() => {
