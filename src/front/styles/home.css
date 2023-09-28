@@ -33,3 +33,10 @@ body {
     color: rgb(10, 10, 10);
     margin-bottom: 50px;
 }
+
+#signupContainer {
+    margin: auto;
+    width: 50%;
+    padding: 3%;
+    text-align: center;
+}
