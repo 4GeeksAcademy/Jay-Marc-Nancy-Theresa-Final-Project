@@ -44,7 +44,7 @@ export const Hotels = () => {
 										<p className="card-text m-3">
 											{item.hotelDescription}
 										</p>
-										<a href="#" className="btn btn-primary mb-3">Book this for ${item.hotelPriceRate} per night!</a>
+										<a href={item.hotelUrl} target="_blank" className="btn btn-primary mb-3">Book this for ${item.hotelPriceRate} per night!</a>
 									</div>
 								<div className="row card-footer text-body-secondary">
 									<div className="col fw-bolder">
