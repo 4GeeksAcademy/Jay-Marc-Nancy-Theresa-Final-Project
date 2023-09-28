@@ -14,7 +14,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			publishers: []
+			comicVendors: [],
+			artVendors: [],
+			merchVendors: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -48,12 +50,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			fetchGetAllPublishers: async () => {
+			fetchGetAllComicVendors: async () => {
 				const response = await fetch(" http://comicvine.gamespot.com/api/publishers/?api_key=95a8680d433d9ff13c2e5dd7eb480ff23089772d");
 				let data = await response.json();
 				// console.log(data);
-				setStore({publishers:data.results});
-			}
+				setStore({comicVendors:data.results});
+			},
 		}
 	};
 };

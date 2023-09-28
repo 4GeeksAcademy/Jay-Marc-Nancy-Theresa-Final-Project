@@ -31,7 +31,7 @@ export const Vendors = props => {
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
                             {/* map vendors of the comicVendor type with the Vendor.js component*/}
-                            {store.publishers.map((publisher, index) => <Vendor key={index} index={index} name={name} site_detail_url={site_detail_url} type="comicVendor"/>)}
+                            {/* {store.publishers.map((publisher, index) => <Vendor key={index} index={index} name={name} site_detail_url={site_detail_url} type="comicVendor"/>)} */}
                         </div>
                     </div>
                 </div>

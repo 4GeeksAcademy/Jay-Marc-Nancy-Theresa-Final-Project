@@ -12,7 +12,7 @@ const Vendor = (props) => {
         field = 
             <ul class="list-group">
                 <li class="row list-group-item">
-                    <div className="col li-vendor-name">{props.Vendor.name}</div>
+                    <div className="col li-vendor-name">ComicVendorName</div>
                     {/* the above needs editing, but it's been a minute and the method eludes me */}
                 </li>
             </ul>
@@ -22,7 +22,7 @@ const Vendor = (props) => {
         field = 
         <ul class="list-group">
             <li class="row list-group-item">
-                <div class="col li-vendor-name">{props.data.art_vendors.name}</div>
+                <div class="col li-vendor-name">ARTVENDORNAME</div>
             </li>
         </ul>
     ) : null
@@ -31,7 +31,7 @@ const Vendor = (props) => {
         field = 
         <ul class="list-group">
             <li class="row list-group-item">
-                <div class="col">testNameWithLink</div>
+                <div class="col">MERCHVENDORNAME</div>
             </li>
         </ul>
     ): null

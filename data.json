@@ -34,4 +34,42 @@
         "location": "Booth 512",
         "description": "Witness the art of inking with live demonstrations and unique ink creations."
     }
-]}
+],
+"merch_vendors": [
+    {
+        "id": 1,
+        "vendor_name": "GeekWares",
+        "vendor_type": "merchVendor",
+        "location": "Booth 601",
+        "description": "Your one-stop shop for all things geeky and collectible, from action figures to posters."
+    },
+    {
+        "id": 2,
+        "vendor_name": "ComicTees",
+        "vendor_type": "merchVendor",
+        "location": "Booth 702",
+        "description": "Express your love for comics with a wide range of themed t-shirts and apparel."
+    },
+    {
+        "id": 3,
+        "vendor_name": "HeroHats",
+        "vendor_type": "merchVendor",
+        "location": "Booth 803",
+        "description": "Top off your superhero look with iconic hats and headwear from your favorite comics."
+    },
+    {
+        "id": 4,
+        "vendor_name": "ComicCollectibles",
+        "vendor_type": "merchVendor",
+        "location": "Booth 904",
+        "description": "Discover rare and vintage comic book collectibles that every fan will cherish."
+    },
+    {
+        "id": 5,
+        "vendor_name": "SuperPosters",
+        "vendor_type": "merchVendor",
+        "location": "Booth 1005",
+        "description": "Decorate your space with stunning comic book posters featuring your beloved heroes."
+    }
+]
+}
