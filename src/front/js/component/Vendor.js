@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import data from "../../../../data.json";
 
 const Vendor = (props) => {
     const {store, actions} = useContext(Context);
@@ -11,12 +12,8 @@ const Vendor = (props) => {
         field = 
             <ul class="list-group">
                 <li class="row list-group-item">
-                    <img 
-                        className="col li-vendor-img"
-                        alt="vendor image"
-                        src={`LINKTOIMAGE`}
-                    />
-                    <div className="col li-vendor-name">testNameWithLink</div>
+                    <div className="col li-vendor-name">{props.Vendor.name}</div>
+                    {/* the above needs editing, but it's been a minute and the method eludes me */}
                 </li>
             </ul>
     ) : null
@@ -25,8 +22,7 @@ const Vendor = (props) => {
         field = 
         <ul class="list-group">
             <li class="row list-group-item">
-                <div class="col">testImage</div>
-                <div class="col">testNameWithLink</div>
+                <div class="col li-vendor-name">{props.data.art_vendors.name}</div>
             </li>
         </ul>
     ) : null
@@ -35,7 +31,6 @@ const Vendor = (props) => {
         field = 
         <ul class="list-group">
             <li class="row list-group-item">
-                <div class="col">testImage</div>
                 <div class="col">testNameWithLink</div>
             </li>
         </ul>

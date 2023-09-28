@@ -1,0 +1,37 @@
+{"art_vendors": [
+    {
+        "id": 1,
+        "vendor_name": "ComicArtWorld",
+        "vendor_type": "artVendor",
+        "location": "Booth 101",
+        "description": "Explore a world of comic art, from superhero sketches to graphic novel illustrations."
+    },
+    {
+        "id": 2,
+        "vendor_name": "FantasyCanvas",
+        "vendor_type": "artVendor",
+        "location": "Booth 205",
+        "description": "Dive into the realms of fantasy with stunning canvas paintings inspired by comics and sci-fi."
+    },
+    {
+        "id": 3,
+        "vendor_name": "SuperSculptures",
+        "vendor_type": "artVendor",
+        "location": "Booth 307",
+        "description": "Marvel at superhero sculptures meticulously crafted to capture every detail."
+    },
+    {
+        "id": 4,
+        "vendor_name": "ComicMerchHub",
+        "vendor_type": "artVendor",
+        "location": "Booth 410",
+        "description": "Get your hands on exclusive comic book merchandise, from collectibles to apparel."
+    },
+    {
+        "id": 5,
+        "vendor_name": "InkMasters",
+        "vendor_type": "artVendor",
+        "location": "Booth 512",
+        "description": "Witness the art of inking with live demonstrations and unique ink creations."
+    }
+]}
