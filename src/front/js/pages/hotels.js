@@ -6,7 +6,6 @@ export const Hotels = () => {
 
     return (
         <>
-		{console.log(store.hotels)}
 			<div className="container text-center">
 				<div className="row">
 					<div className="col-12 text-start">
