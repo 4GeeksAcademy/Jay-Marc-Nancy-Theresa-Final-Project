@@ -120,6 +120,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			forgotPassword: async (email) => {
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(
+						{
+							email: email,
+						}
+					)
+				}
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "api/forgot-password", options)
+					if (response.status !== 200) {
+						alert("Error!  Response Code: ", response.status)
+						return false;
+					}
+					const data = await response.json()
+					console.log("from backend", data)
+					return true;
+				}
+				catch (error) {
+					console.log("login error!")
+				}
+			}
+
 
 		},
 		changeColor: (index, color) => {

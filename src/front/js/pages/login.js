@@ -16,6 +16,8 @@ export const Login = () => {
         // })
     };
 
+
+
     // this replaces the .then() above, much cleaner
     if (store.token && store.token !== "" && store.token !== undefined) {
         navigate("/private");
@@ -26,7 +28,7 @@ export const Login = () => {
                 {(store.token && store.token !== "" && store.token !== undefined) ? "You are logged in with token"
                     :
                     <div align="center">
-                        <h1>Hello Login!</h1>
+                        <h1>Hello! Login</h1>
                         <input
                             type="text"
                             value={email}
@@ -36,6 +38,8 @@ export const Login = () => {
                             value={password}
                             placeholder="enter password" onChange={e => setPassword(e.target.value)}></input>
                         <button onClick={handleLogin}>Login</button>
+                        <button onClick={() => navigate("/signup")}>Signup</button>
+                        <button onClick={() => navigate("/forgot-password")}>Forgot Password</button>
                     </div>
                 }
             </div>

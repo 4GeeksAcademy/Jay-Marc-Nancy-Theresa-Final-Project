@@ -70,21 +70,6 @@ def create_user():
     db.session.commit()
     return jsonify(user.serialize()), 200
 
-# @api.route("/signup", methods=["POST"])
-# def addUser():
-#     email = request.json.get("email", None)
-#     password = request.json.get("password", None)
-
-#     # Check if the email already exists
-#     existing_user = User.query.filter_by(email=email).first()
-#     if existing_user is None:
-#         new_user_data = User(email= email, password=password, is_active=True)
-#         db.session.add(new_user_data)
-#         db.session.commit()
-#         return jsonify({"msg": "User added successfully!"}), 200
-#     return jsonify({"msg": "email is already exists in the database try login instead?"}), 401
-
-
 
 @api.route('/user/<int:id>', methods=['PUT'])
 def update_user(id):
@@ -114,3 +99,49 @@ def delete_user(id):
 @jwt_required()
 def get_private():
     return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
+
+@api.route('/private-scoped', methods=['GET'])
+@jwt_required()
+def get_private_scoped():
+    return jsonify({"msg": "This is a private endpoint with scope 'read:messages'. You need to be logged in and have a JWT with the appropriate scope to see it"}), 200
+
+@api.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    body = request.get_json()
+    user = User.query.filter_by(email=body["email"]).first()
+    if user is None:
+        raise APIException('User not found', status_code=404)
+    return jsonify(user.serialize()), 200
+
+@api.route('/reset-password', methods=['POST'])
+def reset_password():
+    body = request.get_json()
+    user = User.query.filter_by(email=body["email"]).first()
+    if user is None:
+        raise APIException('User not found', status_code=404)
+    return jsonify(user.serialize()), 200
+
+@api.route('/change-password', methods=['POST'])
+def change_password():
+    body = request.get_json()
+    user = User.query.filter_by(email=body["email"]).first()
+    if user is None:
+        raise APIException('User not found', status_code=404)
+    return jsonify(user.serialize()), 200
+
+# @api.route('/change-email', methods=['POST'])
+# def change_email():
+#     body = request.get_json()
+#     user = User.query.filter_by(email=body["email"]).first()
+#     if user is None:
+#         raise APIException('User not found', status_code=404)
+#     return jsonify(user.serialize()), 200
+
+# @api.route('/change-username', methods=['POST'])
+# def change_username():
+#     body = request.get_json()
+#     user = User.query.filter_by(email=body["email"]).first()
+#     if user is None:
+#         raise APIException('User not found', status_code=404)
+#     return jsonify(user.serialize()), 200
+
