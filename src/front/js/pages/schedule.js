@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/schedule.css";
-import data from "../../../../data.json";
-// console.log(data)
 
 export const Schedule = () => {
 	const { store, actions } = useContext(Context);
@@ -42,7 +39,7 @@ export const Schedule = () => {
                     {/* One of three columns */}
                     </div>
                     <div className="col-8">
-                    {data.events.map((event, index) =>              
+                    {store.events.map((event, index) =>              
                         <div className="event event-panel" key={index}>
                             <div className="event-banner"><b>Title:</b> {event.event_name}</div>
                             <div className="event-date"><b>Date:</b> {event.date}</div> 
@@ -76,7 +73,7 @@ export const Schedule = () => {
                 </div>
             </div>
             <div className="table-wrapper">
-            {data.events.map((event, index) => 
+            {store.events.map((event, index) => 
                 <div className="row accordion-event" key={index}>
                     <div className="accordion" id="accordionExample">
                     <div className="accordion-item">
@@ -98,8 +95,8 @@ export const Schedule = () => {
                             </div>
                         </button>
                         </h2>
-                        <div id={String('collapsebox' + event.id)} class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                        <div id={String('collapsebox' + event.id)} className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div className="accordion-body">
                                 <div className="col-2 full-accordion">
                                         {event.location}
                                 </div>
@@ -118,7 +115,3 @@ export const Schedule = () => {
         </div>
     );
 };
-
-
-
-

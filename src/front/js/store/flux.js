@@ -1,31 +1,23 @@
-import "../../../../data.json";
+import data from "../../../../data.json";
 // const fs = require("fs");
 // const get = require("lodash.get");
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			// message: null,
-			// demo: [
-			// 	{
-			// 		title: "FIRST",
-			// 		background: "white",
-			// 		initial: "white"
-			// 	},
-			// 	{
-			// 		title: "SECOND",
-			// 		background: "white",
-			// 		initial: "white"
-			// 	}
-			// ],
-			events: [ 
-				// empty array for creating new events via form
-			]
+			events: [],
+			hotels: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+			},
+			populateStoreEvents: () => {
+				setStore({events: data.events})
+			},
+			populateStoreHotels: () => {
+				setStore({hotels: data.hotels})
 			},
 
 			getMessage: async () => {
