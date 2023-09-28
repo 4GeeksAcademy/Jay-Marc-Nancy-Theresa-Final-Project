@@ -2,6 +2,14 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
+/* ////////////////////////////////////////////////////////////////
+/* DO NOT REMOVE THIS CODE -- THE SITE WILL CRASH */
+/* * {
+	font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+////////////////////////////////////////////////////////////////
+*/
+
 .aboutDropdownHeader {
     text-transform: capitalize !important;
     color: fuchsia !important;
