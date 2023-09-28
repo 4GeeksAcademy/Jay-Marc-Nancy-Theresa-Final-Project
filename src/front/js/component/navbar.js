@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div>
 			{/* need to convert anchor tags to link */}
@@ -59,8 +61,8 @@ export const Navbar = () => {
 									Participate
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/guest-form" className="dropdown-item" >Guests</Link></li>
-									<li><Link to="/vendor-form" className="dropdown-item">Vendors</Link></li>
+									<li><Link to="/signup" className="dropdown-item" >Signup</Link></li>
+									<li><Link to="/login" className="dropdown-item">Login</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
 							</li>
@@ -75,6 +77,17 @@ export const Navbar = () => {
 								</ul>
 							</li>
 						</ul>
+						<div className="ml-auto">
+							{!store.token ?
+								<Link to="/">
+									<button className="btn btn-primary">Logout</button>
+								</Link>
+								:
+								<Link to="/">
+									<button onClick={() => actions.logout()} className="btn btn-primary">Logout</button>
+								</Link>
+							}
+						</div>
 					</div>
 				</div>
 			</nav>
