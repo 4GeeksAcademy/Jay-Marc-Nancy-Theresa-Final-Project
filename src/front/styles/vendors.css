@@ -43,4 +43,5 @@
 }
 .accordion-body {
     background-color: #f6fcf4;
+    columns: 3 auto;
 }
