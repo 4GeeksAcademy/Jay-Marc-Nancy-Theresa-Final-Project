@@ -1,3 +1,5 @@
+import data from "../../../../data.json";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -79,7 +81,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({comicVendors:data.results});
 				}) 
 			},
-		}
+			getArtVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getArtVendors: ", data)
+					setStore({ artVendors: data.artVendors })
+				} )
+				//console.log(data);
+			},
+			getMerchVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getMerchVendors: ", data)
+					setStore({ merchVendors: data.merchVendors })
+				} )
+				//console.log(data);
+			},
+		},
 	};
 };
 

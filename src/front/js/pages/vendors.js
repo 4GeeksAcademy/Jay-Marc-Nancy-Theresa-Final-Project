@@ -4,11 +4,15 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/vendors.css"; 
 // import { Vendor } from "../component/Vendor.js";
-
+import data from "../../../../data.json";
 
 export const Vendors = props => {
     const { store, actions } = useContext(Context);
-    const params = useParams();
+    useEffect(() => {
+        actions.getArtVendors();   
+        actions.getMerchVendors();
+    })
+    // const params = useParams();
 
     return (
         <div className="container">
@@ -32,10 +36,11 @@ export const Vendors = props => {
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
                             <ul className="list-group">
-                            {store.comicVendors.map((vendor, idx) =>
-                                <a key={idx} href={vendor.site_url} target="_blank">
-                                    {vendor.name}
-                                </a>)}
+                                {store.comicVendors.map((vendor, idx) =>
+                                    <a key={idx} href={vendor.site_url} target="_blank">
+                                        {vendor.name}
+                                    </a>)
+                                }
                             </ul>
                         </div>
                     </div>
@@ -48,7 +53,13 @@ export const Vendors = props => {
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul className="list-group">
+                            {data.art_vendors.map((artVendor, index) => 
+                                <a key={index}>
+                                    {artVendor.vendor_name}
+                                </a>)
+                            }
+                        </ul>
                     </div>
                     </div>
                 </div>
@@ -60,7 +71,13 @@ export const Vendors = props => {
                     </h2>
                     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul className="list-group">
+                            {data.merch_vendors.map((merchVendor, index) => 
+                                <a key={index}>
+                                    {merchVendor.vendor_name}
+                                </a>)
+                            }
+                        </ul>
                     </div>
                     </div>
                 </div>
