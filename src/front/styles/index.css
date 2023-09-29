@@ -29,3 +29,10 @@
 .hotelCardHeader {
     text-transform: capitalize !important;
 }
+
+.homeDescriptionComicSound {
+    height: 40px;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
