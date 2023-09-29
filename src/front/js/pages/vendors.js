@@ -33,7 +33,7 @@ export const Vendors = props => {
                         <div className="accordion-body">
                             <ul className="list-group">
                             {store.comicVendors.map((vendor, idx) =>
-                                <a key={idx} href={vendor.site_url}>
+                                <a key={idx} href={vendor.site_url} target="_blank">
                                     {vendor.name}
                                 </a>)}
                             </ul>
