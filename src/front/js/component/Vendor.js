@@ -10,10 +10,12 @@ const Vendor = (props) => {
     let field
     props.type === "comicVendor" ? (
         field = 
-            <ul class="list-group">
-                <li class="row list-group-item">
-                    <div className="col li-vendor-name">ComicVendorName</div>
-                    {/* the above needs editing, but it's been a minute and the method eludes me */}
+            <ul className="list-group">
+                {store.comicVendors.map((vendor, idx) =>
+                <li key={idx} className="row list-group-item">
+                    <div  className="col li-vendor-name">
+                        {vendor.name}
+                    </div>
                 </li>
             </ul>
     ) : null

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/vendors.css"; 
+// import { Vendor } from "../component/Vendor.js";
 
 
 export const Vendors = props => {
@@ -30,8 +31,12 @@ export const Vendors = props => {
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            {/* map vendors of the comicVendor type with the Vendor.js component*/}
-                            {/* {store.publishers.map((publisher, index) => <Vendor key={index} index={index} name={name} site_detail_url={site_detail_url} type="comicVendor"/>)} */}
+                            <ul className="list-group">
+                            {store.comicVendors.map((vendor, idx) =>
+                                <a key={idx} href={vendor.site_url}>
+                                    {vendor.name}
+                                </a>)}
+                            </ul>
                         </div>
                     </div>
                 </div>

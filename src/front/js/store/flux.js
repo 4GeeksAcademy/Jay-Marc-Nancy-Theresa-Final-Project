@@ -72,7 +72,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 	}) 
 			// },
 			fetchGetAllComicVendors: () => {
-				console.log("HERE")
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
 				.then((response) => response.json()) 
 				.then((data) => {

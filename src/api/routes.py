@@ -43,4 +43,4 @@ def get_publishers():
             "name": pub.name,
             "site_url": pub.site_url
         })
-    return jsonify(results=publishers)
+    return jsonify(results=publishers), 200
