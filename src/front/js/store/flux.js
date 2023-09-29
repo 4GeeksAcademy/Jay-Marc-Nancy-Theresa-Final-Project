@@ -1,3 +1,7 @@
+import data from "../../../../data.json";
+// const fs = require("fs");
+// const get = require("lodash.get");
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -14,12 +18,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			events: [],
+			hotels: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
+			},
+			populateStoreEvents: () => {
+				setStore({events: data.events})
+			},
+			populateStoreHotels: () => {
+				setStore({hotels: data.hotels})
 			},
 
 			login: async (email, password) => {
@@ -119,7 +131,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("login error!")
 				}
 			},
-
 			forgotPassword: async (email) => {
 				const options = {
 					method: 'POST',
@@ -145,9 +156,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log("login error!")
 				}
+				//reset the global store
+				setStore({ demo: demo });
+			}, 
+			
+			getEvents: () => {
+				fetch("../../../../data.json") //need to edit the link
+				.then((resp) => resp.json())
+				.then((data) => {
+					console.log("myString: ", data)
+					setStore({ events: data.events })
+				} )
+				//console log data
+
 			}
-
-
 		},
 		changeColor: (index, color) => {
 			//get the store

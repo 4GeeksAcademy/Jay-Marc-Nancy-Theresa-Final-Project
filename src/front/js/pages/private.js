@@ -23,5 +23,3 @@ export const Private = () => {
         </div>
     )
 };
-
-
