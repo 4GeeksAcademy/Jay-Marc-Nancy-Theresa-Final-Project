@@ -36,3 +36,35 @@
     margin: 0px;
     padding: 0px;
 }
+
+.mtgCardImg {
+    width: 223px;
+    height: auto;
+}
+
+
+.condensedCard {
+    width: 300px;
+    transition: transform .2s;
+}
+
+.condensedCard:hover {
+    transform: scale(1.05);
+}
+
+.cardScrollBars::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cardScrollBars::-webkit-scrollbar-track {
+    background: #222222;
+}
+
+.cardScrollBars::-webkit-scrollbar-thumb {
+    background: #FF0000;
+    border-radius: 5px;
+}
+
+.cardScrollBars::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}

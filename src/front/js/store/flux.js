@@ -6,12 +6,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			events: [],
-			hotels: []
+			hotels: [],
+			rkPostCards: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			initialLoading: () => {
+				getActions().populateStoreEvents();
+				getActions().populateStoreHotels();
+				getActions().fetchRkPostCards();
 			},
 			populateStoreEvents: () => {
 				setStore({events: data.events})
@@ -19,7 +21,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			populateStoreHotels: () => {
 				setStore({hotels: data.hotels})
 			},
+			fetchRkPostCards: () => {
+				fetch("https://api.magicthegathering.io/v1/cards?contains=imageUrl&artist=rk%20post")
 
+				.then(response => {
+					if (!response.ok) throw Error(response.statusText);
+					return response.json();
+				})
+				.then(data => {
+					setStore({rkPostCards: data.cards})
+				})
+				.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
