@@ -24,6 +24,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { ForgotPassword } from "./pages/forgotPassword";
 import { PasswordReset } from "./pages/passwordReset";
+import { NewReleases } from "./pages/newReleases";
 
 //create your first component
 const Layout = () => {
@@ -39,10 +40,11 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route element={<Home />} path="/" />                      
+                        <Route element={<Home />} path="/" />
 
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
+                        <Route element={<NewReleases />} path="/new-releases" />
                         <Route element={<WhatToDo />} path="/what-to-do" />
                         <Route element={<Vendors />} path="/vendors" />
                         <Route element={<Schedule />} path="/schedule" />

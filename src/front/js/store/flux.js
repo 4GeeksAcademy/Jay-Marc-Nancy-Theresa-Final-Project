@@ -20,7 +20,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			events: [],
-			hotels: []
+			hotels: [],
+			comics: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -28,10 +29,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			populateStoreEvents: () => {
-				setStore({events: data.events})
+				setStore({ events: data.events })
 			},
 			populateStoreHotels: () => {
-				setStore({hotels: data.hotels})
+				setStore({ hotels: data.hotels })
 			},
 
 			login: async (email, password) => {
@@ -158,15 +159,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				//reset the global store
 				setStore({ demo: demo });
-			}, 
-			
+			},
+
 			getEvents: () => {
 				fetch("../../../../data.json") //need to edit the link
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ events: data.events })
-				} )
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ events: data.events })
+					})
+				//console log data
+
+			},
+
+			getComics: () => {
+				fetch("https://api.shortboxed.com/comics/v1/new") //need to edit the link
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ comics: data.comics })
+					})
 				//console log data
 
 			}
