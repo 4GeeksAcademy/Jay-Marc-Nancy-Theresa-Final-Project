@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
@@ -8,8 +8,18 @@ import CountdownTimer from "../component/countdownTimer";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
+	
+	useEffect(() => {
+		actions.fetchGetAllComicVendors()
+	}, [])
 
 	return (
+
+		<div className="text-center mt-5">
+			<h1>Hello Rigo!!</h1>
+			<div className="alert alert-info">
+				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
+
 		<div className="wrapper" style={{ textAlign: "center" }}>
 			<div className="row">
 				<div className="col-5">
@@ -41,6 +51,7 @@ export const Home = () => {
 				accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo
 				duiLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices
 				eleifend gravida, nulla nunc varius lectus, nec rutrum justo duiLorem ipsum dolor sit.
+
 			</div>
 
 

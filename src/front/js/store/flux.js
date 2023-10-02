@@ -1,6 +1,9 @@
 import data from "../../../../data.json";
+
+
 // const fs = require("fs");
 // const get = require("lodash.get");
+
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -19,8 +22,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
+
+			comicVendors: [],
+			artVendors: [],
+			merchVendors: []
+
 			events: [],
 			hotels: []
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -158,6 +167,61 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				//reset the global store
 				setStore({ demo: demo });
+
+			},
+			// fetchGetAllComicVendors: async () => {
+			// 	fetch("https://comicvine.gamespot.com/api/publishers/?api_key=95a8680d433d9ff13c2e5dd7eb480ff23089772d&format=json&limit=20",{
+			// 		method: "GET",
+			// 		credentials: "include",
+			// 		headers: {
+			// 			"Access-Control-Allow-Origin": "https://comicvine.gamespot.com/",
+			// 			"Access-Control-Allow-Methods": "GET",
+			// 			// "Access-Control-Allow-Credentials": "true",
+			// 			// "Access-Control-Allow-Headers": "*",
+			// 			"Content-Type": "application/json",
+			// 		},
+			// 		mode: "cors",
+					
+			// 	})
+			// 	.then((response) => response.json()) 
+			// 	// let data = await response.json();
+			// 	.then((data) => {
+			// 		console.log(data);
+			// 		setStore({comicVendors:data.results});
+			// 	}) 
+			// },
+			fetchGetAllComicVendors: () => {
+				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
+				.then((response) => response.json()) 
+				.then((data) => {
+					console.log(data);
+					setStore({comicVendors:data.results});
+				}) 
+			},
+			getArtVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getArtVendors: ", data)
+					setStore({ artVendors: data.artVendors })
+				} )
+				//console.log(data);
+			},
+			getMerchVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getMerchVendors: ", data)
+					setStore({ merchVendors: data.merchVendors })
+				} )
+				//console.log(data);
+			},
+		},
+	};
+};
+
+export default getState;
+
 			}, 
 			
 			getEvents: () => {
@@ -190,3 +254,4 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 export default getState;
+
