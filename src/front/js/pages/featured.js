@@ -25,16 +25,10 @@ export const Featured = () => {
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">RK POST</h5>
-                                    <p className="card-text">With his unique art style and one-of-a-kind personality, Randy “rk” Post often finds himself at home as a featured artist across numerous venues. Many know rk from his expansive body of work with Magic: the Gathering, but his limits seem to know no bounds. rk has done extensive work spanning from pure magnificence with Marvel and Microsoft to the depths of Hell in Diablo and World of Warcraft. We are proud and excited to feature rk post along with his brand of humor and beautiful illustrations.</p>
+                                    <p className="card-text">With a body of illustrations that matched only by his outgoing personailty, we are thrilled to feature an illustrator at talented as rk post! Click in a deeper dive and a glimpse into the featured Magic artwork gallery of rk post.</p>
                                 </div>
-                                <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">An item</li>
-                                    <li className="list-group-item">A second item</li>
-                                    <li className="list-group-item">A third item</li>
-                                </ul>
                                 <div className="card-body">
-                                    <a href="https://en.wikipedia.org/wiki/Randy_Post" className="card-link" target="_blank">rk post Wiki</a>
-                                    <a href="https://www.rkpost.net/" className="card-link" target="_blank">Official Website of rk post</a>
+                                    <button type="button" className="btn btn-primary">Click to learn more!</button>
                                 </div>
                             </div>
                         </a>
@@ -104,13 +98,24 @@ export const Featured = () => {
                 <div className="modal-dialog modal-xl">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5">rk post modal</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="container-fluid">
+                                <div className="row">
+                                    <div className="col-10 text-start">
+                                        <h1 className="modal-title fs-5">RK POST : featured artist profile</h1>
+                                    </div>
+                                     <div className="col-2 text-end">
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="modal-body">
+                            <p className="m-2">
+                            With his unique art style and one-of-a-kind personality, Randy “rk” Post often finds himself at home as a featured artist across numerous venues. Many know rk from his expansive body of work with Magic: the Gathering, but his limits seem to know no bounds. rk has done extensive work spanning from pure magnificence with Marvel and Microsoft to the depths of Hell in Diablo and World of Warcraft. We are proud and excited to feature rk post along with his brand of humor and beautiful illustrations.
+                            </p>
                             {/* start magic card mapping */}
-                            <div className="container-fluid border border-danger m-0">
-                                <div className="row py-2 cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
+                            <div className="container-fluid">
+                                <div className="row cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
                                     {store.rkPostCards.map((item, index) =>
                                         <MagicCard 
                                             key={index} 
@@ -125,6 +130,8 @@ export const Featured = () => {
                             {/* end magic card mapping */}
                         </div>
                         <div className="modal-footer">
+                            <a href="https://en.wikipedia.org/wiki/Randy_Post" className="btn btn-success me-1" target="_blank">rk post Wiki</a>
+                            <a href="https://www.rkpost.net/" className="btn btn-success" target="_blank">Official Website of rk post</a>
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>

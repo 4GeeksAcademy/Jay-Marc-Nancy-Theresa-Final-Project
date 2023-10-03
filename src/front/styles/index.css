@@ -42,7 +42,6 @@
     height: auto;
 }
 
-
 .condensedCard {
     width: 275px;
     transition: transform .2s;
@@ -57,11 +56,11 @@
 }
 
 .cardScrollBars::-webkit-scrollbar-track {
-    background: #222222;
+    background: #EEEEEE;
 }
 
 .cardScrollBars::-webkit-scrollbar-thumb {
-    background: #FF0000;
+    background: #bbbbbb;
     border-radius: 5px;
 }
 
@@ -115,7 +114,11 @@ a.featuredArtistModalLink:link, a.featuredArtistModalLink:visited, a.featuredArt
     font-weight: 500;
 }
 
-/* .featuredArtistModal {
-    width: 1200px;
+.magicCardTitle {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
 
-} */
+.magicCardBody {
+    font-size: 0.8rem;
+}
