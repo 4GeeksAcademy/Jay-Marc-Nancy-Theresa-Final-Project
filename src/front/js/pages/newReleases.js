@@ -5,6 +5,7 @@ export const NewReleases = () => {
     const { store, actions } = useContext(Context);
     useEffect(() => {
         actions.getComics();
+        console.log("here")
     }, []);
 
     return (
@@ -20,12 +21,17 @@ export const NewReleases = () => {
                         {store.comics.map((item, index) => {
                             return (
                                 <div className="card" key={index}>
-                                    <img src={item.image} className="card-img-top" alt="..." />
+                                    {/* <img src={item.image} className="card-img-top" alt="..." /> */}
                                     <div className="card-body">
                                         <h5 className="card-title">{item.title}</h5>
+                                        <p className="card-text">{item.publisher}</p>
                                         <p className="card-text">{item.description}</p>
+                                        <p className="card-text">{item.price}</p>
+                                        <p className="card-text">{item.creators}</p>
+                                        <p className="card-text">{item.release_date}</p>
+                                        <p className="card-text">{item.diamond_id}</p>
                                         <p className="card-text">
-                                            <small className="text-muted">{item.publisher}</small>
+                                            {/* <small className="text-muted">{item.publisher}</small> */}
                                         </p>
                                     </div>
                                 </div>

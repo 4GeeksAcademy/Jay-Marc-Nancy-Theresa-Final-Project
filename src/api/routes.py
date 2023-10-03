@@ -9,12 +9,12 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
+from flask_cors import CORS 
+from flask_cors import cross_origin
+
 api = Blueprint('api', __name__)
-
-
-    
-
-
+ 
+# Setup the Flask-JWT-Extended extension
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
@@ -38,6 +38,18 @@ def get_hello():
     # Access the identity of the current user with get_jwt_identity
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
+
+
+
+
+
+# @api.route('/new-releases', methods=['GET'])
+# def get_new_releases(data):    
+#     return jsonify(data), 200
+
+# @api.route('/comics', methods=['GET'])
+# def get_comics():
+#     pass
 
    
 
@@ -98,12 +110,7 @@ def delete_user(id):
 @api.route('/private', methods=['GET'])
 @jwt_required()
 def get_private():
-    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
-
-@api.route('/private-scoped', methods=['GET'])
-@jwt_required()
-def get_private_scoped():
-    return jsonify({"msg": "This is a private endpoint with scope 'read:messages'. You need to be logged in and have a JWT with the appropriate scope to see it"}), 200
+    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200  
 
 @api.route('/forgot-password', methods=['POST'])
 def forgot_password():
@@ -145,3 +152,27 @@ def change_password():
 #         raise APIException('User not found', status_code=404)
 #     return jsonify(user.serialize()), 200
 
+
+# reference to fix cors error
+# @api.route("/api/comics/publishers", methods=["GET"])
+# def get_publishers():
+#     """
+#     GET: <url>/api/comics/publishers?limit=<int>&offset=<int>
+#     """
+#     query = request.args
+#     session = Comicvine(api_key="95a8680d433d9ff13c2e5dd7eb480ff23089772d", cache=SQLiteCache())
+#     results = session.list_publishers(
+#         max_results=int(query.get("limit", 25)),
+#         params={
+#         "offset": int(query.get("offset", 0)),
+#         }
+#     )
+#     print(results)
+#     publishers = []
+#     for pub in results:
+#         #  https://simyan.readthedocs.io/en/latest/simyan/schemas/publisher/
+#         publishers.append({
+#             "name": pub.name,
+#             "site_url": pub.site_url
+#         })
+#     return jsonify(results=publishers), 200

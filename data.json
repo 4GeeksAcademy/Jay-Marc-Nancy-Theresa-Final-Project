@@ -281,5 +281,47 @@
             "hotelDescription": "If you're on a budget the Country Inn is your best value in the market. If your primary focus is a bed to sleep in and a warm shower then this no frills location is just right to keep you fresh and engaged at the convention.",
             "hotelNickname": "Won't Break the Bank"
         }	
+    ],
+
+    "comics": [
+        {
+            "publisher": "Marvel",
+            "title": "Amazing Spider-Man #1000",
+            "description": "An epic milestone issue featuring Spider-Man.",
+            "creators": "writer: Zeb Wells, artist: John Romita Sr., inker: John Romita Sr., colorist: Stan Goldberg, letterer: Sam Rosen",            "inker": "Gil Kane",
+            "price": 4.99,
+            "release_date": "2023-10-15",
+            "diamond_id": "M123456"
+        },
+        {
+            "publisher": "DC",
+            "title": "Batman: The Dark Knight Returns #1",
+            "description": "The iconic story of an older Batman's return.",
+            "creators": "writer: Frank Miller, artist: Klaus Janson, inker: Klaus Janson, colorist: Lynn Varley, letterer: John Costanza",
+            "price": 4.99,
+            "release_date": "2023-10-15",
+            "diamond_id": "D987654"
+        },
+        {
+            "publisher": "Image",
+            "title": "Spawn #400",
+            "description": "A milestone issue for Todd McFarlane's Spawn.",
+            "creators": "writer: Todd McFarlane, artist: Todd McFarlane, inker: Todd McFarlane, colorist: Greg Menzie, letterer: Tom Orzechowski",
+            "price": 3.99,
+            "release_date": "2023-10-15",
+            "diamond_id": "I234567"
+        },
+        {
+            "publisher": "Dark Horse",
+            "title": "Hellboy: The Storm #1",
+            "description": "Hellboy faces a supernatural storm.",
+            "creators": "writer: Mike Mignola, artist: Duncan Fegredo, inker: Duncan Fegredo, colorist: Dave Stewart, letterer: Clem Robins",
+            "price": 3.99,
+            "release_date": "2023-10-15",
+            "diamond_id": "DH345678"
+        }
+       
     ]
+        
+    
 }

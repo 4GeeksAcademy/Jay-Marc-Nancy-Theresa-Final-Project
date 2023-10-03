@@ -7,21 +7,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
 			events: [],
 			hotels: [],
-			comics: []
+			comics: [],
+			nerdFact: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -33,6 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			populateStoreHotels: () => {
 				setStore({ hotels: data.hotels })
+			},
+			getComics: () => {
+				setStore({ comics: data.comics })
 			},
 
 			login: async (email, password) => {
@@ -172,16 +164,60 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-			getComics: () => {
-				fetch("https://api.shortboxed.com/comics/v1/new") //need to edit the link
-					.then((resp) => resp.json())
-					.then((data) => {
-						console.log("myString: ", data)
-						setStore({ comics: data.comics })
-					})
-				//console log data
+			getNerdFact: async () => {
+				const response = await fetch("https://geek-jokes.sameerkumar.website/api?format=json");
+				const data = await response.json();
+				console.log(data);
+				setStore({ nerdFact: data })
+			},
 
-			}
+			// getComics: async () => {
+			// 	const options = {
+			// 		method: 'GET',
+			// 		headers: {
+			// 			"access-control-allow-origin": "*", // Required for CORS support to work
+			// 			"Content-Type": "application/json"
+			// 		},
+			// 	}
+			// 	const response = await fetch("https://api.shortboxed.com/comics/v1/new", options);
+			// 	let data = await response.json();
+			// 	console.log(data);
+			// 	setStore({ comics: data })
+			// },		
+			// getComics: () => {
+			// 	const options = {
+			// 		method: 'GET',
+			// 		headers: {
+			// 			"access-control-allow-origin": "*", // Required for CORS support to work
+			// 			"Content-Type": "application/json",
+
+			// "hash": "a md5 digest of the ts parameter, your private key and your public key (e.g. md5(ts+privateKey+publicKey))"
+			// },
+			// Params: {
+			// 	"apikey": "83826f8eaa2ce93cc7d34d102f95df8c",
+			// 	"ts": "1",
+			// 	"hash": "0d7e8d3e4e4e4e4e4e4e4e4e4e4e4e4e"
+			// }
+			// };
+			// fetch("https://api.shortboxed.com/comics/v1/new", options)
+			// 	.then((resp) => resp.json())
+			// 	.then((data) => {
+			// 		console.log(data)
+			// 		setStore({ comics: data })
+			// 	})
+			// getComics: () => {
+			// 	fetch("../../../../data.json")
+			// 		.then((resp) => resp.json())
+			// 		.then((data) => {
+			// 			console.log("myString: ", data)
+			// 			setStore({ newComics: data.newComics })
+			// 		})
+			// }
+
+
+
+			// 83826f8eaa2ce93cc7d34d102f95df8c //api key Marvel
+			// fetch("http://gateway.marvel.com/v1/public/comics?", options)
 		},
 		changeColor: (index, color) => {
 			//get the store

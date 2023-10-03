@@ -25,6 +25,7 @@ import { Footer } from "./component/footer";
 import { ForgotPassword } from "./pages/forgotPassword";
 import { PasswordReset } from "./pages/passwordReset";
 import { NewReleases } from "./pages/newReleases";
+import { NerdFact } from "./pages/nerdFact";
 
 //create your first component
 const Layout = () => {
@@ -45,6 +46,7 @@ const Layout = () => {
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
                         <Route element={<NewReleases />} path="/new-releases" />
+                        <Route element={<NerdFact />} path="/nerd-fact" />
                         <Route element={<WhatToDo />} path="/what-to-do" />
                         <Route element={<Vendors />} path="/vendors" />
                         <Route element={<Schedule />} path="/schedule" />
