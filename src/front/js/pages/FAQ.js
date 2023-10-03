@@ -46,4 +46,4 @@ export const FAQ = () => {
             </div>
         </div>
     )
-}
+}       
