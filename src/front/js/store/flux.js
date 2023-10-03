@@ -1,9 +1,7 @@
 import data from "../../../../data.json";
 
-
 // const fs = require("fs");
 // const get = require("lodash.get");
-
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -25,10 +23,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			comicVendors: [],
 			artVendors: [],
-			merchVendors: []
-
+			merchVendors: [],
 			events: [],
-			hotels: []
+			hotels: [],
 
 		},
 		actions: {
@@ -216,14 +213,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} )
 				//console.log(data);
 			},
-		},
-	};
-};
 
-export default getState;
-
-			}, 
-			
 			getEvents: () => {
 				fetch("../../../../data.json") //need to edit the link
 				.then((resp) => resp.json())
@@ -232,26 +222,9 @@ export default getState;
 					setStore({ events: data.events })
 				} )
 				//console log data
-
 			}
 		},
-		changeColor: (index, color) => {
-			//get the store
-			const store = getStore();
-
-			//we have to loop the entire demo array to look for the respective index
-			//and change its color
-			const demo = store.demo.map((elm, i) => {
-				if (i === index) elm.background = color;
-				return elm;
-			});
-
-			//reset the global store
-			setStore({ demo: demo });
-		}
-	}
+	};
 };
 
-
 export default getState;
-

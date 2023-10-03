@@ -8,7 +8,6 @@ import { Vendors } from "./pages/vendors";
 import { Featured } from "./pages/featured";
 import { Guests } from "./pages/guests";
 import { WhatToDo } from "./pages/whatToDo";
-import { Vendors } from "./pages/vendors";
 import { Schedule } from "./pages/schedule";
 import { Transportation } from "./pages/transportation";
 import { Hotels } from "./pages/hotels";
@@ -18,7 +17,6 @@ import { Login } from "./pages/login";
 import { Private } from "./pages/private";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
-
 
 import injectContext from "./store/appContext";
 
@@ -43,12 +41,10 @@ const Layout = () => {
                     <Routes>
 
                         <Route element={<Home />} path="/" />
-                        <Route element={<Vendors />} path="/vendors" />
-                        <Route element={<Home />} path="/" />                  
+                        <Route element={<Vendors />} path="/vendors" />                                     
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
-                        <Route element={<WhatToDo />} path="/what-to-do" />
-                        <Route element={<Vendors />} path="/vendors" />
+                        <Route element={<WhatToDo />} path="/what-to-do" />                        
                         <Route element={<Schedule />} path="/schedule" />
                         <Route element={<Transportation />} path="/transportation" />
                         <Route element={<Hotels />} path="/hotels" />

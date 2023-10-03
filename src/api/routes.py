@@ -23,7 +23,7 @@ api = Blueprint('api', __name__)
 
 
 
-    return jsonify(response_body), 200
+    # return jsonify(response_body), 200
 
 @api.route("/api/comics/publishers", methods=["GET"])
 def get_publishers():
@@ -47,7 +47,6 @@ def get_publishers():
             "site_url": pub.site_url
         })
     return jsonify(results=publishers), 200
-=======
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
@@ -70,9 +69,7 @@ def get_hello():
     # return jsonify(msg)
     # Access the identity of the current user with get_jwt_identity
     current_user = get_jwt_identity()
-    return jsonify(logged_in_as=current_user), 200
-
-   
+    return jsonify(logged_in_as=current_user), 200   
 
 @api.route('/user', methods=['GET'])
 def get_all_users():
@@ -132,11 +129,6 @@ def delete_user(id):
 @jwt_required()
 def get_private():
     return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
-
-@api.route('/private-scoped', methods=['GET'])
-@jwt_required()
-def get_private_scoped():
-    return jsonify({"msg": "This is a private endpoint with scope 'read:messages'. You need to be logged in and have a JWT with the appropriate scope to see it"}), 200
 
 @api.route('/forgot-password', methods=['POST'])
 def forgot_password():
