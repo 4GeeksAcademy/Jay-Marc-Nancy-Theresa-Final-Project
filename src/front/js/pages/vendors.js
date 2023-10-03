@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/vendors.css"; 
+import "../../styles/vendors.css";
 // import { Vendor } from "../component/Vendor.js";
 import data from "../../../../data.json";
 
 export const Vendors = props => {
     const { store, actions } = useContext(Context);
     useEffect(() => {
-        actions.getArtVendors();   
+        actions.getArtVendors();
         actions.getMerchVendors();
     })
     // const params = useParams();
@@ -29,9 +29,9 @@ export const Vendors = props => {
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Comics
-                    </button>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Comics
+                        </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
@@ -47,52 +47,41 @@ export const Vendors = props => {
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Art 
-                    </button>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Art
+                        </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <ul className="list-group">
-                            {data.art_vendors.map((artVendor, index) => 
-                                <a key={index}>
-                                    {artVendor.vendor_name}
-                                </a>)
-                            }
-                        </ul>
-                    </div>
+                        <div className="accordion-body">
+                            <ul className="list-group">
+                                {data.art_vendors.map((artVendor, index) =>
+                                    <a key={index}>
+                                        {artVendor.vendor_name}
+                                    </a>)
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingFour">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Merch
-                    </button>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Merch
+                        </button>
                     </h2>
                     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <ul className="list-group">
-                            {data.merch_vendors.map((merchVendor, index) => 
-                                <a key={index}>
-                                    {merchVendor.vendor_name}
-                                </a>)
-                            }
-                        </ul>
-                    </div>
+                        <div className="accordion-body">
+                            <ul className="list-group">
+                                {data.merch_vendors.map((merchVendor, index) =>
+                                    <a key={index}>
+                                        {merchVendor.vendor_name}
+                                    </a>)
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-export const Vendors = props => {
-    const { store, actions } = useContext(Context);
-    const params = useParams();
-
-    return (
-        <div className="jumbotron">
-
-
         </div>
     );
 };

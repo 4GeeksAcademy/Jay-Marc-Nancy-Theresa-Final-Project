@@ -22,11 +22,6 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-
-			state.actions.fetchGetAllComicVendors();
-			state.actions.getArtVendors();
-			state.actions.getMerchVendors();
-
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
@@ -38,6 +33,9 @@ const injectContext = PassedComponent => {
 			state.actions.getEvents();
 			state.actions.populateStoreEvents();
 			state.actions.populateStoreHotels();
+			state.actions.fetchGetAllComicVendors();
+			state.actions.getArtVendors();
+			state.actions.getMerchVendors();
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
