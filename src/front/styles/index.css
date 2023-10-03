@@ -44,7 +44,7 @@
 
 
 .condensedCard {
-    width: 300px;
+    width: 275px;
     transition: transform .2s;
 }
 
@@ -68,3 +68,54 @@
 .cardScrollBars::-webkit-scrollbar-thumb:hover {
     background: #444444;
 }
+
+.featuredArtistCard {
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.featuredArtistCard:hover {
+    opacity: 1.0;
+    transition: .5s;
+}
+
+.featuredArtistCard img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+a.featuredArtistModalLink:link, a.featuredArtistModalLink:visited, a.featuredArtistModalLink:hover, a.featuredArtistModalLink:active {
+    text-decoration: none;
+}
+
+.copyrightOverlay {
+    position: relative;
+    bottom: 20px;
+    right: 0px;
+    font-size: 10px;
+    color: #eeff00;
+    background: rgba(0,0,0,0.5);
+}
+.copyrightOverlay a:link, a:visited {
+    color: #cdd832;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  
+.copyrightOverlay a:hover, a:active {
+    color: #f7fcb6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* .featuredArtistModal {
+    width: 1200px;
+
+} */
