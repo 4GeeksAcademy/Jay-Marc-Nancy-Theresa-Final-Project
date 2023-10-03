@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
+import data from "../../../../data.json";
 import "../../styles/FAQ.css";
 
 export const FAQ = () => {
@@ -22,7 +23,7 @@ export const FAQ = () => {
                 </div>
             </div>
             <div className="accordion-wrapper">
-                {store.faq_data.map((faq_data, index) => 
+                {data.faq_data.map((faq_data, index) => 
                     <div className="row accordion-event" key={index}>
                         <div className="accordion" id="accordionExample">
                             <div className="accordion-item">
