@@ -1,0 +1,45 @@
+.timerImg {
+    width: auto;
+    height: 15%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2%;
+    border: 2px solid #080808;
+    box-shadow: 0 0 0 2px #0e0d0d;
+    transition: all 0.3s ease;
+}
+
+#timerComponent {
+    padding: 20px;
+    margin: 20% 0 15% 5%;
+
+}
+
+#timerNumColumn {
+    align-items: right;
+    font-size: 4.5rem;
+
+}
+
+#timerImgColumn {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all 0.3s ease;
+
+} */
