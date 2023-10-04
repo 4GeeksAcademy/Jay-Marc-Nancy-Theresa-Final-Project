@@ -13,8 +13,7 @@ import secrets
 import app
 # from dotenv import load_dotenv
 
-api = Blueprint('api', __name__)   
-
+api = Blueprint('api', __name__)
 
 
 # Create a route to authenticate your users and return JWTs. The
@@ -29,21 +28,23 @@ def create_token():
         raise APIException('User not found', status_code=404)
     access_token = create_access_token(identity=email)
     user_id = user.id
-    return jsonify(access_token=access_token, user_id=user_id) 
+    return jsonify(access_token=access_token, user_id=user_id)
 
 
 @api.route('/user', methods=['GET'])
 def get_all_users():
     users = User.query.all()
     all_users = list(map(lambda x: x.serialize(), users))
-    return jsonify(all_users), 200      
+    return jsonify(all_users), 200
 
-@api.route('/user/<int:id>', methods=['GET'])   
-def get_user(id):   
+
+@api.route('/user/<int:id>', methods=['GET'])
+def get_user(id):
     user = User.query.get(id)
     if user is None:
         raise APIException('User not found', status_code=404)
     return jsonify(user.serialize()), 200
+
 
 @api.route('/signup', methods=['POST'])
 def create_user():
@@ -51,16 +52,17 @@ def create_user():
     password = request.json.get("password", None)
     first_name = request.json.get("first_name", None)
     last_name = request.json.get("last_name", None)
-    phone = request.json.get("phone", None)    
+    phone = request.json.get("phone", None)
     # user.is_active = True
-    
+
     user = User.query.filter_by(email=email).first()
     if user is None:
-         new_user_data = User(email= email, password=password, first_name=first_name, last_name=last_name, phone=phone,)
-         db.session.add(new_user_data)
-         db.session.commit()
-         return jsonify({"msg": "Account created successfully!"}), 201
-    return jsonify({"error": "Email already registered, please login."}), 401  
+        new_user_data = User(email=email, password=password,
+                             first_name=first_name, last_name=last_name, phone=phone,)
+        db.session.add(new_user_data)
+        db.session.commit()
+        return jsonify({"msg": "Account created successfully!"}), 201
+    return jsonify({"error": "Email already registered, please login."}), 401
 
 
 @api.route('/user/<int:id>', methods=['PUT'])
@@ -76,16 +78,18 @@ def update_user(id):
     if "is_active" in body:
         user.is_active = body["is_active"]
     db.session.commit()
-    return jsonify(user.serialize()), 200   
+    return jsonify(user.serialize()), 200
 
-@api.route('/user/<int:id>', methods=['DELETE'])    
+
+@api.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):
     user = User.query.get(id)
     if user is None:
         raise APIException('User not found', status_code=404)
     db.session.delete(user)
     db.session.commit()
-    return jsonify(user.serialize()), 200       
+    return jsonify(user.serialize()), 200
+
 
 @api.route('/private', methods=['GET'])
 @jwt_required()
@@ -99,17 +103,17 @@ def forgot_password():
     token = secrets.token_urlsafe(16)
     user = User.query.filter_by(email=email).first()
     if user is None:
-        raise APIException('User not found', status_code=404)    
-    
+        raise APIException('User not found', status_code=404)
+
     reset_user = User(email=email, token=token)
     db.session.add(reset_user)
     db.session.commit()
-    
+
     app.send_reset_email(email, token)
     return jsonify({'msg': 'Please check your email for password reset instructions.'}), 200
 
 
-@api.route('/reset-password', methods=['GET','POST'])
+@api.route('/reset-password', methods=['GET', 'POST'])
 def reset_password():
     new_password = request.json.get("newPassword", None)
     token = request.json.get("token", None)
@@ -120,22 +124,21 @@ def reset_password():
     user.password = new_password
     db.session.commit()
     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
-   
 
 
-@api.route('/change-password', methods=['POST'])
+@ api.route('/change-password', methods=['POST'])
 def change_password():
     email = request.json.get("email", None)
     oldPassword = request.json.get("oldPassword", None)
     newPassword = request.json.get("newPassword", None)
 
     if email is None:
-        raise APIException('Email is required.', status_code=404)    
+        raise APIException('Email is required.', status_code=404)
     if oldPassword is None:
         raise APIException('Old password is required.', status_code=404)
     if newPassword is None:
         raise APIException('New password is required.', status_code=404)
-    
+
     user = User.query.filter_by(email=email, password=oldPassword).first()
     if user is None:
         raise APIException('User not found', status_code=404)

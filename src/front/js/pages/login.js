@@ -37,7 +37,7 @@ export const Login = () => {
                             placeholder="enter password" onChange={e => setPassword(e.target.value)}></input>
                         <button onClick={handleLogin}>Login</button>
                         <button onClick={() => navigate("/signup")}>Signup</button>
-                        <button onClick={() => navigate("/forgot-password")}>Forgot Password</button>
+                        {/* <button onClick={() => navigate("/forgot-password")}>Forgot Password</button> */}
                     </div>
                 }
             </div>

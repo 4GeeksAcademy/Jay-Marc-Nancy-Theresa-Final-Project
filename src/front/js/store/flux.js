@@ -17,6 +17,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: [],
 			events: [],
 			hotels: [],
+			favorites: [
+
+			],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -31,7 +34,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			login: async (email, password) => {
-
 				const options = {
 					method: 'POST',
 					headers: {
@@ -44,7 +46,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					)
 				}
-
 				try {
 					const response = await fetch(process.env.BACKEND_URL + "api/token", options)
 					if (response.status !== 200) {
@@ -83,11 +84,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 				}
 				try {
-					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "api/hello", options)
 					const data = await resp.json()
 					setStore({ message: data.message })
-
 					// don't forget to return something, that is how the async resolves
 					return data;
 				} catch (error) {
@@ -110,7 +109,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 							first_name: first_name,
 							last_name: last_name,
 							phone: phone
-
 						}
 					)
 				}
@@ -131,7 +129,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("login error!")
 				}
 			},
-			forgotPassword: async (email) => {
+
+			forgotPassword: async (email, token) => {
 				const options = {
 					method: 'POST',
 					headers: {
@@ -140,6 +139,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(
 						{
 							email: email,
+							token: token
 						}
 					)
 				}
@@ -156,8 +156,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log("login error!")
 				}
-				//reset the global store
-				setStore({ demo: demo });
+
+
 			},
 
 			getEvents: () => {

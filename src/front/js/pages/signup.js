@@ -85,6 +85,9 @@ export const Signup = () => {
             <Link to="/login">
                 <button onClick={submitRequest}>Submit</button>
             </Link>
+            <Link to="/login">
+                <button>Cancel</button>
+            </Link>
             <div>
                 {error != null && error}
                 {error != null && <Link to="/login">Login</Link>}
