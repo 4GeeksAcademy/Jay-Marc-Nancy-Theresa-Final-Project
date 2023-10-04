@@ -11,8 +11,12 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
-
+from flask_mail import Mail, Message
+from dotenv import load_dotenv
+import secrets
 #from models import Person
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
@@ -22,8 +26,17 @@ app.url_map.strict_slashes = False
 app.config["DEBUG"] = True
 
 # Setup the Flask-JWT-Extended extension
-app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')  # Change this!
+app.config["JWT_SECRET_KEY"] = os.getenv('JWT_SECRET_KEY')  # Change this!
 jwt = JWTManager(app)
+
+# Configure Flask-Mail
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT']=587
+app.config['MAIL_USERNAME']='worstconventionevercon@gmail.com' # this is test gmail account for email generate
+app.config['MAIL_PASSWORD']='rustdustbust' # important for email generate
+app.config['MAIL_USE_TLS']=True
+mail = Mail(app)
+mail.init_app(app)
 
 db_url = os.getenv("DATABASE_URL")
 if db_url is not None:
@@ -75,6 +88,13 @@ def get_events():
     #events = 
     #return jsonify(events), 200
     pass
+
+def send_reset_email(email, token):
+     msg = Message('Password Reset', sender="worstconventionevercon@gmail.com", recipients=[email])
+     msg.body = f'click the link below to reset your password:\n {os.getenv("FRONTEND_URL")}/reset-password?token={token}&email={email}'
+     
+     msg.send(mail)
+     return "Mail has sent"
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
