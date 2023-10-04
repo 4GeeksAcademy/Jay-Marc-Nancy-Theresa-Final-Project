@@ -7,20 +7,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
+			error: null,
+			loginSuccess: false,
+			signup: false,
+			passwordReset: false,
+			changePassword: false,
+			forgotPassword: false,
+			passwordRecovery: false,
+			user: [],
 			events: [],
-			hotels: []
+			hotels: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -28,10 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			populateStoreEvents: () => {
-				setStore({events: data.events})
+				setStore({ events: data.events })
 			},
 			populateStoreHotels: () => {
-				setStore({hotels: data.hotels})
+				setStore({ hotels: data.hotels })
 			},
 
 			login: async (email, password) => {
@@ -158,15 +154,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				//reset the global store
 				setStore({ demo: demo });
-			}, 
-			
+			},
+
 			getEvents: () => {
 				fetch("../../../../data.json") //need to edit the link
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ events: data.events })
-				} )
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ events: data.events })
+					})
 				//console log data
 
 			}
