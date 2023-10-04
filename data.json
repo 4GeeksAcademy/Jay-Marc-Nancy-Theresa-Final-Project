@@ -286,39 +286,43 @@
     "comics": [
         {
             "publisher": "Marvel",
-            "title": "Amazing Spider-Man #1000",
-            "description": "An epic milestone issue featuring Spider-Man.",
-            "creators": "writer: Zeb Wells, artist: John Romita Sr., inker: John Romita Sr., colorist: Stan Goldberg, letterer: Sam Rosen",            "inker": "Gil Kane",
+            "title": "Doctor Strange #8",
+            "description": "With the enemy revealed, Doctor Strange and his allies rush to confront his evil doppelganger, General Strange! But does the Doctor stand a chance again the General’s five thousand years of experience? And will Stephen and Clea’s marriage hold in the face of such a threat?",
+            "creators": "writer: Zeb Wells, artist: John Romita Sr., inker: John Romita Sr., colorist: Stan Goldberg, letterer: Sam Rosen", 
             "price": 4.99,
             "release_date": "2023-10-15",
-            "diamond_id": "M123456"
+            "diamond_id": "M123456", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-3339735.jpg?1696022332"
         },
         {
             "publisher": "DC",
-            "title": "Batman: The Dark Knight Returns #1",
-            "description": "The iconic story of an older Batman's return.",
+            "title": "Batman: The Dark Knight Detective Vol.8 TP",
+            "description": "In the final volume of the Dark Knight Detective series, Batman and Robin hunt a murderer with electricity-based powers, encounter a fledgling vigilante called the Spoiler, and team up with Huntress to take down a terrorist group. Plus, appearances from Scarface and The Joker!",
             "creators": "writer: Frank Miller, artist: Klaus Janson, inker: Klaus Janson, colorist: Lynn Varley, letterer: John Costanza",
             "price": 4.99,
             "release_date": "2023-10-15",
-            "diamond_id": "D987654"
+            "diamond_id": "D987654", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-4987530.jpg?1691797151"
         },
         {
             "publisher": "Image",
-            "title": "Spawn #400",
-            "description": "A milestone issue for Todd McFarlane's Spawn.",
-            "creators": "writer: Todd McFarlane, artist: Todd McFarlane, inker: Todd McFarlane, colorist: Greg Menzie, letterer: Tom Orzechowski",
-            "price": 3.99,
-            "release_date": "2023-10-15",
-            "diamond_id": "I234567"
+            "title": "Spawn #349",
+            "description": "The final battle for the Throne of HELL begins now.",
+            "creators": "writer: Todd McFarlane, artist: Carlo Barberi, inker: Todd McFarlane, colorist: Greg Menzie, letterer: Tom Orzechowski",
+            "price": 2.99,
+            "release_date": "2023-12-15",
+            "diamond_id": "I234567", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-9357490.jpg?1694938149"
         },
         {
             "publisher": "Dark Horse",
-            "title": "Hellboy: The Storm #1",
-            "description": "Hellboy faces a supernatural storm.",
+            "title": "Hellboy in Love HC",
+            "description": "Ghosts, ghouls...girlfriends? Love blooms between Hellboy and archaeologist Anastasia Bransfield.",
             "creators": "writer: Mike Mignola, artist: Duncan Fegredo, inker: Duncan Fegredo, colorist: Dave Stewart, letterer: Clem Robins",
             "price": 3.99,
             "release_date": "2023-10-15",
-            "diamond_id": "DH345678"
+            "diamond_id": "DH345678", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-2247099.jpg?1688027643"
         }, 
         {
             "publisher": "Marvel",
@@ -327,16 +331,18 @@
             "creators": "writer: Kieron Gillen, artist: Lucas Werneck, inker: Klaus Janson, colorist: David Curiel, letterer: Clayton Cowles",
             "price": 3.99,
             "release_date": "2023-10-15",
-            "diamond_id": "M234567"
+            "diamond_id": "M234567", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-8544073.jpg?1695931005"
         }, 
         {
             "publisher": "Marvel", 
             "title": "Star Wars: Darth Vader #39",
-            "description": "THE CRUCIBLE OF HATE! The DROID SCOURGE takes over one of Darth Vader's closest allies- and seizes one of MUSTAFAR'S greatest weapons!",
+            "description": "THE CRUCIBLE OF HATE! The DROID SCOURGE takes over one of Darth Vader's closest allies- and seizes one of MUSTAFAR'S greatest weapons! To survive, Vader must finally reclaim his control over THE FORCE by exploring his deepest hatred. Featuring the answer to the terrifying question: Who does Vader hate more than anyone else in the galaxy?",
             "creators": "writer: Greg Pak, artist: Raffaele Ienco, inker: Raffaele Ienco, colorist: Neeraj Menon, letterer: Joe Caramagna",
             "price": 3.99,
             "release_date": "2023-10-15",
-            "diamond_id":"M123875"
+            "diamond_id":"M123875", 
+            "img_url": "https://s3.amazonaws.com/comicgeeks/comics/covers/large-2409554.jpg?1695205868"
         }
 
        
