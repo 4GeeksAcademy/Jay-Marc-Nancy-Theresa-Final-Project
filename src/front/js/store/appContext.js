@@ -36,6 +36,10 @@ const injectContext = PassedComponent => {
 			state.actions.getEvents();
 			state.actions.populateStoreEvents();
 			state.actions.populateStoreHotels();
+
+			state.actions.getComics();
+			state.actions.getNerdFact();
+
 			state.actions.fetchGetAllComicVendors();
 			state.actions.getArtVendors();
 			state.actions.getMerchVendors();
