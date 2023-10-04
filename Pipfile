@@ -19,6 +19,8 @@ cloudinary = "*"
 flask-admin = "*"
 typing-extensions = "*"
 requests = "*"
+
+simyan = "*"
 flask-jwt-extended = "*"
 
 [requires]

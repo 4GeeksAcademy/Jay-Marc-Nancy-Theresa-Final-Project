@@ -1,4 +1,5 @@
 import data from "../../../../data.json";
+
 // const fs = require("fs");
 // const get = require("lodash.get");
 
@@ -7,10 +8,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
+
 			events: [],
 			hotels: [],
 			comics: [],
 			nerdFact: [],
+
+
+			
+
+			demo: [
+				{
+					title: "FIRST",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "SECOND",
+					background: "white",
+					initial: "white"
+				}
+			],
+
+			comicVendors: [],
+			artVendors: [],
+			merchVendors: [],
+			events: [],
+			hotels: [],
+      faq_data: [],
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -92,6 +118,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			getFAQData: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					console.log("myString: ", data)
+					setStore({ faq_data: data.faq_data })
+				} )
+				//console log data
+		},				
+
+
 			getUserAdded: async (email, password) => {
 				const store = getStore();
 				const options = {
@@ -151,6 +188,57 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				//reset the global store
 				setStore({ demo: demo });
+
+
+
+			},
+			// fetchGetAllComicVendors: async () => {
+			// 	fetch("https://comicvine.gamespot.com/api/publishers/?api_key=95a8680d433d9ff13c2e5dd7eb480ff23089772d&format=json&limit=20",{
+			// 		method: "GET",
+			// 		credentials: "include",
+			// 		headers: {
+			// 			"Access-Control-Allow-Origin": "https://comicvine.gamespot.com/",
+			// 			"Access-Control-Allow-Methods": "GET",
+			// 			// "Access-Control-Allow-Credentials": "true",
+			// 			// "Access-Control-Allow-Headers": "*",
+			// 			"Content-Type": "application/json",
+			// 		},
+			// 		mode: "cors",
+					
+			// 	})
+			// 	.then((response) => response.json()) 
+			// 	// let data = await response.json();
+			// 	.then((data) => {
+			// 		console.log(data);
+			// 		setStore({comicVendors:data.results});
+			// 	}) 
+			// },
+			fetchGetAllComicVendors: () => {
+				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
+				.then((response) => response.json()) 
+				.then((data) => {
+					console.log(data);
+					setStore({comicVendors:data.results});
+				}) 
+			},
+			getArtVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getArtVendors: ", data)
+					setStore({ artVendors: data.artVendors })
+				} )
+				//console.log(data);
+			},
+			getMerchVendors: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					// console.log("getMerchVendors: ", data)
+					setStore({ merchVendors: data.merchVendors })
+				} )
+				//console.log(data);
+
 			},
 
 			getEvents: () => {
@@ -161,6 +249,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ events: data.events })
 					})
 				//console log data
+
 
 			},
 
@@ -218,23 +307,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			// 83826f8eaa2ce93cc7d34d102f95df8c //api key Marvel
 			// fetch("http://gateway.marvel.com/v1/public/comics?", options)
+
+			}
+
 		},
-		changeColor: (index, color) => {
-			//get the store
-			const store = getStore();
-
-			//we have to loop the entire demo array to look for the respective index
-			//and change its color
-			const demo = store.demo.map((elm, i) => {
-				if (i === index) elm.background = color;
-				return elm;
-			});
-
-			//reset the global store
-			setStore({ demo: demo });
-		}
-	}
+	};
 };
-
 
 export default getState;
