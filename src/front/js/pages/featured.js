@@ -10,30 +10,30 @@ export const Featured = () => {
         <>
 
         <div className="container text-center">
-            <div className="row text-start">
-                <h1>Welcome to Featured Artists!</h1>
+            <div className="row text-start badaboom fs3p5">
+                Welcome to Featured Artists!
             </div>
             <div className="row">
                 <div className="col-4">
-                <center>
+                    <center>
 {/* start artist card - rk post */}
                         <a href="#" className="featuredArtistModalLink" data-bs-toggle="modal" data-bs-target="#rkPostModal">
-                            <div className="card featuredArtistCard text-bg-success">
+                            <div className="card featuredArtistCard">
                                 <div className="featuredArtistImagecontainer">
                                     <img src="https://www.coolstuffinc.com/s3_image.php?img=http://s3.gatheringmagic.com/uploads/2013/01/23/MJ_08.jpg" className="card-img-top" alt="..." />
                                     <div className="copyrightOverlay">Image rights and credits belong to <a href="https://www.coolstuffinc.com/a/mj-scott-vorthos-art-interview-01232013-7-questions-with-rk-post" target="_blank">MJ Scott</a>.</div>
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title">RK POST</h5>
+                                    <h5 className="card-title fs1p5">RK POST</h5>
                                     <p className="card-text">With a body of illustrations that matched only by his outgoing personailty, we are thrilled to feature an illustrator at talented as rk post! Click in a deeper dive and a glimpse into the featured Magic artwork gallery of rk post.</p>
                                 </div>
                                 <div className="card-body">
-                                    <button type="button" className="btn btn-primary">Click to learn more!</button>
+                                    <button type="button" className="btn btn-primary m-0 p-1">Click to learn more!</button>
                                 </div>
                             </div>
                         </a>
 {/* end artist card - rk post */}
-                </center>
+                    </center>
                 </div>
                 <div className="col-4">
                     <center>
@@ -94,91 +94,91 @@ export const Featured = () => {
 
 
 {/* start rk post modal */}
-            <div className="modal fade" id="rkPostModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-xl">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <div className="container-fluid">
-                                <div className="row">
-                                    <div className="col-10 text-start">
-                                        <h1 className="modal-title fs-5">RK POST : featured artist profile</h1>
-                                    </div>
-                                     <div className="col-2 text-end">
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
+        <div className="modal fade" id="rkPostModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog modal-xl">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-10 text-start">
+                                    <h1 className="modal-title fs-5">RK POST : featured artist profile</h1>
+                                </div>
+                                    <div className="col-2 text-end">
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
-                        <div className="modal-body">
-                            <p className="m-2">
-                            With his unique art style and one-of-a-kind personality, Randy “rk” Post often finds himself at home as a featured artist across numerous venues. Many know rk from his expansive body of work with Magic: the Gathering, but his limits seem to know no bounds. rk has done extensive work spanning from pure magnificence with Marvel and Microsoft to the depths of Hell in Diablo and World of Warcraft. We are proud and excited to feature rk post along with his brand of humor and beautiful illustrations.
-                            </p>
-                            {/* start magic card mapping */}
-                            <div className="container-fluid">
-                                <div className="row cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
-                                    {store.rkPostCards.map((item, index) =>
-                                        <MagicCard 
-                                            key={index} 
-                                            name={item.name} 
-                                            setName={item.setName} 
-                                            imageUrl={item.imageUrl} 
-                                            artist={item.artist}
-                                        />
-                                    )}
-                                </div>
+                    </div>
+                    <div className="modal-body">
+                        <p className="m-2">
+                        With his unique art style and one-of-a-kind personality, Randy “rk” Post often finds himself at home as a featured artist across numerous venues. Many know rk from his expansive body of work with Magic: the Gathering, but his limits seem to know no bounds. rk has done extensive work spanning from pure magnificence with Marvel and Microsoft to the depths of Hell in Diablo and World of Warcraft. We are proud and excited to feature rk post along with his brand of humor and beautiful illustrations.
+                        </p>
+                        {/* start magic card mapping */}
+                        <div className="container-fluid">
+                            <div className="row cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
+                                {store.rkPostCards.map((item, index) =>
+                                    <MagicCard 
+                                        key={index} 
+                                        name={item.name} 
+                                        setName={item.setName} 
+                                        imageUrl={item.imageUrl} 
+                                        artist={item.artist}
+                                    />
+                                )}
                             </div>
-                            {/* end magic card mapping */}
                         </div>
-                        <div className="modal-footer">
-                            <a href="https://en.wikipedia.org/wiki/Randy_Post" className="btn btn-success me-1" target="_blank">rk post Wiki</a>
-                            <a href="https://www.rkpost.net/" className="btn btn-success" target="_blank">Official Website of rk post</a>
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                        {/* end magic card mapping */}
+                    </div>
+                    <div className="modal-footer">
+                        <a href="https://en.wikipedia.org/wiki/Randy_Post" className="btn btn-success me-1" target="_blank">rk post Wiki</a>
+                        <a href="https://www.rkpost.net/" className="btn btn-success" target="_blank">Official Website of rk post</a>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
 {/* end rk post modal */}
 
 
 {/* start fiona staples modal */}
-            <div className="modal fade" id="fionaStaplesModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Fiona Staples modal</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            ...
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
+        <div className="modal fade" id="fionaStaplesModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">Fiona Staples modal</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        ...
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
+        </div>
 {/* end fiona staples modal */}
 
 
 {/* start anthony burch modal */}
-            <div className="modal fade" id="anthonyBurchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Anthony Burch modal</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            ...
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
+        <div className="modal fade" id="anthonyBurchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">Anthony Burch modal</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        ...
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
+        </div>
 {/* end anthony burch modal */}
         </>
     );
