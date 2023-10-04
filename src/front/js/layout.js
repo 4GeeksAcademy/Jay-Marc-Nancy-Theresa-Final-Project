@@ -4,6 +4,10 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
+
+import { Demo } from "./pages/demo";
+import { Single } from "./pages/single";
+
 import { Vendors } from "./pages/vendors";
 import { Featured } from "./pages/featured";
 import { Guests } from "./pages/guests";
@@ -17,6 +21,7 @@ import { Login } from "./pages/login";
 import { Private } from "./pages/private";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
+
 
 import injectContext from "./store/appContext";
 
@@ -40,7 +45,7 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
 
-                        <Route element={<Home />} path="/" />
+                        <Route element={<Home />} path="/" />                       
                         <Route element={<Vendors />} path="/vendors" />                                     
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />

@@ -8,6 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
+
+			
+
 			demo: [
 				{
 					title: "FIRST",
@@ -26,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			merchVendors: [],
 			events: [],
 			hotels: [],
-
+      faq_data: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -104,6 +107,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
+
+			getFAQData: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					console.log("myString: ", data)
+					setStore({ faq_data: data.faq_data })
+				} )
+				//console log data
+		},				
+
 
 			getUserAdded: async (email, password) => {
 				const store = getStore();
