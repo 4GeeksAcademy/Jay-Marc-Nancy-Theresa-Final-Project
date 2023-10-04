@@ -17,9 +17,25 @@ export const Private = () => {
 
     return (
         <div className="text-center mt-5">
-            <h1>Welcome to the exclusive private page!</h1>
-            <h2>Only authorized users can see this area!</h2>
-            <h3>Lucky you!</h3>
+            <h1>Welcome to your account dashboard!</h1>
+            <p>From your account dashboard you can view your bookmarked favorites.</p>
+            <h2>My Favorites</h2>
+            <div className="row">
+                {store.favorites.map((item, index) => {
+                    return (
+                        <div className="card col-3" key={index}>
+                            <img src={item.image} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">{item.name}</h5>
+                                <p className="card-text">{item.description}</p>
+                                <a href={item.url} className="btn btn-primary">Go to website</a>
+                            </div>
+                        </div>
+                    )
+                }
+                )}
+            </div>
+
         </div>
     )
 };

@@ -8,35 +8,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
-
+			error: null,
+			// loginSuccess: false,
+			// signup: false,
+			// passwordReset: false,
+			// changePassword: false,
+			// forgotPassword: false,
+			// passwordRecovery: false,
+			user: [],
 			events: [],
 			hotels: [],
+			favorites: [],
 			comics: [],
 			nerdFact: [],
-
-
-			
-
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
-
 			comicVendors: [],
 			artVendors: [],
 			merchVendors: [],
-			events: [],
-			hotels: [],
-      faq_data: [],
-
+      faq_data: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -54,7 +42,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			login: async (email, password) => {
-
 				const options = {
 					method: 'POST',
 					headers: {
@@ -67,7 +54,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					)
 				}
-
 				try {
 					const response = await fetch(process.env.BACKEND_URL + "api/token", options)
 					if (response.status !== 200) {
@@ -106,11 +92,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 				}
 				try {
-					// fetching data from the backend
 					const resp = await fetch(process.env.BACKEND_URL + "api/hello", options)
 					const data = await resp.json()
 					setStore({ message: data.message })
-
 					// don't forget to return something, that is how the async resolves
 					return data;
 				} catch (error) {
@@ -118,6 +102,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			getUserAdded: async (email, password, first_name, last_name, phone) => {
 			getFAQData: () => {
 				fetch("../../../../data.json") 
 				.then((resp) => resp.json())
@@ -127,7 +112,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} )
 				//console log data
 		},				
-
 
 			getUserAdded: async (email, password) => {
 				const store = getStore();
@@ -141,27 +125,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 						{
 							email: email,
 							password: password,
+							first_name: first_name,
+							last_name: last_name,
+							phone: phone
 						}
 					)
 				}
 				try {
 					const response = await fetch(process.env.BACKEND_URL + "api/signup", options)
-					if (response.status !== 200) {
-						alert("Error!  Response Code: this sucks! ", response.status)
+					if (response.status == 500) {
+						console.log("Error!  Response Code: ", response.status)
 						return false;
 					}
 					const data = await response.json()
 					console.log("from backend", data)
-					// setStore({ message: data.msg });
-					// sessionStorage.getItem("token", token);
-					// setStore({ token: token })
+					setStore({ message: data.msg });
+					sessionStorage.getItem("token", token);
+					setStore({ token: token })
 					return true;
 				}
 				catch (error) {
 					console.log("login error!")
 				}
 			},
-			forgotPassword: async (email) => {
+
+			forgotPassword: async (email, token) => {
 				const options = {
 					method: 'POST',
 					headers: {
@@ -170,6 +158,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(
 						{
 							email: email,
+							token: token
 						}
 					)
 				}
