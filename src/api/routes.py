@@ -1,9 +1,15 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
+from simyan.comicvine import Comicvine
+from simyan.sqlite_cache import SQLiteCache
+
+import requests
+
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
@@ -13,8 +19,33 @@ import secrets
 import app
 # from dotenv import load_dotenv
 
-api = Blueprint('api', __name__)
 
+api = Blueprint('api', __name__)   
+
+    # return jsonify(response_body), 200
+
+@api.route("/api/comics/publishers", methods=["GET"])
+def get_publishers():
+    """
+    GET: <url>/api/comics/publishers?limit=<int>&offset=<int>
+    """
+    query = request.args
+    session = Comicvine(api_key="95a8680d433d9ff13c2e5dd7eb480ff23089772d", cache=SQLiteCache())
+    results = session.list_publishers(
+        max_results=int(query.get("limit", 25)),
+        params={
+        "offset": int(query.get("offset", 0)),
+        }
+    )
+    print(results)
+    publishers = []
+    for pub in results:
+        #  https://simyan.readthedocs.io/en/latest/simyan/schemas/publisher/
+        publishers.append({
+            "name": pub.name,
+            "site_url": pub.site_url
+        })
+    return jsonify(results=publishers), 200
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
@@ -30,6 +61,17 @@ def create_token():
     user_id = user.id
     return jsonify(access_token=access_token, user_id=user_id)
 
+
+# Protect a route with jwt_required, which will kick out requests
+# without a valid JWT present.
+# @api.route("/hello", methods=["GET"])
+# @jwt_required()
+# def get_hello():
+#     msg = {"message": "Hello from the backend!"}
+#     # return jsonify(msg)
+#     # Access the identity of the current user with get_jwt_identity
+#     current_user = get_jwt_identity()
+#     return jsonify(logged_in_as=current_user), 200   
 
 @api.route('/user', methods=['GET'])
 def get_all_users():
@@ -96,7 +138,6 @@ def delete_user(id):
 def get_private():
     return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
 
-
 @api.route('/forgot-password', methods=['POST'])
 def forgot_password():
     email = request.json.get("email", None)
@@ -157,3 +198,18 @@ def change_password():
 #     # Access the identity of the current user with get_jwt_identity
 #     current_user = get_jwt_identity()
 #     return jsonify(logged_in_as=current_user), 200
+# @api.route('/change-email', methods=['POST'])
+# def change_email():
+#     body = request.get_json()
+#     user = User.query.filter_by(email=body["email"]).first()
+#     if user is None:
+#         raise APIException('User not found', status_code=404)
+#     return jsonify(user.serialize()), 200
+
+# @api.route('/change-username', methods=['POST'])
+# def change_username():
+#     body = request.get_json()
+#     user = User.query.filter_by(email=body["email"]).first()
+#     if user is None:
+#         raise APIException('User not found', status_code=404)
+#     return jsonify(user.serialize()), 200

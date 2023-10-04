@@ -1,0 +1,59 @@
+.FAQJumbotron {
+    position: relative;
+}
+.FAQJumbotron img {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.FAQJumbotron .jumbotronContent {
+    position: relative;
+    z-index: 10;
+}
+
+
+.accordion-element-spacing {
+    display: inline-block;
+    width: auto;
+}
+.full-accordion {
+    display: inline-block;
+    width: auto;
+}
+.full-accordion-description {
+    padding-left: 5%;
+    overflow-wrap: normal;
+}
+.accordion-item {
+    margin-top: 1rem;
+}
+.accordion-button.collapsed:hover {
+    background-color: #E8F0E4;
+}
+.accordion-button:not(.collapsed) {
+    color: #37472f;
+    background-color: #c9dac1;
+}
+.accordion-button:not(.collapsed)::after {
+    content: "\02C5";
+    color: #37472f;
+    background: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    scale: 1.7 .9;
+    font-weight: 100;
+}
+.accordion-button:focus {
+    z-index: 3;
+    border-color: #d8e4d2;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #9aaf90b6;
+}
+.accordion-body {
+    background-color: #f6fcf4;
+}
