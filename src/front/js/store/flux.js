@@ -8,12 +8,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			message: null,
 			error: null,
-			loginSuccess: false,
-			signup: false,
-			passwordReset: false,
-			changePassword: false,
-			forgotPassword: false,
-			passwordRecovery: false,
+			// loginSuccess: false,
+			// signup: false,
+			// passwordReset: false,
+			// changePassword: false,
+			// forgotPassword: false,
+			// passwordRecovery: false,
 			user: [],
 			events: [],
 			hotels: [],
@@ -95,7 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			getUserAdded: async (email, password) => {
+			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
 					method: 'POST',
@@ -107,20 +107,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 						{
 							email: email,
 							password: password,
+							first_name: first_name,
+							last_name: last_name,
+							phone: phone
+
 						}
 					)
 				}
 				try {
 					const response = await fetch(process.env.BACKEND_URL + "api/signup", options)
-					if (response.status !== 200) {
-						alert("Error!  Response Code: this sucks! ", response.status)
+					if (response.status == 500) {
+						console.log("Error!  Response Code: ", response.status)
 						return false;
 					}
 					const data = await response.json()
 					console.log("from backend", data)
-					// setStore({ message: data.msg });
-					// sessionStorage.getItem("token", token);
-					// setStore({ token: token })
+					setStore({ message: data.msg });
+					sessionStorage.getItem("token", token);
+					setStore({ token: token })
 					return true;
 				}
 				catch (error) {

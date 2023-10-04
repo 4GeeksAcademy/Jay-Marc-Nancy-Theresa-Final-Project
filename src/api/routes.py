@@ -52,7 +52,7 @@ def create_user():
     first_name = request.json.get("first_name", None)
     last_name = request.json.get("last_name", None)
     phone = request.json.get("phone", None)    
-    user.is_active = True
+    # user.is_active = True
     
     user = User.query.filter_by(email=email).first()
     if user is None:
