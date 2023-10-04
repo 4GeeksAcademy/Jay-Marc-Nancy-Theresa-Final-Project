@@ -18,28 +18,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: [],
 			events: [],
 			hotels: [],
-			favorites: [
-
-			],
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
-
+			favorites: [],
+			comics: [],
+			nerdFact: [],
 			comicVendors: [],
 			artVendors: [],
 			merchVendors: [],
-			events: [],
-			hotels: [],
-      faq_data: [],
+      faq_data: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -51,6 +36,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			populateStoreHotels: () => {
 				setStore({ hotels: data.hotels })
+			},
+			getComics: () => {
+				setStore({ comics: data.comics })
 			},
 
 			login: async (email, password) => {
@@ -190,6 +178,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 
+
+
 			},
 			// fetchGetAllComicVendors: async () => {
 			// 	fetch("https://comicvine.gamespot.com/api/publishers/?api_key=95a8680d433d9ff13c2e5dd7eb480ff23089772d&format=json&limit=20",{
@@ -237,6 +227,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ merchVendors: data.merchVendors })
 				} )
 				//console.log(data);
+
 			},
 
 			getEvents: () => {
@@ -247,7 +238,67 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ events: data.events })
 					})
 				//console log data
+
+
+			},
+
+			getNerdFact: async () => {
+				const response = await fetch("https://geek-jokes.sameerkumar.website/api?format=json");
+				const data = await response.json();
+				console.log(data);
+				setStore({ nerdFact: data })
+			},
+
+			// getComics: async () => {
+			// 	const options = {
+			// 		method: 'GET',
+			// 		headers: {
+			// 			"access-control-allow-origin": "*", // Required for CORS support to work
+			// 			"Content-Type": "application/json"
+			// 		},
+			// 	}
+			// 	const response = await fetch("https://api.shortboxed.com/comics/v1/new", options);
+			// 	let data = await response.json();
+			// 	console.log(data);
+			// 	setStore({ comics: data })
+			// },		
+			// getComics: () => {
+			// 	const options = {
+			// 		method: 'GET',
+			// 		headers: {
+			// 			"access-control-allow-origin": "*", // Required for CORS support to work
+			// 			"Content-Type": "application/json",
+
+			// "hash": "a md5 digest of the ts parameter, your private key and your public key (e.g. md5(ts+privateKey+publicKey))"
+			// },
+			// Params: {
+			// 	"apikey": "83826f8eaa2ce93cc7d34d102f95df8c",
+			// 	"ts": "1",
+			// 	"hash": "0d7e8d3e4e4e4e4e4e4e4e4e4e4e4e4e"
+			// }
+			// };
+			// fetch("https://api.shortboxed.com/comics/v1/new", options)
+			// 	.then((resp) => resp.json())
+			// 	.then((data) => {
+			// 		console.log(data)
+			// 		setStore({ comics: data })
+			// 	})
+			// getComics: () => {
+			// 	fetch("../../../../data.json")
+			// 		.then((resp) => resp.json())
+			// 		.then((data) => {
+			// 			console.log("myString: ", data)
+			// 			setStore({ newComics: data.newComics })
+			// 		})
+			// }
+
+
+
+			// 83826f8eaa2ce93cc7d34d102f95df8c //api key Marvel
+			// fetch("http://gateway.marvel.com/v1/public/comics?", options)
+
 			}
+
 		},
 	};
 };

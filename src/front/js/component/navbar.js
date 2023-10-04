@@ -55,7 +55,7 @@ export const Navbar = () => {
 									Resources
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="important-dates" className="dropdown-item">Important Dates</Link></li>
+									<li><Link to="new-releases" className="dropdown-item">New Releases</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Another action</a></li>
 									<li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
