@@ -5,7 +5,7 @@ export const Footer = () => (
 
 		<p>
 			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			4Nerds at 4Geeks
+			3Nerds at 4Geeks
 		</p>
 		<div className="container-fluid mx-3">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
