@@ -3,6 +3,24 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { MagicCard } from "../component/magicCard";
 
+import stormtroopers from "../../img/stormtroopers.jpg";
+import conlogo from "../../img/conlogo.png";
+
+import saga-0o1 from "../../img/saga-01.jpg";
+import saga-0o2 from "../../img/saga-02.jpg";
+import saga-0o3 from "../../img/saga-03.jpg";
+import saga-0o4 from "../../img/saga-04.jpg";
+import saga-0o5 from "../../img/saga-05.jpg";
+import saga-0o6 from "../../img/saga-06.jpg";
+import saga-0o7 from "../../img/saga-07.jpg";
+import saga-0o8 from "../../img/saga-08.jpg";
+import saga-0o9 from "../../img/saga-09.jpg";
+import saga-1o0 from "../../img/saga-10.jpg";
+import saga-1o1 from "../../img/saga-11.jpg";
+
+
+
+
 export const Featured = () => {
     const { store } = useContext(Context);
 
@@ -46,16 +64,12 @@ export const Featured = () => {
                                 </div>
                                 <div className="card-body">
                                     <h5 className="card-title">Fiona Staples</h5>
-                                    <p className="card-text">Fiona Staples is a Canadian comic book artist known for her work on books such as North 40, DV8: Gods and Monsters, T.H.U.N.D.E.R. Agents, Archie, and Saga. She has been described as one of the best artists working in the industry today.[6] She has won multiple Eisner and Harvey Awards.</p>
+                                    <p className="card-text">
+                                        Fiona Staples is a breakthrough artist and a game-changer known for her groundbreaking work with the instant-hit series, Saga. We are thrilled and awestruck to have such a masterful illustrator joining us. Please click to learn more!
+                                    </p>
                                 </div>
-                                <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">An item</li>
-                                    <li className="list-group-item">A second item</li>
-                                    <li className="list-group-item">A third item</li>
-                                </ul>
                                 <div className="card-body">
-                                    <a href="https://en.wikipedia.org/wiki/Fiona_Staples" className="card-link" target="_blank">Fiona Staples Wiki</a>
-                                    <a href="https://fionastaples.tumblr.com/" className="card-link" target="_blank">Official Website of rk post</a>
+                                    <button type="button" className="btn btn-primary m-0 p-1">Click to learn more!</button>
                                 </div>
                             </div>
                         </a>
@@ -142,18 +156,46 @@ export const Featured = () => {
 
 {/* start fiona staples modal */}
         <div className="modal fade" id="fionaStaplesModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-xl">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Fiona Staples modal</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-10 text-start">
+                                    <h1 className="modal-title fs-5">FIONA STAPLES : featured artist profile</h1>
+                                </div>
+                                    <div className="col-2 text-end">
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                     <div className="modal-body">
-                        ...
+                        <p className="m-2">
+                        Fiona Staples is the Canadian born illustrator behind the masterpiece known as Saga. Arguably one of the best artists in the industry, Staples is iconic, and unique, and the winner of multiple Eisner and Harvey awards. Other well known works by Staples include the Archie revamp, the Chronicles of Narnia, and DV8: Gods and Monsters. 
+                        </p>
+                        {/* start magic card mapping */}
+                        <div className="container-fluid">
+                            CONTENT WILL GO HERE.
+                            <img src={saga-0o3.jpg} />
+                            {/* <div className="row cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
+                                {store.rkPostCards.map((item, index) =>
+                                    <MagicCard 
+                                        key={index} 
+                                        name={item.name} 
+                                        setName={item.setName} 
+                                        imageUrl={item.imageUrl} 
+                                        artist={item.artist}
+                                    />
+                                )}
+                            </div> */}
+                        </div>
+                        {/* end magic card mapping */}
                     </div>
                     <div className="modal-footer">
+                        <a href="https://en.wikipedia.org/wiki/Fiona_Staples" className="btn btn-success me-1" target="_blank">Fiona Staples Wiki</a>
+                        <a href="https://fionastaples.tumblr.com/" className="btn btn-success" target="_blank">Official Website of Fiona Staples</a>
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -163,18 +205,61 @@ export const Featured = () => {
 
 {/* start anthony burch modal */}
         <div className="modal fade" id="anthonyBurchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
+            <div className="modal-dialog modal-xl">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Anthony Burch modal</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-10 text-start">
+                                    <h1 className="modal-title fs-5">ANTHONY BURCH : featured artist profile</h1>
+                                </div>
+                                    <div className="col-2 text-end">
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                     <div className="modal-body">
-                        ...
+                        <p className="m-2">
+
+                        Anthony Burch (born January 12, 1988) is an actor and writer who is known for Hey Ash, Whatcha Playin'?, Anime Crimes Division (with RocketJump), and Tales from the Borderlands: A Telltale Games Series. He has also written comic books (Big Trouble in Little China: Old Man Jack and Rocko's Modern Afterlife) for BOOM! Studios. He is the Dungeon Master for the Dungeons and Daddies podcast. He is also known as the "DM" or "Daddy Master". His sister, Ashly Burch, guest starred in Episode 34 and Episode 55. He also played Beignet during Fetch Quest.
+
+                        </p>
+                        {/* start dungeons and daddies podcast mapping */}
+                        <div className="container-fluid">
+                            <div className="row cardScrollBars d-flex flex-row flex-nowrap overflow-auto">
+                                <div className="col-4 text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/65127637f8d0a600113e756b"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/650004e8d1d5030011e90987"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64eda5c59a27a50011c78ecb"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64db2803b331200011b09e89"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64c89af5c501f600119bcc12"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64b6374ae331870011e08756"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64a3b05b4225470011983a1f"></iframe>
+                                </div>
+                                <div className="col-4  text-center">
+                                    <iframe title="Embed Player" className="iframe" src="https://embed.acast.com/46e42ca7-4921-5f04-a297-1970e72fd86d/64913d0e89f1240011e68c64"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        {/* end dungeons and daddies podcast mapping */}
                     </div>
                     <div className="modal-footer">
+                        <a href="https://dungeons-and-daddies-podcast.fandom.com/wiki/Anthony_Burch" className="btn btn-success me-1" target="_blank">Anthony Burch Wiki</a>
+                        <a href="https://www.anthonyburch.pizza/#heyhowyadoin" className="btn btn-success" target="_blank">Official Website of Anthony Burch</a>
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
