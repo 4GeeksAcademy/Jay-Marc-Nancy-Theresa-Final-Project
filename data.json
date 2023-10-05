@@ -1,134 +1,131 @@
 
-{"faq_data": [
-    {
-        "id": 1,
-        "question": "Are lightsabers allowed inside the convention?",
-        "answer": "We'd love to see your lightsaber skills, but for safety reasons (and to prevent any accidental dismemberments), lightsabers are a no-go. You can still channel your inner Jedi through cosplay, though!"
-    },
-    {
-        "id": 2,
-        "question": "What's the deal with cosplay weapons?",
-        "answer": "Good question! We're totally cool with cosplay weapons, as long as they're peace-bonded by our friendly Wookiee security team. Just remember, no Death Star lasers, please."
-    },
-    {
-        "id": 3,
-        "question": "Do I have to speak Klingon to attend the Sci-Fi panel?",
-        "answer": "Nah, you're good! While speaking Klingon would earn you some nerd street cred, it's not a requirement. Our panelists are fluent in English, Wookiee, and a few other intergalactic languages."
-    },
-    {
-        "id": 4,
-        "question": "Will there be snacks?",
-        "answer": "Absolutely! We've got snacks fit for hobbits, replicators stocked with sci-fi treats, and butterbeer that would make even the Hogwarts gang jealous. Leave your ration packs at home!"
-    },
-    {
-        "id": 5,
-        "question": "Can I bring my pet Tribble to the convention?",
-        "answer": "As cute as Tribbles are, they have a tendency to multiply faster than you can say 'Beam me up.' To avoid a furry catastrophe, please leave your Tribbles at home."
-    },
-    {
-        "id": 6,
-        "question": "What happens if I accidentally time-travel during the Doctor Who panel?",
-        "answer": "Don't panic! Our Gallifreyan panelists are experts in timey-wimey stuff. They'll have you back in your proper era in no time. Just be sure not to step on any butterflies."
-    },
-    {
-        "id": 7,
-        "question": "Do you have a lost and found for misplaced teleporters?",
-        "answer": "We sure do! If your teleporter ends up in the wrong galaxy or just vanishes into a parallel universe, swing by our Lost & Found. Our crew of dimension-hoppers will help you out."
-    },
-    {
-        "id": 8,
-        "question": "Can I use the Bat-Signal to find my friends?",
-        "answer": "While it's tempting to summon your pals with the Bat-Signal, we recommend sticking to good old-fashioned text messages. It's quicker and doesn't attract Gotham's rogues' gallery."
-    },
-    {
-        "id": 9,
-        "question": "Is there a costume contest?",
-        "answer": "You bet your utility belt there is! Get ready to strut your stuff on our cosplay stage. Prizes include the admiration of fellow nerds and some sweet loot from across the multiverse."
-    },
-    {
-        "id": 10,
-        "question": "What's the airspeed velocity of an unladen swallow?",
-        "answer": "Ah, a true geek classic! The airspeed velocity of an unladen swallow is approximately 24 miles per hour. Just remember, that's in Earth's atmosphere, not Middle-earth."
-    }
-],
-
-
-{"art_vendors": [
-    {
-        "id": 1,
-        "vendor_name": "ComicArtWorld",
-        "vendor_type": "artVendor",
-        "location": "Booth 101",
-        "description": "Explore a world of comic art, from superhero sketches to graphic novel illustrations."
-    },
-    {
-        "id": 2,
-        "vendor_name": "FantasyCanvas",
-        "vendor_type": "artVendor",
-        "location": "Booth 205",
-        "description": "Dive into the realms of fantasy with stunning canvas paintings inspired by comics and sci-fi."
-    },
-    {
-        "id": 3,
-        "vendor_name": "SuperSculptures",
-        "vendor_type": "artVendor",
-        "location": "Booth 307",
-        "description": "Marvel at superhero sculptures meticulously crafted to capture every detail."
-    },
-    {
-        "id": 4,
-        "vendor_name": "ComicMerchHub",
-        "vendor_type": "artVendor",
-        "location": "Booth 410",
-        "description": "Get your hands on exclusive comic book merchandise, from collectibles to apparel."
-    },
-    {
-        "id": 5,
-        "vendor_name": "InkMasters",
-        "vendor_type": "artVendor",
-        "location": "Booth 512",
-        "description": "Witness the art of inking with live demonstrations and unique ink creations."
-    }
-],
-"merch_vendors": [
-    {
-        "id": 1,
-        "vendor_name": "GeekWares",
-        "vendor_type": "merchVendor",
-        "location": "Booth 601",
-        "description": "Your one-stop shop for all things geeky and collectible, from action figures to posters."
-    },
-    {
-        "id": 2,
-        "vendor_name": "ComicTees",
-        "vendor_type": "merchVendor",
-        "location": "Booth 702",
-        "description": "Express your love for comics with a wide range of themed t-shirts and apparel."
-    },
-    {
-        "id": 3,
-        "vendor_name": "HeroHats",
-        "vendor_type": "merchVendor",
-        "location": "Booth 803",
-        "description": "Top off your superhero look with iconic hats and headwear from your favorite comics."
-    },
-    {
-        "id": 4,
-        "vendor_name": "ComicCollectibles",
-        "vendor_type": "merchVendor",
-        "location": "Booth 904",
-        "description": "Discover rare and vintage comic book collectibles that every fan will cherish."
-    },
-    {
-        "id": 5,
-        "vendor_name": "SuperPosters",
-        "vendor_type": "merchVendor",
-        "location": "Booth 1005",
-        "description": "Decorate your space with stunning comic book posters featuring your beloved heroes."
-    }
-],
-
-
+{
+    "faq_data": [
+        {
+            "id": 1,
+            "question": "Are lightsabers allowed inside the convention?",
+            "answer": "We'd love to see your lightsaber skills, but for safety reasons (and to prevent any accidental dismemberments), lightsabers are a no-go. You can still channel your inner Jedi through cosplay, though!"
+        },
+        {
+            "id": 2,
+            "question": "What's the deal with cosplay weapons?",
+            "answer": "Good question! We're totally cool with cosplay weapons, as long as they're peace-bonded by our friendly Wookiee security team. Just remember, no Death Star lasers, please."
+        },
+        {
+            "id": 3,
+            "question": "Do I have to speak Klingon to attend the Sci-Fi panel?",
+            "answer": "Nah, you're good! While speaking Klingon would earn you some nerd street cred, it's not a requirement. Our panelists are fluent in English, Wookiee, and a few other intergalactic languages."
+        },
+        {
+            "id": 4,
+            "question": "Will there be snacks?",
+            "answer": "Absolutely! We've got snacks fit for hobbits, replicators stocked with sci-fi treats, and butterbeer that would make even the Hogwarts gang jealous. Leave your ration packs at home!"
+        },
+        {
+            "id": 5,
+            "question": "Can I bring my pet Tribble to the convention?",
+            "answer": "As cute as Tribbles are, they have a tendency to multiply faster than you can say 'Beam me up.' To avoid a furry catastrophe, please leave your Tribbles at home."
+        },
+        {
+            "id": 6,
+            "question": "What happens if I accidentally time-travel during the Doctor Who panel?",
+            "answer": "Don't panic! Our Gallifreyan panelists are experts in timey-wimey stuff. They'll have you back in your proper era in no time. Just be sure not to step on any butterflies."
+        },
+        {
+            "id": 7,
+            "question": "Do you have a lost and found for misplaced teleporters?",
+            "answer": "We sure do! If your teleporter ends up in the wrong galaxy or just vanishes into a parallel universe, swing by our Lost & Found. Our crew of dimension-hoppers will help you out."
+        },
+        {
+            "id": 8,
+            "question": "Can I use the Bat-Signal to find my friends?",
+            "answer": "While it's tempting to summon your pals with the Bat-Signal, we recommend sticking to good old-fashioned text messages. It's quicker and doesn't attract Gotham's rogues' gallery."
+        },
+        {
+            "id": 9,
+            "question": "Is there a costume contest?",
+            "answer": "You bet your utility belt there is! Get ready to strut your stuff on our cosplay stage. Prizes include the admiration of fellow nerds and some sweet loot from across the multiverse."
+        },
+        {
+            "id": 10,
+            "question": "What's the airspeed velocity of an unladen swallow?",
+            "answer": "Ah, a true geek classic! The airspeed velocity of an unladen swallow is approximately 24 miles per hour. Just remember, that's in Earth's atmosphere, not Middle-earth."
+        }
+    ],
+    "art_vendors": [
+        {
+            "id": 1,
+            "vendor_name": "ComicArtWorld",
+            "vendor_type": "artVendor",
+            "location": "Booth 101",
+            "description": "Explore a world of comic art, from superhero sketches to graphic novel illustrations."
+        },
+        {
+            "id": 2,
+            "vendor_name": "FantasyCanvas",
+            "vendor_type": "artVendor",
+            "location": "Booth 205",
+            "description": "Dive into the realms of fantasy with stunning canvas paintings inspired by comics and sci-fi."
+        },
+        {
+            "id": 3,
+            "vendor_name": "SuperSculptures",
+            "vendor_type": "artVendor",
+            "location": "Booth 307",
+            "description": "Marvel at superhero sculptures meticulously crafted to capture every detail."
+        },
+        {
+            "id": 4,
+            "vendor_name": "ComicMerchHub",
+            "vendor_type": "artVendor",
+            "location": "Booth 410",
+            "description": "Get your hands on exclusive comic book merchandise, from collectibles to apparel."
+        },
+        {
+            "id": 5,
+            "vendor_name": "InkMasters",
+            "vendor_type": "artVendor",
+            "location": "Booth 512",
+            "description": "Witness the art of inking with live demonstrations and unique ink creations."
+        }   
+    ],
+    "merch_vendors": [
+        {
+            "id": 1,
+            "vendor_name": "GeekWares",
+            "vendor_type": "merchVendor",
+            "location": "Booth 601",
+            "description": "Your one-stop shop for all things geeky and collectible, from action figures to posters."
+        },
+        {
+            "id": 2,
+            "vendor_name": "ComicTees",
+            "vendor_type": "merchVendor",
+            "location": "Booth 702",
+            "description": "Express your love for comics with a wide range of themed t-shirts and apparel."
+        },
+        {
+            "id": 3,
+            "vendor_name": "HeroHats",
+            "vendor_type": "merchVendor",
+            "location": "Booth 803",
+            "description": "Top off your superhero look with iconic hats and headwear from your favorite comics."
+        },
+        {
+            "id": 4,
+            "vendor_name": "ComicCollectibles",
+            "vendor_type": "merchVendor",
+            "location": "Booth 904",
+            "description": "Discover rare and vintage comic book collectibles that every fan will cherish."
+        },
+        {
+            "id": 5,
+            "vendor_name": "SuperPosters",
+            "vendor_type": "merchVendor",
+            "location": "Booth 1005",
+            "description": "Decorate your space with stunning comic book posters featuring your beloved heroes."
+        }
+    ],
     "events": [
         {
             "id": 1,
@@ -412,7 +409,6 @@
             "hotelNickname": "Won't Break the Bank"
         }	
     ],
-
     "comics": [
         {
             "publisher": "Marvel",
@@ -477,11 +473,4 @@
 
        
     ]
-
-        
-    
-
-
-
-
 }
