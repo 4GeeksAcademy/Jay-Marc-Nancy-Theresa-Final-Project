@@ -78,11 +78,10 @@ let fionaStaplesGallery = [
 ]
 
 export const Featured = () => {
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
 
     return (
         <>
-
         <div className="container text-center">
             <div className="row text-start badaboom fs3p5 mb-4">
                 Welcome to Featured Artists!

@@ -31,7 +31,6 @@ const injectContext = PassedComponent => {
 			 **/
 			state.actions.syncSessionToken(); // <---- calling this function from the flux.js actions
 			state.actions.getMessage(); // <---- calling this function from the flux.js actions
-			state.actions.getFAQData();
 			state.actions.getEvents();
 			state.actions.populateStoreEvents();
 			state.actions.populateStoreHotels();

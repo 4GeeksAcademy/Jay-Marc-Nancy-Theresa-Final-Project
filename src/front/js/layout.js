@@ -21,10 +21,7 @@ import { Login } from "./pages/login";
 import { Private } from "./pages/private";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
-
-
 import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { ForgotPassword } from "./pages/forgotPassword";
@@ -46,22 +43,13 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-
-                        
-
-
                         <Route element={<Home />} path="/" />                       
                         <Route element={<Vendors />} path="/vendors" />                                     
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
-
                         <Route element={<NewReleases />} path="/new-releases" />
                         <Route element={<NerdFact />} path="/nerd-fact" />
-                        <Route element={<WhatToDo />} path="/what-to-do" />
-                        
-
-                                           
-
+                        <Route element={<WhatToDo />} path="/what-to-do" /> 
                         <Route element={<Schedule />} path="/schedule" />
                         <Route element={<Transportation />} path="/transportation" />
                         <Route element={<Hotels />} path="/hotels" />
