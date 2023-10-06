@@ -11,6 +11,8 @@
     color: #000000;
 } */
 
+@import url('https://fonts.cdnfonts.com/css/badaboom-bb');
+
 .wrapper {
     background: rgb(88, 34, 195);
     background: linear-gradient(0deg, rgba(88, 34, 195, 1) 0%, rgba(10, 21, 77, 1) 100%);
@@ -22,6 +24,16 @@
     width: 50%;
     padding: 3%;
     text-align: center;
+}
+
+#timerComponent {
+    background-color: black;
+}
+#timerNumColumn {
+    color:#ffbf00;
+    text-shadow: 3px 4px 0 rgba(227, 20, 68, 1) ; 
+    height: 60%;
+    font-family: 'BadaBoom BB', sans-serif;
 }
 
 #primaryNav {
