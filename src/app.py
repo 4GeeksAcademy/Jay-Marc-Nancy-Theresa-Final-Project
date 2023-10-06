@@ -51,7 +51,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db, compare_type=True)
 db.init_app(app)
 
-app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Allow CORS requests to this API
@@ -94,6 +93,13 @@ def serve_any_other_file(path):
     return response
 
 
+# @app.route('/calendar', methods=['GET'])
+# def get_events():
+#     # need to define events here
+#     # events =
+#     # return jsonify(events), 200
+#     pass
+
 # #Nelson Chang: ALSO: events are not defined
 # @app.route('/calendar', methods=['GET'])
 # def get_events():
@@ -112,12 +118,12 @@ def get_events():
     pass
 
 
-def send_reset_email(email, token):
-     msg = Message('Password Reset', sender="worstconventionevercon@gmail.com", recipients=[email])
-     msg.body = f'click the link below to reset your password:\n {os.getenv("FRONTEND_URL")}/reset-password?token={token}&email={email}'
+# def send_reset_email(email, token):
+#      msg = Message('Password Reset', sender="worstconventionevercon@gmail.com", recipients=[email])
+#      msg.body = f'click the link below to reset your password:\n {os.getenv("FRONTEND_URL")}/reset-password?token={token}&email={email}'
      
-     msg.send(mail)
-     return "Mail has sent"
+#      msg.send(mail)
+#      return "Mail has sent"
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':

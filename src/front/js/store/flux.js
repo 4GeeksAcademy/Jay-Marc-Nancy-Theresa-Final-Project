@@ -111,18 +111,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			getUserAdded: async (email, password, first_name, last_name, phone) => {
-				getFAQData: () => {
-					fetch("../../../../data.json") 
-					.then((resp) => resp.json())
-					.then((data) => {
-						console.log("myString: ", data)
-						setStore({ faq_data: data.faq_data })
-					} )
-					//console log data
-				}
+			getFAQData: () => {
+				fetch("../../../../data.json") 
+				.then((resp) => resp.json())
+				.then((data) => {
+					console.log("myString: ", data)
+					setStore({ faq_data: data.faq_data })
+				} )
+				//console log data
 			},				
-			getUserAdded: async (email, password) => {
+			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
 					method: 'POST',
