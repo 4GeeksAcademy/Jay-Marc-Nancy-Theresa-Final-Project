@@ -101,8 +101,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-
-			getUserAdded: async (email, password, first_name, last_name, phone) => {
 			getFAQData: () => {
 				fetch("../../../../data.json") 
 				.then((resp) => resp.json())
@@ -111,9 +109,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ faq_data: data.faq_data })
 				} )
 				//console log data
-		},				
-
-			getUserAdded: async (email, password) => {
+			},				
+			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
 					method: 'POST',
@@ -296,9 +293,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			// 83826f8eaa2ce93cc7d34d102f95df8c //api key Marvel
 			// fetch("http://gateway.marvel.com/v1/public/comics?", options)
-
-			}
-
 		},
 	};
 };
