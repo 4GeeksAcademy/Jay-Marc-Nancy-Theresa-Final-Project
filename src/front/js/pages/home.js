@@ -15,7 +15,7 @@ export const Home = () => {
 
 	return (
 
-		<div className="text-center mt-5">
+		<div className="text-center">
 			<div className="wrapper" style={{ textAlign: "center" }}>
 				<div className="row">
 					<div className="col-5">
