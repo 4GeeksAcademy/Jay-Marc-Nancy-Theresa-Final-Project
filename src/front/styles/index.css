@@ -1,6 +1,79 @@
+@import url('https://fonts.cdnfonts.com/css/badaboom-bb');
+
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+/* ////////////////////////////////////////////////////////////////
+/* DO NOT REMOVE THIS CODE -- THE SITE WILL CRASH */
+/* * {
+	font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+}
+////////////////////////////////////////////////////////////////
+*/
+
+.iframe {
+    width:325px;
+    height:250px;
+    border:none;
+    overflow:hidden;
+    transition: transform .2s;
+}
+
+.iframe:hover {
+    transform: scale(1.05);
+}
+
+.fs4p0 {
+    font-size: 4.0rem;
+}
+.fs3p75 {
+    font-size: 3.75rem;
+}
+.fs3p5 {
+    font-size: 3.5rem;
+}
+.fs3p25 {
+    font-size: 3.25rem;
+}
+.fs3p0 {
+    font-size: 3.0rem;
+}
+.fs2p75 {
+    font-size: 2.75rem;
+}
+.fs2p5 {
+    font-size: 2.5rem;
+}
+.fs2p25 {
+    font-size: 2.25rem;
+}
+.fs2p0 {
+    font-size: 2.0rem;
+}
+.fs1p75 {
+    font-size: 1.75rem;
+}
+.fs1p5 {
+    font-size: 1.5rem;
+}
+.fs1p25 {
+    font-size: 1.25rem;
+}
+.fs1p0 {
+    font-size: 1.0rem;
+}
+.fs0p75 {
+    font-size: 0.75rem;
+}
+.fs0p5 {
+    font-size: 0.5rem;
+}
+
+
+.badaboom {
+    font-family: 'BadaBoom BB', sans-serif;
+}
 
 .aboutDropdownHeader {
     text-transform: capitalize !important;
@@ -20,4 +93,97 @@
 
 .hotelCardHeader {
     text-transform: capitalize !important;
+}
+
+.homeDescriptionComicSound {
+    height: 40px;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mtgCardImg {
+    width: 223px;
+    height: auto;
+}
+
+.condensedCard {
+    width: 275px;
+    transition: transform .2s;
+}
+
+.condensedCard:hover {
+    transform: scale(1.05);
+}
+
+.cardScrollBars::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cardScrollBars::-webkit-scrollbar-track {
+    background: #EEEEEE;
+}
+
+.cardScrollBars::-webkit-scrollbar-thumb {
+    background: #bbbbbb;
+    border-radius: 5px;
+}
+
+.cardScrollBars::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+.featuredArtistCard {
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.featuredArtistCard:hover {
+    opacity: 1.0;
+    transition: .5s;
+}
+
+.featuredArtistCard img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+a.featuredArtistModalLink:link, a.featuredArtistModalLink:visited, a.featuredArtistModalLink:hover, a.featuredArtistModalLink:active {
+    text-decoration: none;
+}
+
+.copyrightOverlay {
+    position: relative;
+    bottom: 20px;
+    right: 0px;
+    font-size: 10px;
+    color: #eeff00;
+    background: rgba(0,0,0,0.5);
+}
+.copyrightOverlay a:link, a:visited {
+    color: #cdd832;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  
+.copyrightOverlay a:hover, a:active {
+    color: #f7fcb6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.magicCardTitle {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.magicCardBody {
+    font-size: 0.8rem;
 }

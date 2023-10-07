@@ -100,6 +100,24 @@ def serve_any_other_file(path):
 #     # return jsonify(events), 200
 #     pass
 
+# #Nelson Chang: ALSO: events are not defined
+# @app.route('/calendar', methods=['GET'])
+# def get_events():
+#     #need to define events here 
+#     #events = 
+#     #return jsonify(events), 200
+#     pass
+# Nelson Chang: ALSO: events are not defined
+
+
+@app.route('/calendar', methods=['GET'])
+def get_events():
+    # need to define events here
+    # events =
+    # return jsonify(events), 200
+    pass
+
+
 # def send_reset_email(email, token):
 #      msg = Message('Password Reset', sender="worstconventionevercon@gmail.com", recipients=[email])
 #      msg.body = f'click the link below to reset your password:\n {os.getenv("FRONTEND_URL")}/reset-password?token={token}&email={email}'
