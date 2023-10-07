@@ -16,11 +16,9 @@ export const Home = () => {
 	return (
 
 		<div className="text-center mt-5">
-
 			<div className="wrapper" style={{ textAlign: "center" }}>
 				<div className="row">
 					<div className="col-5">
-
 						<CountdownTimer />
 					</div>
 					<div className="col-7">
