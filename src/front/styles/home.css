@@ -18,15 +18,13 @@ body {
     background: linear-gradient(180deg, rgba(13,13,12,1) 0%, rgba(26,50,62,1) 100%);
     /* @NC: why is this not covering the whole page? */
 }
-
 /* .wrapper {
     background: rgb(88, 34, 195);
     background: linear-gradient(0deg, rgba(88, 34, 195, 1) 0%, rgba(10, 21, 77, 1) 100%);
     color: #f8f7f7;
 } */
-
-.h3 {
-    color: white;
+#countdownTimerTitle {
+    color: #d9e4e9;
 }
 .blurb-container {
     margin: auto;
