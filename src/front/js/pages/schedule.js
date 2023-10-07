@@ -15,7 +15,7 @@ export const Schedule = () => {
             <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
                 <img src="https://images.unsplash.com/photo-1555725305-e823b44548de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"></img>
                 <div className="jumbotronContent">
-                    <h1 className="display-4">Schedule</h1>
+                    <h1 className="display-4" id="scheduleJumbotronTitle">Schedule</h1>
                     <p className="lead">Learn and Grow</p>
                     <hr className="my-4"></hr>
                     <p>Expand your horizons with a wide range of informative panels and workshops. Discover the secrets of comic book creation, explore the latest trends in pop culture, and gain insights into the worlds of gaming, sci-fi, and fantasy.</p>
