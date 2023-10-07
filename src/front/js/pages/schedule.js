@@ -19,7 +19,6 @@ export const Schedule = () => {
                     <p className="lead">Learn and Grow</p>
                     <hr className="my-4"></hr>
                     <p>Expand your horizons with a wide range of informative panels and workshops. Discover the secrets of comic book creation, explore the latest trends in pop culture, and gain insights into the worlds of gaming, sci-fi, and fantasy.</p>
-                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </div>
             </div>
             <ul className="nav nav-tabs" id="myTab" role="tablist">

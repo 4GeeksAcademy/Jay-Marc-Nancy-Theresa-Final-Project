@@ -23,7 +23,6 @@ export const Vendors = props => {
                     <p className="lead">Explore a Universe of Treasures</p>
                     <hr className="my-4"></hr>
                     <p>Welcome to the Vendor Hall of our Comic Book Convention! Prepare to embark on a thrilling journey through a galaxy of unique and captivating finds. Our carefully curated vendors offer a diverse array of treasures, from rare comic books and collectibles to one-of-a-kind art pieces and memorabilia.</p>
-                    <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </div>
             </div>
             <div className="accordion" id="accordionExample">
