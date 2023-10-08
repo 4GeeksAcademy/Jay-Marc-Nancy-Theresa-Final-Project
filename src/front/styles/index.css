@@ -208,6 +208,17 @@ a:active {
     font-size: 0.8rem;
 }
 
+#primaryNav {
+    height: 80px;
+    background-color: black;
+    color: rgb(10, 10, 10);
+    margin-bottom: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
 /* footer {
     background-color: black;
     color: #f8f7f7;
