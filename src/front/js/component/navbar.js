@@ -7,11 +7,10 @@ import conlogoText from "../../img/conlogoText.png";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<div>
+		<div className="navContainer">
 			{/* need to convert anchor tags to link */}
 			<nav className="navbar navbar-expand-lg bg-body-tertiary" id="primaryNav">
 				<div className="container-fluid">
-
 					<Link to="/" className="navbar-brand">
 						<img src={conlogoText} className="navLogo" alt="banner" />
 					</Link>
@@ -25,8 +24,8 @@ export const Navbar = () => {
 									People to See
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/featured" className="dropdown-item">Featured</Link></li>
-									<li><Link to="/guests" className="dropdown-item">Guests</Link></li>
+									<li><Link to="/featured" className="dropdown-item" style={{ color: "black" }}>Featured</Link></li>
+									<li><Link to="/guests" className="dropdown-item" style={{ color: "black" }}>Guests</Link></li>
 									{/* <li><a className="dropdown-item" href="#"></a></li> */}
 								</ul>
 							</li>
@@ -35,9 +34,9 @@ export const Navbar = () => {
 									Things to Do
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/what-to-do" className="dropdown-item">What to do at Worst Convention EverCon</Link></li>
-									<li><Link to="/schedule" className="dropdown-item">Schedule</Link></li>
-									<li><Link to="/vendors" className="dropdown-item">Vendors</Link></li>
+									<li><Link to="/what-to-do" className="dropdown-item" style={{ color: "black" }}>What to do at Worst Convention EverCon</Link></li>
+									<li><Link to="/schedule" className="dropdown-item" style={{ color: "black" }}>Schedule</Link></li>
+									<li><Link to="/vendors" className="dropdown-item" style={{ color: "black" }}>Vendors</Link></li>
 								</ul>
 							</li>
 							<li className="nav-item dropdown">
@@ -45,8 +44,8 @@ export const Navbar = () => {
 									Travel
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/transportation" className="dropdown-item">Transportation</Link></li>
-									<li><Link to="/hotels" className="dropdown-item">Hotels</Link></li>
+									<li><Link to="/transportation" className="dropdown-item" style={{ color: "black" }}>Transportation</Link></li>
+									<li><Link to="/hotels" className="dropdown-item" style={{ color: "black" }}>Hotels</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
 							</li>
@@ -55,7 +54,7 @@ export const Navbar = () => {
 									Resources
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="new-releases" className="dropdown-item">New Releases</Link></li>
+									<li><Link to="new-releases" className="dropdown-item" style={{ color: "black" }}>New Releases</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Another action</a></li>
 									<li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
@@ -65,8 +64,8 @@ export const Navbar = () => {
 									Participate
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/signup" className="dropdown-item" >Signup</Link></li>
-									<li><Link to="/login" className="dropdown-item">Login</Link></li>
+									<li><Link to="/signup" className="dropdown-item" style={{ color: "black" }}>Signup</Link></li>
+									<li><Link to="/login" className="dropdown-item" style={{ color: "black" }}>Login</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
 							</li>
@@ -75,8 +74,8 @@ export const Navbar = () => {
 									About
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/about-contact" className="dropdown-item">About/Contact Us</Link></li>
-									<li><Link to="/FAQ" className="dropdown-item">FAQs</Link></li>
+									<li><Link to="/about-contact" className="dropdown-item" style={{ color: "black" }}>About/Contact Us</Link></li>
+									<li><Link to="/FAQ" className="dropdown-item" style={{ color: "black" }}>FAQs</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>
 							</li>
@@ -84,11 +83,11 @@ export const Navbar = () => {
 						<div className="ml-auto">
 							{!store.token ?
 								<Link to="/">
-									<button className="btn btn-primary">Logout</button>
+									<button className="btn" style={{ color: "#f7d281" }}>Logout</button>
 								</Link>
 								:
 								<Link to="/">
-									<button onClick={() => actions.logout()} className="btn btn-primary">Logout</button>
+									<button onClick={() => actions.logout()} className="btn" style={{ color: "#f7d281" }}>Logout</button>
 								</Link>
 							}
 						</div>

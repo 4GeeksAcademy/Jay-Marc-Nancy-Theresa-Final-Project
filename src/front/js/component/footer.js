@@ -1,24 +1,24 @@
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
-    const { store, actions } = useContext(Context);
-	const [ nerdFact, setNerdFact] = useState("")
+	const { store, actions } = useContext(Context);
+	const [nerdFact, setNerdFact] = useState("")
 
 	useEffect(() => {
-        actions.getNerdFact();
-    }, []);
+		actions.getNerdFact();
+	}, []);
 
 
 	return (
 		<footer className="footer mt-auto text-center">
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-8 text-start">
+					<div className="col-8 text-start" style={{ color: "#f7d281" }}>
 						{store.nerdFact}
 					</div>
-					<div className="col-3 text-center border border-danger">
+					<div className="col-3 text-center" style={{ color: "white" }}>
 						Made with <i className="fa fa-heart text-danger" /> by{" "}
 						3Nerds at 4Geeks
 					</div>
