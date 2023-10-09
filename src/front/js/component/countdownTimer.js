@@ -50,7 +50,8 @@ class CountdownTimer extends Component {
             <div>
 
                 <div className="row my-3" id='timerComponent'>
-                    <h3 id="countdownTimerTitle">Countdown to the Convention</h3>
+                <h1 className="eventDate">May 23, 24, 25 & 26</h1>
+                    {/* <h3 id="countdownTimerTitle">Countdown to the Convention</h3> */}
                     <div className="col-3 my-3" id='timerNumColumn'>
 
                         <div>

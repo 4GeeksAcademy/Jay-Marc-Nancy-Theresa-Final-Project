@@ -5,27 +5,36 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
-/* body {
-    background: rgb(34, 193, 195);
-    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(45, 253, 184, 0.7875525210084033) 100%);
-    color: #000000;
-} */
 
 @import url('https://fonts.cdnfonts.com/css/badaboom-bb');
 
 body {
-    background: rgb(13,13,12);
-    background: linear-gradient(180deg, rgba(13,13,12,1) 0%, rgba(26,50,62,1) 100%);
-    /* @NC: why is this not covering the whole page? */
+    background: rgb(13, 13, 12);
+    background: linear-gradient(180deg, rgba(13, 13, 12, 1) 0%, rgba(26, 50, 62, 1) 20%);
 }
-/* .wrapper {
-    background: rgb(88, 34, 195);
-    background: linear-gradient(0deg, rgba(88, 34, 195, 1) 0%, rgba(10, 21, 77, 1) 100%);
+
+/* @NC: why is this not covering the whole page? */
+
+.wrapper {
+    margin-top: 75px;
+    background: rgb(13, 13, 12);
+    background: linear-gradient(180deg, rgba(13, 13, 12, 1) 0%, rgba(26, 50, 62, 1) 20%);
     color: #f8f7f7;
-} */
-#countdownTimerTitle {
-    color: #d9e4e9;
 }
+
+.eventDate {
+    color: #ffbf00;
+    text-shadow: 3px 1px 0 rgba(227, 20, 68, 1);
+    font-size: 3.5rem;
+
+
+    /* font-family: 'BadaBoom BB', sans-serif; */
+}
+
+/* #countdownTimerTitle {
+    color: #d9e4e9;
+} */
+
 .blurb-container {
     margin: auto;
     width: 50%;
@@ -34,13 +43,22 @@ body {
 }
 
 #timerComponent {
+    margin-left: 25%;
+    /* padding: 5%; */
+    max-height: 600px;
+    border-radius: 10px;
     background-color: #0d0d0c;
 }
+
 #timerNumColumn {
-    color:#ffbf00;
-    text-shadow: 3px 4px 0 rgba(227, 20, 68, 1) ; 
+    color: #ffbf00;
+    text-shadow: 3px 4px 0 rgba(227, 20, 68, 1);
     height: 60%;
     font-family: 'BadaBoom BB', sans-serif;
+}
+
+.navContainer {
+    margin: 0;
 }
 
 #primaryNav {
@@ -48,21 +66,27 @@ body {
     background-color: black;
     color: rgb(10, 10, 10);
     margin-bottom: 50px;
-}
-
-#signupContainer {
-    margin: auto;
-    width: 50%;
-    padding: 3%;
-    text-align: center;
-}
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+} 
 
 .navLogo {
     height: 70px;
     width: auto;
 }
 
-.homeImage {
+.homeLogo {
+    margin: 0;
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    /* padding-bottom: 10%; */
+}
+
+.homeTroopers {
+    border-radius: 75%;
     width: 60%;
     height: auto;
     object-fit: cover;
@@ -70,8 +94,12 @@ body {
     padding-top: 5%;
 }
 
-#newComicsImg {
-    width: 20%;
-    height: auto;
-    object-fit: cover;
+footer {
+    background-color: black;
+    color: #f8f7f7;
+    padding: 2%;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
 }
