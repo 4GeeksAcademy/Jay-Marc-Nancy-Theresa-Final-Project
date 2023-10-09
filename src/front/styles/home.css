@@ -16,6 +16,9 @@
 body {
     background: rgb(13,13,12);
     background: linear-gradient(180deg, rgba(13,13,12,1) 0%, rgba(26,50,62,1) 100%);
+    /* background-size: cover;
+    height: 100vh;
+    width: 100vw; */
     /* @NC: why is this not covering the whole page? */
 }
 /* .wrapper {

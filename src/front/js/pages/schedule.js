@@ -23,10 +23,14 @@ export const Schedule = () => {
             </div>
             <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Page</button>
+                <button className="nav-link bg-secondary text-light active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                    Page
+                </button>
             </li>
             <li className="nav-item" role="presentation">
-                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Table</button>
+                <button className="nav-link bg-secondary text-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                    Table
+                </button>
             </li>
             </ul>
             <div className="tab-content" id="myTabContent">
@@ -34,23 +38,26 @@ export const Schedule = () => {
             {/* Page View */}
             <div className="container">
                 <div className="row-odd">
-                    <div className="col-2">
-                    {/* One of three columns */}
-                    </div>
-                    <div className="col-8">
+                    <div className="col-12">
                     {store.events.map((event, index) =>              
                         <div className="event event-panel" key={index}>
-                            <div className="event-banner"><b>Title:</b> {event.event_name}</div>
-                            <div className="event-date"><b>Date:</b> {event.date}</div> 
-                            <div className="event-start-time"><b>Start:</b> {event.start_time}</div>
-                            <div className="event-end-time"><b>End:</b> {event.end_time}</div>
-                            <div className="event-location"><b>Location:</b> {event.location}</div>
-                            <div className="event-description"><b>Description:</b> {event.description}</div>
+                            <div className="eventsContainer">
+                                <div className="event-banner"><b>Title:</b> {event.event_name}</div>
+                                <div className="event-date"><b>Date:</b> {event.date}</div> 
+                                <div className="event-start-time"><b>Start:</b> {event.start_time}</div>
+                                <div className="event-end-time"><b>End:</b> {event.end_time}</div>
+                                <div className="event-location"><b>Location:</b> {event.location}</div>
+                                <div className="event-description"><b>Description:</b> {event.description}</div>
+                            </div>
+                            <div className="favoritesContainer">
+                                <button className="btn btn-light btn-card" onClick={()=>actions.addFavorite(event.id)}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         )}
-                    </div>
-                    <div className="col-2">
-                    {/* Three of three columns */}
                     </div>
                 </div>
             </div>

@@ -227,6 +227,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(data);
 				setStore({ nerdFact: data.joke })
 				return data.joke
+			},
+			addFavorite: (id) => {
+				const favorites = getStore().favorites
+				favorites.push(id)
+				setStore({favorites: favorites})
 			}
 		},
 	};
