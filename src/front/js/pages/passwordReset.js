@@ -6,21 +6,44 @@ import { Link, useNavigate } from "react-router-dom";
 export const PasswordReset = () => {
     const { store, actions } = useContext(Context);
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState();
     const navigate = useNavigate()
-    function submitRequest() {
-        actions.getUserAdded(email, password)
+    function submitNewPassword() {
+        if (newPassword != confirmPassword) {
+            setError("Passwords do not match")
+        }
+        actions.resetPassword(email, newPassword, confirmPassword)
     }
 
-    useEffect(() => {
-        if (store.message != null && store.message != '') {
-            setError(store.message)
-        }
-    }, [store.message])
 
     return (
         <>
-            <h1>Password Reset</h1></>
+            <div className="container">
+                <h1>Password Reset</h1>
+                <input
+                    type="text"
+                    placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}></input>
+                <input
+                    type="password"
+                    placeholder="Enter new password"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}></input>
+                <input
+                    type="password"
+                    placeholder="Confirm new password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                <button
+                    type="submit"
+                    onClick={submitNewPassword}>Reset Password</button>
+            </div>
+
+
+        </>
+
     );
 }
