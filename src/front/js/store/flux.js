@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			comicVendors: [],
 			artVendors: [],
 			merchVendors: [],
-      faq_data: []
+			faq_data: []
 		},
 		actions: {
 			initialLoading: () => {
@@ -42,6 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getComics: () => {
 				setStore({ comics: data.comics })
 			},
+
 			login: async (email, password) => {
 				const options = {
 					method: 'POST',
@@ -85,14 +86,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			fetchRkPostCards: () => {
 				fetch("https://api.magicthegathering.io/v1/cards?contains=imageUrl&artist=rk%20post")
 
-				.then(response => {
-					if (!response.ok) throw Error(response.statusText);
-					return response.json();
-				})
-				.then(data => {
-					setStore({rkPostCards: data.cards})
-				})
-				.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
+					.then(response => {
+						if (!response.ok) throw Error(response.statusText);
+						return response.json();
+					})
+					.then(data => {
+						setStore({ rkPostCards: data.cards })
+					})
+					.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
 			},
 			getMessage: async () => {
 				const store = getStore();
@@ -112,14 +113,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getFAQData: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ faq_data: data.faq_data })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ faq_data: data.faq_data })
+					})
 				//console log data
-			},				
+			},
 			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
@@ -181,34 +182,61 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log("login error!")
 				}
-				//reset the global store
-				setStore({ demo: demo });
 			},
-			
+
+			resetPassword: async (email, newPassword, confirmPassword) => {
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(
+						{
+							email: email,
+							newPassword: newPassword,
+							confirmPassword: confirmPassword
+						}
+					)
+				}
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "api/reset-password", options)
+					if (response.status !== 200) {
+						alert("Error!  Response Code: ", response.status)
+						return false;
+					}
+					const data = await response.json()
+					console.log("from backend", data)
+					return true;
+				}
+				catch (error) {
+					console.log("login error!")
+				}
+			},
+
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
-				.then((response) => response.json()) 
-				.then((data) => {
-					console.log(data);
-					setStore({comicVendors:data.results});
-				}) 
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						setStore({ comicVendors: data.results });
+					})
 			},
 			getArtVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getArtVendors: ", data)
-					setStore({ artVendors: data.artVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getArtVendors: ", data)
+						setStore({ artVendors: data.artVendors })
+					})
 				//console.log(data);
 			},
 			getMerchVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getMerchVendors: ", data)
-					setStore({ merchVendors: data.merchVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getMerchVendors: ", data)
+						setStore({ merchVendors: data.merchVendors })
+					})
 				//console.log(data);
 
 			},

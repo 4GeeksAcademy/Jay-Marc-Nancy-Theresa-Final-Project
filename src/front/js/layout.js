@@ -28,6 +28,7 @@ import { ForgotPassword } from "./pages/forgotPassword";
 import { PasswordReset } from "./pages/passwordReset";
 import { NewReleases } from "./pages/newReleases";
 import { NerdFact } from "./pages/nerdFact";
+import { ContactUs } from "./component/contactUs";
 
 //create your first component
 const Layout = () => {
@@ -43,13 +44,13 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route element={<Home />} path="/" />                       
-                        <Route element={<Vendors />} path="/vendors" />                                     
+                        <Route element={<Home />} path="/" />
+                        <Route element={<Vendors />} path="/vendors" />
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
                         <Route element={<NewReleases />} path="/new-releases" />
                         <Route element={<NerdFact />} path="/nerd-fact" />
-                        <Route element={<WhatToDo />} path="/what-to-do" /> 
+                        <Route element={<WhatToDo />} path="/what-to-do" />
                         <Route element={<Schedule />} path="/schedule" />
                         <Route element={<Transportation />} path="/transportation" />
                         <Route element={<Hotels />} path="/hotels" />
@@ -58,9 +59,10 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         <Route element={<Private />} path="/private" />
                         <Route element={<ForgotPassword />} path="/forgot-password" />
-                        <Route element={<PasswordReset />} path="/password-reset" />
+                        <Route element={<PasswordReset />} path="/reset-password" />
                         <Route element={<AboutContact />} path="/about-contact" />
                         <Route element={<FAQ />} path="/FAQ" />
+                        <Route element={<ContactUs />} path="/contact-us" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
