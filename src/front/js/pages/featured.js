@@ -122,7 +122,7 @@ export const Featured = () => {
                                     <div className="copyrightOverlay">Image rights and credits belong to <a href="https://ca.wikipedia.org/wiki/Fiona_Staples#/media/Fitxer:Fiona_Staples_-_Lucca_Comics_&_Games_2014.JPG" target="_blank">Niccolò Caranti</a>.</div>
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title">Fiona Staples</h5>
+                                    <h5 className="card-title">FIONA STAPLES</h5>
                                     <p className="card-text">
                                         Fiona Staples is a breakthrough artist and a game-changer known for her groundbreaking work with the instant-hit series, Saga. We are thrilled and awestruck to have such a masterful illustrator joining us. Please click to learn more!
                                     </p>
@@ -146,7 +146,7 @@ export const Featured = () => {
                                     <div className="copyrightOverlay">Image rights and credits belong to <a href="https://www.anthonyburch.pizza/about#bio" target="_blank">Anthony Burch</a>.</div>
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title">Anthony Burch</h5>
+                                    <h5 className="card-title">ANTHONY BURCH</h5>
                                     <p className="card-text">
                                         Anthony Burch is an actor, writer, and force to be reckoned with. We are honored to be able to showcase such a creative talent. Please join out enthusiasm for our artist highlight of the prolific Dungeon Master Anthony Burch!
                                     </p>
