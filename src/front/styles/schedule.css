@@ -19,9 +19,10 @@
 #scheduleJumbotronTitle {
     font-family: 'BadaBoom BB', sans-serif;
 }
-.nav-link {
-    color: #6c8062cc;
+.eventNavLink:active {
+    background-color: #f7d281;
 }
+/* @NC how to have active tab stay yellow */
 .event-panel {
     margin: 5px;
     padding: 5px;

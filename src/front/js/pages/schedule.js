@@ -23,12 +23,12 @@ export const Schedule = () => {
             </div>
             <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
-                <button className="nav-link bg-secondary text-light active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                    Page
+                <button className="nav-link eventNavLink text-secondary active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                    Favorites
                 </button>
             </li>
             <li className="nav-item" role="presentation">
-                <button className="nav-link bg-secondary text-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                <button className="nav-link eventNavLink text-secondary" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
                     Table
                 </button>
             </li>
@@ -64,7 +64,7 @@ export const Schedule = () => {
             </div>
             {/* Table View */}
             <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
-            <div className="row row-key">
+            <div className="row row-key text-secondary">
                 <div className="col-3 accordion-element-spacing table-head">
                     Date
                 </div>

@@ -16,7 +16,7 @@ export const FAQ = () => {
             <div className="FAQJumbotron bg-light p-5 rounded-lg m-3">
                 <img src="https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80"></img>
                 <div className="jumbotronContent">
-                    <h1 className="display-4">FAQ</h1>
+                    <h1 className="display-4" id="FAQJumbotronTitle">FAQ</h1>
                     <p className="lead">Have Questions? We Have Answers!</p>
                     <hr className="my-4"></hr>
                     <p>Got questions about the Worst Con EverCon? We do too. You're in the right place. We've gathered all the information you need to make your experience smooth, enjoyable, and filled with epic moments. If you can't find what you're looking for here, feel free to reach out to our support team. Your adventure begins here!</p>
