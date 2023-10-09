@@ -2,6 +2,8 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 
+from flask_cors import CORS
+from flask_cors import cross_origin
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
@@ -20,18 +22,15 @@ import app
 # from dotenv import load_dotenv
 
 
-api = Blueprint('api', __name__)   
-
-from flask_cors import CORS 
-from flask_cors import cross_origin
-
+api = Blueprint('api', __name__)
 
 
 api = Blueprint('api', __name__)
- 
+
 # Setup the Flask-JWT-Extended extension
 
-    # return jsonify(response_body), 200
+# return jsonify(response_body), 200
+
 
 @api.route("/api/comics/publishers", methods=["GET"])
 def get_publishers():
@@ -39,11 +38,12 @@ def get_publishers():
     GET: <url>/api/comics/publishers?limit=<int>&offset=<int>
     """
     query = request.args
-    session = Comicvine(api_key="95a8680d433d9ff13c2e5dd7eb480ff23089772d", cache=SQLiteCache())
+    session = Comicvine(
+        api_key="95a8680d433d9ff13c2e5dd7eb480ff23089772d", cache=SQLiteCache())
     results = session.list_publishers(
         max_results=int(query.get("limit", 25)),
         params={
-        "offset": int(query.get("offset", 0)),
+            "offset": int(query.get("offset", 0)),
         }
     )
     print(results)
@@ -58,6 +58,7 @@ def get_publishers():
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
+
 
 @api.route("/token", methods=["POST"])
 def create_token():
@@ -81,7 +82,7 @@ def create_token():
 #     # return jsonify(msg)
 #     # Access the identity of the current user with get_jwt_identity
 #     current_user = get_jwt_identity()
-#     return jsonify(logged_in_as=current_user), 200   
+#     return jsonify(logged_in_as=current_user), 200
 
 @api.route("/hello", methods=["GET"])
 @jwt_required()
@@ -158,7 +159,7 @@ def delete_user(id):
 @jwt_required()
 def get_private():
 
-    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200  
+    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
 
     return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
 
@@ -179,38 +180,34 @@ def forgot_password():
     return jsonify({'msg': 'Please check your email for password reset instructions.'}), 200
 
 
-@api.route('/reset-password', methods=['GET', 'POST'])
+# @api.route('/reset-password', methods=['GET', 'POST'])
+# def reset_password():
+#     new_password = request.json.get("newPassword", None)
+#     token = request.json.get("token", None)
+#     email = request.json.get("email", None)
+#     user = User.query.filter_by(email=email, token=token).first()
+#     if user is None:
+#         raise APIException('User not found', status_code=404)
+#     user.password = new_password
+#     db.session.commit()
+#     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
+
+
+@ api.route('/reset-password', methods=['POST'])
 def reset_password():
-    new_password = request.json.get("newPassword", None)
-    token = request.json.get("token", None)
     email = request.json.get("email", None)
-    user = User.query.filter_by(email=email, token=token).first()
+    password = request.json.get("password", None)
+    confirmPassword = request.json.get("confirmPassword", None)
+
+    user = User.query.filter_by(email=email).first()
     if user is None:
         raise APIException('User not found', status_code=404)
-    user.password = new_password
+    if password != confirmPassword:
+        raise APIException('Passwords do not match', status_code=404)
+    user.password = password
     db.session.commit()
     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
-
-@ api.route('/change-password', methods=['POST'])
-def change_password():
-    email = request.json.get("email", None)
-    oldPassword = request.json.get("oldPassword", None)
-    newPassword = request.json.get("newPassword", None)
-
-    if email is None:
-        raise APIException('Email is required.', status_code=404)
-    if oldPassword is None:
-        raise APIException('Old password is required.', status_code=404)
-    if newPassword is None:
-        raise APIException('New password is required.', status_code=404)
-
-    user = User.query.filter_by(email=email, password=oldPassword).first()
-    if user is None:
-        raise APIException('User not found', status_code=404)
-    user.password = newPassword
-    db.session.commit()
-    return jsonify(user.serialize()), 200
     # return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
     # Protect a route with jwt_required, which will kick out requests
@@ -240,8 +237,6 @@ def change_password():
 #     return jsonify(user.serialize()), 200
 
 
-
-
 # reference to fix cors error
 # @api.route("/api/comics/publishers", methods=["GET"])
 # def get_publishers():
@@ -265,4 +260,3 @@ def change_password():
 #             "site_url": pub.site_url
 #         })
 #     return jsonify(results=publishers), 200
-
