@@ -14,5 +14,3 @@ export const Guests = props => {
 		</div>
 	);
 };
-
-

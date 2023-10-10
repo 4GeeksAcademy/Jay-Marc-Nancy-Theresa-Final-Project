@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="200" height="200" src="https://worldvectorlogo.com/logos/html5.svg" alt="html-loader">
+  <img width="200" height="200" src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" alt="html-loader">
   <a href="https://github.com/webpack/webpack">
     <img width="200" height="200" vspace="" hspace="25" src="https://webpack.js.org/assets/icon-square-big.svg" alt="webpack">
   </a>
@@ -7,7 +7,6 @@
 
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
 [![chat][chat]][chat-url]
@@ -23,6 +22,18 @@ To begin, you'll need to install `html-loader`:
 
 ```console
 npm install --save-dev html-loader
+```
+
+or
+
+```console
+yarn add -D html-loader
+```
+
+or
+
+```console
+pnpm add -D html-loader
 ```
 
 Then add the plugin to your `webpack` config. For example:
@@ -50,16 +61,39 @@ module.exports = {
 
 ## Options
 
-|                Name                 |        Type         |                   Default                    | Description                                      |
-| :---------------------------------: | :-----------------: | :------------------------------------------: | :----------------------------------------------- |
-|      **[`sources`](#sources)**      | `{Boolean\|Object}` |                    `true`                    | Enables/Disables sources handling                |
-| **[`preprocessor`](#preprocessor)** |    `{Function}`     |                 `undefined`                  | Allows pre-processing of content before handling |
-|     **[`minimize`](#minimize)**     | `{Boolean\|Object}` | `true` in production mode, otherwise `false` | Tell `html-loader` to minimize HTML              |
-|     **[`esModule`](#esmodule)**     |     `{Boolean}`     |                    `true`                    | Enable/disable ES modules syntax                 |
+- **[`sources`](#sources)**
+- **[`preprocessor`](#preprocessor)**
+- **[`minimize`](#minimize)**
+- **[`esModule`](#esmodule)**
 
 ### `sources`
 
-Type: `Boolean|Object`
+Type:
+
+```ts
+type sources =
+  | boolean
+  | {
+      list?: Array<{
+        tag?: string;
+        attribute?: string;
+        type?: string;
+        filter?: (
+          tag: string,
+          attribute: string,
+          attributes: string,
+          resourcePath: string
+        ) => boolean;
+      }>;
+      urlFilter?: (
+        attribute: string,
+        value: string,
+        resourcePath: string
+      ) => boolean;
+      scriptingEnabled?: boolean;
+    };
+```
+
 Default: `true`
 
 By default every loadable attributes (for example - `<img src="image.png">`) is imported (`const img = require('./image.png')` or `import img from "./image.png""`).
@@ -90,7 +124,7 @@ Supported tags and attributes:
 - the `content` attribute of the `meta` tag when the `name` attribute is `msapplication-tileimage`, `msapplication-square70x70logo`, `msapplication-square150x150logo`, `msapplication-wide310x150logo`, `msapplication-square310x310logo`, `msapplication-config`, `twitter:image` or when the `property` attribute is `og:image`, `og:image:url`, `og:image:secure_url`, `og:audio`, `og:audio:secure_url`, `og:video`, `og:video:secure_url`, `vk:image` or when the `itemprop` attribute is `image`, `logo`, `screenshot`, `thumbnailurl`, `contenturl`, `downloadurl`, `duringmedia`, `embedurl`, `installurl`, `layoutimage`
 - the `icon-uri` value component in `content` attribute of the `meta` tag when the `name` attribute is `msapplication-task`
 
-#### `Boolean`
+#### `boolean`
 
 The `true` value enables processing of all default elements and attributes, the `false` disable processing of all attributes.
 
@@ -113,7 +147,7 @@ module.exports = {
 };
 ```
 
-#### `Object`
+#### `object`
 
 Allows you to specify which tags and attributes to process, filter them, filter urls and process sources starts with `/`.
 
@@ -165,7 +199,22 @@ module.exports = {
 
 #### `list`
 
-Type: `Array`
+Type:
+
+```ts
+type list = Array<{
+  tag?: string;
+  attribute?: string;
+  type?: string;
+  filter?: (
+    tag: string,
+    attribute: string,
+    attributes: string,
+    resourcePath: string
+  ) => boolean;
+}>;
+```
+
 Default: [supported tags and attributes](#sources).
 
 Allows to setup which tags and attributes to process and how, and the ability to filter some of them.
@@ -320,7 +369,9 @@ module.exports = {
 };
 ```
 
-**Note:** source with a `tag` option takes precedence over source without.
+> **Note**
+>
+> source with a `tag` option takes precedence over source without.
 
 Filter can be used to disable default sources.
 
@@ -354,7 +405,16 @@ module.exports = {
 
 #### `urlFilter`
 
-Type: `Function`
+Type:
+
+```ts
+type urlFilter = (
+  attribute: string,
+  value: string,
+  resourcePath: string
+) => boolean;
+```
+
 Default: `undefined`
 
 Allow to filter urls. All filtered urls will not be resolved (left in the code as they were written).
@@ -388,14 +448,61 @@ module.exports = {
 };
 ```
 
+#### `scriptingEnabled`
+
+Type:
+
+```ts
+type scriptingEnabled = boolean;
+```
+
+Default: `true`
+
+By default, the parser in `html-loader` interprets content inside `<noscript>` tags as `#text`, so processing of content inside this tag will be ignored.
+
+In order to enable processing inside `<noscript>` for content recognition by the parser as `#AST`, set this parameter to: `false`
+
+Additional information: [scriptingEnabled](https://parse5.js.org/interfaces/parse5.ParserOptions.html#scriptingEnabled)
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+        options: {
+          sources: {
+            // Enables processing inside the <noscript> tag
+            scriptingEnabled: false,
+          },
+        },
+      },
+    ],
+  },
+};
+```
+
 ### `preprocessor`
 
-Type: `Function`
+Type:
+
+```ts
+type preprocessor = (
+  content: string | Buffer,
+  loaderContext: LoaderContext
+) => HTMLElement;
+```
+
 Default: `undefined`
 
 Allows pre-processing of content before handling.
 
-> ⚠ You should always return valid HTML
+> **Warning**
+>
+> You should always return valid HTML
 
 **file.hbs**
 
@@ -406,9 +513,9 @@ Allows pre-processing of content before handling.
 <div>
 ```
 
-#### `Function`
+#### `function`
 
-You can set the `preprocessor` option as a `Function` instance.
+You can set the `preprocessor` option as a `function` instance.
 
 **webpack.config.js**
 
@@ -486,12 +593,30 @@ module.exports = {
 
 ### `minimize`
 
-Type: `Boolean|Object`
+Type:
+
+```ts
+type minimize =
+  | boolean
+  | {
+      caseSensitive?: boolean;
+      collapseWhitespace?: boolean;
+      conservativeCollapse?: boolean;
+      keepClosingSlash?: boolean;
+      minifyCSS?: boolean;
+      minifyJS?: boolean;
+      removeComments?: boolean;
+      removeRedundantAttributes?: boolean;
+      removeScriptTypeAttributes?: boolean;
+      removeStyleLinkTypeAttributes?: boolean;
+    };
+```
+
 Default: `true` in production mode, otherwise `false`
 
 Tell `html-loader` to minimize HTML.
 
-#### `Boolean`
+#### `boolean`
 
 The enabled rules for minimizing by default are the following ones:
 
@@ -528,13 +653,13 @@ module.exports = {
 };
 ```
 
-#### `Object`
+#### `object`
 
 **webpack.config.js**
 
 See [html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser)'s documentation for more information on the available options.
 
-The rules can be disabled using the following options in your `webpack.conf.js`
+The default rules can be overridden using the following options in your `webpack.conf.js`
 
 **webpack.config.js**
 
@@ -557,9 +682,40 @@ module.exports = {
 };
 ```
 
+The default rules can be extended:
+
+**webpack.config.js**
+
+```js
+const { defaultMinimizerOptions } = require("html-loader");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+        options: {
+          minimize: {
+            ...defaultMinimizerOptions,
+            removeComments: false,
+            collapseWhitespace: false,
+          },
+        },
+      },
+    ],
+  },
+};
+```
+
 ### `esModule`
 
-Type: `Boolean`
+Type:
+
+```ts
+type esModule = boolean;
+```
+
 Default: `true`
 
 By default, `html-loader` generates JS modules that use the ES modules syntax.
@@ -749,7 +905,7 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        use: ["extract-loader", "html-loader"],
+        use: ["html-loader"],
       },
       {
         test: /\.js$/i,
@@ -899,7 +1055,7 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        use: ["extract-loader", "html-loader"],
+        use: ["html-loader"],
       },
     ],
   },
@@ -920,8 +1076,6 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [npm-url]: https://npmjs.com/package/html-loader
 [node]: https://img.shields.io/node/v/html-loader.svg
 [node-url]: https://nodejs.org
-[deps]: https://david-dm.org/webpack-contrib/html-loader.svg
-[deps-url]: https://david-dm.org/webpack-contrib/html-loader
 [tests]: https://github.com/webpack-contrib/html-loader/workflows/html-loader/badge.svg
 [tests-url]: https://github.com/webpack-contrib/html-loader/actions
 [cover]: https://codecov.io/gh/webpack-contrib/html-loader/branch/master/graph/badge.svg

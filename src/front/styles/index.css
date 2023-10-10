@@ -12,6 +12,16 @@
 ////////////////////////////////////////////////////////////////
 */
 
+.font-red {
+    color: #ff2626;
+}
+.font-yellow {
+    color: #ffbf00;
+}
+.font-white {
+    color: #ffffff;
+}
+
 .iframe {
     width: 325px;
     height: 250px;

@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import comicbookguy from "../../img/comicbookguy.webp";
+import "../../styles/footer.css";
+
+
+
 
 export const Footer = () => {
 	const { store, actions } = useContext(Context);
@@ -12,17 +16,80 @@ export const Footer = () => {
 
 
 	return (
-		<footer className="footer mt-auto text-center">
-			<div className="container-fluid">
+		// <footer className="footer text-center border border-danger">
+			<div className="footerStyling container-fluid">
 				<div className="row">
-					<div className="col-8 text-start" style={{ color: "#f7d281" }}>
-						{store.nerdFact}
+
+					<div className="col-5 ps-5 text-start m-0">
+						<div className="container-fluid">
+							<div className="row">
+								<div className="col comicBookGuyCol">
+									<img src={store.nerdFact.image} className="comicBookGuyImg" />
+								</div>
+								<div className="col nerdFactCol">
+									<div className="box sb2">{store.nerdFact.quote}</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div className="col-3 text-center" style={{ color: "white" }}>
-						Made with <i className="fa fa-heart text-danger" /> by{" "}
-						3Nerds at 4Geeks
+
+					<div className="col-1 text-start m-0">
+						&nbsp;
 					</div>
-					<div className="col-1 text-end">
+
+					<div className="col-1 align-self-center">				
+						<div className="containerx">
+							<div className="worstBox badaboom font-red fs1p75 text-start">
+								Worst.
+							</div>
+							<div className="worstBox conventionBox badaboom font-yellow fs1p75 text-start">
+								Convention. 
+							</div>
+							<div className="worstBox conventionBox everconBox badaboom font-white fs1p75 text-start">
+								Evercon.
+							</div>
+						</div>
+					</div>
+
+
+					<div className="col-3 ps-5 align-self-center text-start">
+						<font className="fs0p75">
+							Brought to you by<br />
+							<a href="https://github.com/labs404" target="_blank">Jay</a>, <a href="https://github.com/NJCampbell" target="_blank">Nancy</a>, and <a href="https://github.com/thatreligionmajor" target="_blank">Theresa</a><br />
+							4Geeks Academy Class of 2023
+						</font>
+					</div>
+
+					<div className="col-2 text-center align-self-center">
+						<a href="#app">
+							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+							</svg> Back to top
+						</a>
+					</div>
+
+					{/* <div className="col-4 text-center align-self-center border border-danger">
+						<div className="container-fluid">
+							<div className="row">
+								<div className="col align-self-center">
+									<a href="#app">
+										<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+										</svg> Back to top
+									</a>
+								</div>
+								<div className="col align-self-center text-center border border-danger">
+									<font className="fs0p75">
+										Brought to you by<br />
+										<a href="https://github.com/labs404" target="_blank">Jay</a>, <a href="https://github.com/NJCampbell" target="_blank">Nancy</a>, and <a href="https://github.com/thatreligionmajor" target="_blank">Theresa</a><br />
+										4Geeks Academy Class of 2023
+									</font>
+								</div>
+							</div>
+						</div>
+
+					</div> */}
+					{/* <div className="col-1 text-end">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
 							<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
 						</svg>
@@ -32,9 +99,9 @@ export const Footer = () => {
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
 							<path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
 						</svg>
-					</div>
+					</div> */}
 				</div>
 			</div>
-		</footer>
+		// </footer>
 	);
 };

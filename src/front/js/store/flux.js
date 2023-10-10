@@ -250,11 +250,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//console log data
 			},
 			getNerdFact: async () => {
-				const response = await fetch("https://geek-jokes.sameerkumar.website/api?format=json");
+				const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
 				const data = await response.json();
-				console.log(data);
-				setStore({ nerdFact: data.joke })
-				return data.joke
+				console.log("this is the nerd quote ",data[0]);
+				setStore({ nerdFact: data[0] })
+				return data[0]
 			}
 		},
 	};
