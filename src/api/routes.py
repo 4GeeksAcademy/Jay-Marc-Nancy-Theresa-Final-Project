@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Favorites
 from api.utils import generate_sitemap, APIException
 from simyan.comicvine import Comicvine
 from simyan.sqlite_cache import SQLiteCache
@@ -192,7 +192,7 @@ def reset_password():
     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
 
-@ api.route('/change-password', methods=['POST'])
+@api.route('/change-password', methods=['POST'])
 def change_password():
     email = request.json.get("email", None)
     oldPassword = request.json.get("oldPassword", None)
@@ -212,6 +212,22 @@ def change_password():
     db.session.commit()
     return jsonify(user.serialize()), 200
     # return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
+
+@api.route('/favorite-events', methods=['POST'])
+@jwt_required()
+def favorite_event():
+    userEmail = get_jwt_identity()
+    user = User.query.filter_by(email=userEmail).first()
+    
+    newFavorite = Favorites(
+        user_id = user.id,
+        favorite_type = request.json.get("favoriteType"), 
+        event_id = request.json.get("eventId"),
+    )
+    db.session.add(newFavorite)
+    db.session.commit()
+    return jsonify("Successfully saved favorite: ", newFavorite.serialize()), 200
+
 
     # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.
