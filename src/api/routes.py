@@ -68,7 +68,7 @@ def create_token():
         raise APIException('User not found', status_code=404)
     access_token = create_access_token(identity=email)
     user_id = user.id
-    return jsonify(access_token=access_token, user_id=user_id)
+    return jsonify(access_token=access_token, user=user.serialize())
 
 
 # Protect a route with jwt_required, which will kick out requests
@@ -226,8 +226,18 @@ def favorite_event():
     )
     db.session.add(newFavorite)
     db.session.commit()
-    return jsonify("Successfully saved favorite: ", newFavorite.serialize()), 200
+    return jsonify("Successfully saved favorite: ", user.serialize()), 200
 
+@api.route('/delete-favorite', methods=['DELETE'])
+@jwt_required()
+def delete_event():
+    userEmail = get_jwt_identity()
+    user = User.query.filter_by(email=userEmail).first()
+    favoriteId = request.json.get("favoriteId")
+    favorite = Favorites.query.filter_by(id=favoriteId, user_id=user.id).first()
+    db.session.delete(favorite)
+    db.session.commit()
+    return jsonify("Successfully deleted favorite: ", favorite.serialize()), 200
 
     # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.

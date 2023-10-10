@@ -14,6 +14,7 @@ class User(db.Model):
     # login_method = db.Column(db.String(80), unique=False, nullable=True)
     phone = db.Column(db.String(20), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, server_default='true')
+    favorites = db.relationship("Favorites", backref="user", lazy=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -26,6 +27,7 @@ class User(db.Model):
             "last_name": self.last_name,
             # "login_method": self.login_method,
             "phone": self.phone,
+            "favorites": [favorite.serialize() for favorite in self.favorites],
         }
 
 
@@ -58,10 +60,10 @@ class Favorites(db.Model):
     magic_id = db.Column(db.Integer, db.ForeignKey('Magic.id'), nullable=True)
     magic_name = db.Column(db.String(80), unique=False, nullable=True)
     name = db.relationship(Magic)
-    user = db.relationship(User)
+    # user = db.relationship(User)
     event_id = db.Column(db.Integer, unique=False, nullable=True)
     favorite_type = db.Column(db.String(80))
-
+    # userFavorites = db.relationship("User", backref="favorites", lazy=True)
     def __repr__(self):
         return f'<Favorites {self.id}>'
 
@@ -74,7 +76,6 @@ class Favorites(db.Model):
             "event_id": self.event_id,
             "favorite_type": self.favorite_type
         }
-
 
 # class Events(db.Model):
 #     __tablename__ = 'Events'
