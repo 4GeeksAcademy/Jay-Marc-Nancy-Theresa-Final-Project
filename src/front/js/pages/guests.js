@@ -13,11 +13,21 @@ export const Guests = props => {
 		<div className="jumbotron">
 
 
-			<button className="popArtButton" role="button">Button 52</button>
 
 
 
-			<h1>hello from guests</h1>
+
+			{/* <button className="popArtButton" role="button">Button 52</button> */}
+
+
+
+			<h1 className="badaboom">hello from guests</h1>
+
+
+
+
+
+
 			{store.token && store.token != "" && store.token != undefined ? 
 			<p>token is {store.token}</p>
 			:

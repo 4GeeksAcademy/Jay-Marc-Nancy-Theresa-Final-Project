@@ -171,10 +171,10 @@ export const Featured = () => {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-10 text-start ps-4">
-                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">RK POST</font> : <font className="font-spidey-darkblue fs2p0">featured artist profile</font></h1>
+                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">RK POST</font> : <font className="font-spidey-darkBlue fs2p0">featured artist profile</font></h1>
                                 </div>
                                 <div className="col-2 text-end align-self-center">
-                                    <button type="button" className="exitButton font-spidey-darkblue" data-bs-dismiss="modal" aria-label="Close">
+                                    <button type="button" className="exitButton font-spidey-darkBlue" data-bs-dismiss="modal" aria-label="Close">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
@@ -184,7 +184,7 @@ export const Featured = () => {
                         </div>
                     </div>
                     <div className="modal-body featuredModalBody">
-                        <p className="m-2 font-spidey-darkblue">
+                        <p className="m-2 font-spidey-darkBlue">
                         With his unique art style and one-of-a-kind personality, Randy “rk” Post often finds himself at home as a featured artist across numerous venues. Many know rk from his expansive body of work with Magic: the Gathering, but his limits seem to know no bounds. rk has done extensive work spanning from pure magnificence with Marvel and Microsoft to the depths of Hell in Diablo and World of Warcraft. We are proud and excited to feature rk post along with his brand of humor and beautiful illustrations.
                         </p>
                         {/* start magic card mapping */}
@@ -221,10 +221,10 @@ export const Featured = () => {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-10 text-start ps-4">
-                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">FIONA STAPLES</font> : <font className="font-spidey-darkblue fs2p0">featured artist profile</font></h1>
+                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">FIONA STAPLES</font> : <font className="font-spidey-darkBlue fs2p0">featured artist profile</font></h1>
                                 </div>
                                 <div className="col-2 text-end align-self-center">
-                                    <button type="button" className="exitButton font-spidey-darkblue" data-bs-dismiss="modal" aria-label="Close">
+                                    <button type="button" className="exitButton font-spidey-darkBlue" data-bs-dismiss="modal" aria-label="Close">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
@@ -234,7 +234,7 @@ export const Featured = () => {
                         </div>                        
                     </div>
                     <div className="modal-body featuredModalBody">
-                        <p className="m-2 font-spidey-darkblue">
+                        <p className="m-2 font-spidey-darkBlue">
                         Fiona Staples is the Canadian born illustrator behind the masterpiece known as Saga. Arguably one of the best artists in the industry, Staples is iconic, and unique, and the winner of multiple Eisner and Harvey awards. Other well known works by Staples include the Archie revamp, the Chronicles of Narnia, and DV8: Gods and Monsters. 
                         </p>
                         {/* start magic card mapping */}
@@ -279,10 +279,10 @@ export const Featured = () => {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="col-10 text-start ps-4">
-                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">ANTHONY BURCH</font> : <font className="font-spidey-darkblue fs2p0">featured artist profile</font></h1>
+                                    <h1 className="modal-title badaboom"><font className="font-white fs3p25 textBorderDarkBlue">ANTHONY BURCH</font> : <font className="font-spidey-darkBlue fs2p0">featured artist profile</font></h1>
                                 </div>
                                 <div className="col-2 text-end align-self-center">
-                                    <button type="button" className="exitButton font-spidey-darkblue" data-bs-dismiss="modal" aria-label="Close">
+                                    <button type="button" className="exitButton font-spidey-darkBlue" data-bs-dismiss="modal" aria-label="Close">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                                         </svg>
@@ -292,7 +292,7 @@ export const Featured = () => {
                         </div>                        
                     </div>
                     <div className="modal-body featuredModalBody">
-                        <p className="m-2 font-spidey-darkblue">
+                        <p className="m-2 font-spidey-darkBlue">
                             The multitalented Anthony Burch has been the recipient of the coveted Forbes 30 Under 30 as well as <i>several</i> Audioverse Awards for his work with Dungeons and Daddies. Prior to his prolific podcast career, Anthony was a writer for several video game developers, such ad Visual Concepts, Riot Games, and Gearbox with notable works on Borderlands 2. Anthony also dabbled in writing comic books and has published works under Big Trouble in Little China: Old Man Jack and Rocko’s Modern Afterlife. Please check out the podcast reel below and delve into Anthony’s personal website for much more content!
                         </p>
                         {/* start dungeons and daddies podcast mapping */}
