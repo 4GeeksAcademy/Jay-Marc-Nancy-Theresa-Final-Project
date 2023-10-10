@@ -34,10 +34,10 @@ class User(db.Model):
 class Magic(db.Model):
     __tablename__ = 'Magic'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=False, nullable=False),
-    type = db.Column(db.String(80), unique=False, nullable=False),
-    description = db.Column(db.String(120), unique=False, nullable=False),
-    level = db.Column(db.String(80), unique=False, nullable=False),
+    name = db.Column(db.String(80), unique=False, nullable=False)
+    type = db.Column(db.String(80), unique=False, nullable=False)
+    description = db.Column(db.String(120), unique=False, nullable=False)
+    level = db.Column(db.String(80), unique=False, nullable=False)
 
     def __repr__(self):
         return f'<Magic {self.id}>'
@@ -51,6 +51,32 @@ class Magic(db.Model):
             "level": self.level,
             "image": self.image
         }
+    
+# class Events(db.Model):
+#     __tablename__ = 'Events'
+#     id = db.Column(db.Integer, primary_key=True)
+#     event_name = db.Column(db.String(80), unique=False, nullable=False)
+#     event_date = db.Column(db.String(80), unique=False, nullable=False)
+#     event_time = db.Column(db.String(80), unique=False, nullable=False)
+#     event_location = db.Column(db.String(80), unique=False, nullable=False)
+#     event_description = db.Column(db.String(80), unique=False, nullable=False)
+#     event_image = db.Column(db.String(80), unique=False, nullable=False)
+#     # favorites = db.relationship('Favorites', backref='events')
+#     # user = relationship(User, backref='events')
+
+#     def __repr__(self):
+#         return f'<Events {self.event_name}>'
+
+#     def serialize(self):
+#         return {
+#             "id": self.id,
+#             "event_name": self.event_name,
+#             "event_date": self.event_date,
+#             "event_time": self.event_time,
+#             "event_location": self.event_location,
+#             "event_description": self.event_description,
+#             "event_image": self.event_image
+#         }
 
 
 class Favorites(db.Model):
@@ -76,29 +102,3 @@ class Favorites(db.Model):
             "event_id": self.event_id,
             "favorite_type": self.favorite_type
         }
-
-# class Events(db.Model):
-#     __tablename__ = 'Events'
-#     id = db.Column(db.Integer, primary_key=True)
-#     event_name = db.Column(db.String(80), unique=False, nullable=False)
-#     event_date = db.Column(db.String(80), unique=False, nullable=False)
-#     event_time = db.Column(db.String(80), unique=False, nullable=False)
-#     event_location = db.Column(db.String(80), unique=False, nullable=False)
-#     event_description = db.Column(db.String(80), unique=False, nullable=False)
-#     event_image = db.Column(db.String(80), unique=False, nullable=False)
-#     favorites = db.relationship('Favorites', backref='events')
-#     user = relationship(User, backref='events')
-
-#     def __repr__(self):
-#         return f'<Events {self.event_name}>'
-
-#     def serialize(self):
-#         return {
-#             "id": self.id,
-#             "event_name": self.event_name,
-#             "event_date": self.event_date,
-#             "event_time": self.event_time,
-#             "event_location": self.event_location,
-#             "event_description": self.event_description,
-#             "event_image": self.event_image
-#         }
