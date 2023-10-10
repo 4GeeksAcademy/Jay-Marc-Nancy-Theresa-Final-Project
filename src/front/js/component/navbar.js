@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
-// import "../../styles/navbar.css";
+import "../../styles/navbar.css";
 import conlogoText from "../../img/conlogoText.png";
 
 export const Navbar = () => {

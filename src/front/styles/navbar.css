@@ -1,3 +1,20 @@
 .navbarManualBottomMargin {
     margin: 0px 0px 125px 0px;
 }
+#primaryNav {
+    height: 80px;
+    background-color: #0d0d0c;
+    color: rgb(10, 10, 10);
+    margin-bottom: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+} 
+.navContainer {
+    margin: 0;
+}
+.navLogo {
+    height: 70px;
+    width: auto;
+}
