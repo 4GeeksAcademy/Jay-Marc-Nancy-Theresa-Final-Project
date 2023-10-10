@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			comicVendors: [],
 			artVendors: [],
 			merchVendors: [],
-      faq_data: []
+			faq_data: []
 		},
 		actions: {
 			initialLoading: () => {
@@ -86,14 +86,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			fetchRkPostCards: () => {
 				fetch("https://api.magicthegathering.io/v1/cards?contains=imageUrl&artist=rk%20post")
 
-				.then(response => {
-					if (!response.ok) throw Error(response.statusText);
-					return response.json();
-				})
-				.then(data => {
-					setStore({rkPostCards: data.cards})
-				})
-				.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
+					.then(response => {
+						if (!response.ok) throw Error(response.statusText);
+						return response.json();
+					})
+					.then(data => {
+						setStore({ rkPostCards: data.cards })
+					})
+					.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
 			},
 			getMessage: async () => {
 				const store = getStore();
@@ -113,14 +113,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getFAQData: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ faq_data: data.faq_data })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ faq_data: data.faq_data })
+					})
 				//console log data
-			},				
+			},
 			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
@@ -185,31 +185,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			
+
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
-				.then((response) => response.json()) 
-				.then((data) => {
-					console.log(data);
-					setStore({comicVendors:data.results});
-				}) 
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						setStore({ comicVendors: data.results });
+					})
 			},
 			getArtVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getArtVendors: ", data)
-					setStore({ artVendors: data.artVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getArtVendors: ", data)
+						setStore({ artVendors: data.artVendors })
+					})
 				//console.log(data);
 			},
 			getMerchVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getMerchVendors: ", data)
-					setStore({ merchVendors: data.merchVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getMerchVendors: ", data)
+						setStore({ merchVendors: data.merchVendors })
+					})
 				//console.log(data);
 
 			},
@@ -230,22 +230,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return data.joke
 			},
 			addFavorite: (event) => {
+				const store = getStore()
 				const favorites = getStore().favorites
 				const options = {
 					method: 'POST',
 					headers: {
+						"Content-Type": "application/json",
 						"Authorization": "Bearer " + store.token
 					},
 					body: JSON.stringify({
 						eventId: event.id,
-						favoriteType: "event"
+						// favoriteType: "event"
 					})
 				}
-				fetch(`${process.env.BACKEND_URL}/api/favorite-events`) 
-				.then((response) => response.json())
-				.then((data) => {
-					console.log(data)
-				})
+				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data)
+					})
 				// favorites.push(event)
 				// setStore({user.favorites: data.user.favorites})
 			},

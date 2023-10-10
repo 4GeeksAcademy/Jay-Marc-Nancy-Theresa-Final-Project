@@ -24,14 +24,8 @@ api = Blueprint('api', __name__)
 
 from flask_cors import CORS 
 from flask_cors import cross_origin
-
-
-
-api = Blueprint('api', __name__)
  
-# Setup the Flask-JWT-Extended extension
-
-    # return jsonify(response_body), 200
+# Setup the Flask-JWT-Extended extension   
 
 @api.route("/api/comics/publishers", methods=["GET"])
 def get_publishers():
@@ -70,18 +64,6 @@ def create_token():
     user_id = user.id
     return jsonify(access_token=access_token, user=user.serialize())
 
-
-# Protect a route with jwt_required, which will kick out requests
-# without a valid JWT present.
-
-# @api.route("/hello", methods=["GET"])
-# @jwt_required()
-# def get_hello():
-#     msg = {"message": "Hello from the backend!"}
-#     # return jsonify(msg)
-#     # Access the identity of the current user with get_jwt_identity
-#     current_user = get_jwt_identity()
-#     return jsonify(logged_in_as=current_user), 200   
 
 @api.route("/hello", methods=["GET"])
 @jwt_required()
@@ -159,8 +141,7 @@ def delete_user(id):
 def get_private():
 
     return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200  
-
-    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
+ 
 
 
 @api.route('/forgot-password', methods=['POST'])
@@ -221,7 +202,7 @@ def favorite_event():
     
     newFavorite = Favorites(
         user_id = user.id,
-        favorite_type = request.json.get("favoriteType"), 
+        # favorite_type = request.json.get("favoriteType"), 
         event_id = request.json.get("eventId"),
     )
     db.session.add(newFavorite)
