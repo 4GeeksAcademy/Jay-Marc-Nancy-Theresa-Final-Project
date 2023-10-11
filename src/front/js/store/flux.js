@@ -243,7 +243,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			getEvents: () => {
-				fetch("../../../../data.json") //need to edit the link
+				fetch("../../../../data.json") 
 					.then((resp) => resp.json())
 					.then((data) => {
 						console.log("myString: ", data)
