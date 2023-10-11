@@ -63,6 +63,9 @@
     display: inline-block;
     width: auto;
 }
+.accordion-body {
+    background-color: #f7d281c5 !important;
+}
 .full-accordion {
     display: inline-block;
     width: auto;

@@ -124,7 +124,7 @@ export const Schedule = () => {
                                         <div id={String('collapsebox' + event.id)} className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                             <div className="accordion-body">
                                                 <div className="full-accordion">
-                                                    {event.location}
+                                                    <b>{event.location}</b>
                                                 </div>
                                                 <div className=" full-accordion full-accordion-description">
                                                     {event.description}
