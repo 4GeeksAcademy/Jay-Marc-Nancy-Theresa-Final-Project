@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// forgotPassword: false,
 			// passwordRecovery: false,
 			user: [],
+			currentUser: null,
 			events: [],
 			hotels: [],
 			rkPostCards: [],
@@ -65,7 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const data = await response.json()
 					console.log("from backend", data)
 					sessionStorage.setItem("token", data.access_token);
-					setStore({ token: data.access_token })
+					setStore({ token: data.access_token, currentUser: data.user })
 					return true;
 				}
 				catch (error) {
@@ -213,6 +214,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
 					.then((response) => response.json())
@@ -254,6 +256,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json();
 				setStore({ nerdFact: data[0] })
 				return data[0]
+			},
+			addFavorite: (event) => {
+				const store = getStore()
+				const favorites = getStore().favorites
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + store.token
+					},
+					body: JSON.stringify({
+						eventId: event.id,
+						favoriteType: "event"
+					})
+				}
+				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data)
+					})
+				// favorites.push(event)
+				// setStore({user.favorites: data.user.favorites})
 			}
 		},
 	};

@@ -6,6 +6,11 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+/*     background: rgb(13,13,12);
+    background: linear-gradient(180deg, rgba(13,13,12,1) 0%, rgba(26,50,62,1) 100%);
+
+    background: rgb(13, 13, 12);
+    background: linear-gradient(180deg, rgba(13, 13, 12, 1) 0%, rgba(26, 50, 62, 1) 20%); */  
 }
 .homeDescriptionComicSound {
     height: 40px;
