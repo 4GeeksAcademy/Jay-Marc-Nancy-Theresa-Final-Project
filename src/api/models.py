@@ -14,6 +14,7 @@ class User(db.Model):
     # login_method = db.Column(db.String(80), unique=False, nullable=True)
     phone = db.Column(db.String(20), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, server_default='true')
+    favorites = db.relationship("Favorites", backref="user", lazy=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -26,6 +27,7 @@ class User(db.Model):
             "last_name": self.last_name,
             # "login_method": self.login_method,
             "phone": self.phone,
+            "favorites": [favorite.serialize() for favorite in self.favorites],
         }
 
 
@@ -49,30 +51,7 @@ class Magic(db.Model):
             "level": self.level,
             "image": self.image
         }
-
-
-class Favorites(db.Model):
-    __tablename__ = 'Favorites'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    magic_id = db.Column(db.Integer, db.ForeignKey('Magic.id'), nullable=False)
-    magic_name = db.Column(db.String(80), unique=False, nullable=False)
-    name = db.relationship(Magic)
-    user = db.relationship(User)
-
-    def __repr__(self):
-        return f'<Favorites {self.id}>'
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "user_id": self.user_id,
-            "magic_id": self.magic_id,
-            "magic_name": self.magic_name,
-
-        }
-
-
+    
 # class Events(db.Model):
 #     __tablename__ = 'Events'
 #     id = db.Column(db.Integer, primary_key=True)
@@ -82,8 +61,8 @@ class Favorites(db.Model):
 #     event_location = db.Column(db.String(80), unique=False, nullable=False)
 #     event_description = db.Column(db.String(80), unique=False, nullable=False)
 #     event_image = db.Column(db.String(80), unique=False, nullable=False)
-#     favorites = db.relationship('Favorites', backref='events')
-#     user = relationship(User, backref='events')
+#     # favorites = db.relationship('Favorites', backref='events')
+#     # user = relationship(User, backref='events')
 
 #     def __repr__(self):
 #         return f'<Events {self.event_name}>'
@@ -98,3 +77,28 @@ class Favorites(db.Model):
 #             "event_description": self.event_description,
 #             "event_image": self.event_image
 #         }
+
+
+class Favorites(db.Model):
+    __tablename__ = 'Favorites'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    magic_id = db.Column(db.Integer, db.ForeignKey('Magic.id'), nullable=True)
+    magic_name = db.Column(db.String(80), unique=False, nullable=True)
+    name = db.relationship(Magic)
+    # user = db.relationship(User)
+    event_id = db.Column(db.Integer, unique=False, nullable=True)
+    favorite_type = db.Column(db.String(80))
+    # userFavorites = db.relationship("User", backref="favorites", lazy=True)
+    def __repr__(self):
+        return f'<Favorites {self.id}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "magic_id": self.magic_id,
+            "magic_name": self.magic_name,
+            "event_id": self.event_id,
+            "favorite_type": self.favorite_type
+        }
