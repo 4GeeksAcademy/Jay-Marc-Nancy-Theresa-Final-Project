@@ -1,0 +1,100 @@
+.nerdFactImg {
+    height: 75px;
+    width: auto;
+}
+.footerStyling {
+    background-color: #0d0d0c;
+    color: #f8f7f7;
+    text-align: center;
+    min-height: 40px;
+    padding: 5px;
+}
+.worstConEverCol {
+    max-width: 75px;
+    height: 100%;
+    font-weight: 900;
+    margin: 0px;
+    padding: 0px;
+    text-align: end;
+    vertical-align: bottom;
+}
+.nerdFactImgCol {
+    max-width: 75px !important;
+    text-align: right;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.nerdFactCol {
+    width: auto;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box {
+    min-width: 300px;
+    margin: 5px 20px;
+    background: #EEEEEE;
+    padding: 10px;
+    text-align: center;
+    color: #0d0d0c;
+    position:relative;
+    border-radius: 5px;
+}
+.sb2:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #EEEEEE;
+    border-top: 10px solid #EEEEEE;
+    border-bottom: 10px solid transparent;
+    left: -19px;
+    top: 12px;
+}
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #f7b21f;
+}
+a:hover {
+    text-decoration: none;
+    color: #f1d18c;
+}
+.containerx {
+    min-width: 185px;
+    max-width: 185px;
+    min-height: 75px;
+    position: relative;
+    margin: 0px;
+  }
+.worstBox {
+    width: 200px;
+    height: 0px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    background: #FF0000;
+}
+.conventionBox {
+    z-index: 9;
+    margin: 22px;
+    background: #00FF00;
+}
+.everconBox {
+    z-index: 9;
+    margin: 44px 90px;
+    background: #0000FF;
+}
+.worstConEverDivSpacing {
+    min-width: 185px;
+    max-width: 185px;
+}
+.broughtToYouByDivSpacing {
+    min-width: 225px;
+    max-width: 225px;
+}

@@ -1,230 +1,146 @@
 @import url('https://fonts.cdnfonts.com/css/badaboom-bb');
 
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
-
-/* ////////////////////////////////////////////////////////////////
-/* DO NOT REMOVE THIS CODE -- THE SITE WILL CRASH */
-/* * {
-	font-family: "Comic Sans MS", "Comic Sans", cursive !important;
-}
-////////////////////////////////////////////////////////////////
-*/
-
-.iframe {
-    width: 325px;
-    height: 250px;
-    border: none;
-    overflow: hidden;
-    transition: transform .2s;
-}
-
-.iframe:hover {
-    transform: scale(1.05);
-}
-
-.fs4p0 {
-    font-size: 4.0rem;
-}
-
-.fs3p75 {
-    font-size: 3.75rem;
-}
-
-.fs3p5 {
-    font-size: 3.5rem;
-}
-
-.fs3p25 {
-    font-size: 3.25rem;
-}
-
-.fs3p0 {
-    font-size: 3.0rem;
-}
-
-.fs2p75 {
-    font-size: 2.75rem;
-}
-
-.fs2p5 {
-    font-size: 2.5rem;
-}
-
-.fs2p25 {
-    font-size: 2.25rem;
-}
-
-.fs2p0 {
-    font-size: 2.0rem;
-}
-
-.fs1p75 {
-    font-size: 1.75rem;
-}
-
-.fs1p5 {
-    font-size: 1.5rem;
-}
-
-.fs1p25 {
-    font-size: 1.25rem;
-}
-
-.fs1p0 {
-    font-size: 1.0rem;
-}
-
-.fs0p75 {
-    font-size: 0.75rem;
-}
-
-.fs0p5 {
-    font-size: 0.5rem;
-}
-
-
+/* start badaboom font */
 .badaboom {
     font-family: 'BadaBoom BB', sans-serif;
 }
+/* end badaboom font */
 
-.aboutDropdownHeader {
-    text-transform: capitalize !important;
-    color: fuchsia !important;
+
+
+/* start text borders */
+.textBorderDarkRed{
+    text-shadow: -2px 0 #902724, 0 2px #902724, 2px 0 #902724, 0 -2px #902724;
 }
-
-.hotelIMG {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+.textBorderLightRed {
+    text-shadow: -2px 0 #f23c27, 0 2px #f23c27, 2px 0 #f23c27, 0 -2px #f23c27;
 }
-
-.hotelCardContainer {
-    border: solid 4px black !important;
-    border-radius: 15px;
+.textBorderYellow{
+    text-shadow: -2px 0 #f7d281, 0 2px #f7d281, 2px 0 #f7d281, 0 -2px #f7d281;
 }
-
-.hotelCardHeader {
-    text-transform: capitalize !important;
+.textBorderLightBlue {
+    text-shadow: -2px 0 #1b729f, 0 2px #1b729f, 2px 0 #1b729f, 0 -2px #1b729f;
 }
-
-.homeDescriptionComicSound {
-    height: 40px;
-    width: auto;
-    margin: 0px;
-    padding: 0px;
+.textBorderDarkBlue {
+    text-shadow: -2px 0 #1a323e, 0 2px #1a323e, 2px 0 #1a323e, 0 -2px #1a323e;
 }
-
-.mtgCardImg {
-    width: 223px;
-    height: auto;
+.textBorderWhite{
+    text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
-
-.condensedCard {
-    width: 275px;
-    transition: transform .2s;
+.textBorderBlack{
+    text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 }
+/* end text borders */
 
-.condensedCard:hover {
-    transform: scale(1.05);
+
+
+/* start background color override */
+.bgDarkRed {
+    background-color: #902724 !important;
 }
-
-.cardScrollBars::-webkit-scrollbar {
-    width: 6px;
+.bgLightRed {
+    background-color: #f23c27 !important;
 }
-
-.cardScrollBars::-webkit-scrollbar-track {
-    background: #EEEEEE;
+.bgYellow {
+    background-color: #f7d281 !important;
 }
-
-.cardScrollBars::-webkit-scrollbar-thumb {
-    background: #bbbbbb;
-    border-radius: 5px;
+.bgLightBlue {
+    background-color: #1b729f !important;
 }
-
-.cardScrollBars::-webkit-scrollbar-thumb:hover {
-    background: #444444;
+.bgDarkBlue {
+    background-color: #1a323e !important;
 }
-
-.featuredArtistCard {
-    padding: 0px;
-    margin: 0px;
-    width: 400px;
-    opacity: 0.8;
-    transition: .5s;
+.bgBlack {
+    background-color: #000000 !important;
 }
-
-.featuredArtistCard:hover {
-    opacity: 1.0;
-    transition: .5s;
+.bgWhite {
+    background-color: #ffffff !important;
 }
+/* end background color override */
 
-.featuredArtistCard img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    object-position: 0px 0px;
-    margin: 0px;
-    padding: 0px 0px 0px 0px;
+
+
+/* start spidey color palette */
+.font-spidey-darkRed {
+    color: #902724 !important;
 }
-
-a.featuredArtistModalLink:link,
-a.featuredArtistModalLink:visited,
-a.featuredArtistModalLink:hover,
-a.featuredArtistModalLink:active {
-    text-decoration: none;
+.font-spidey-lightRed {
+    color: #f23c27 !important;
 }
-
-.copyrightOverlay {
-    position: relative;
-    bottom: 20px;
-    right: 0px;
-    font-size: 10px;
-    color: #eeff00;
-    background: rgba(0, 0, 0, 0.5);
+.font-spidey-yellow {
+    color: #f7d281 !important;
 }
-
-.copyrightOverlay a:link,
-a:visited {
-    color: #cdd832;
-    text-decoration: none;
-    font-weight: 300;
+.font-spidey-lightBlue {
+    color: #1b729f !important;
 }
-
-.copyrightOverlay a:hover,
-a:active {
-    color: #f7fcb6;
-    text-decoration: none;
-    font-weight: 500;
+.font-spidey-darkBlue {
+    color: #1a323e !important;
 }
+/* end spidey color palette */
 
-.magicCardTitle {
-    font-size: 0.8rem;
-    font-weight: 300;
+
+
+/* start conlogo color palette */
+.font-red {
+    color: #ff2626 !important;
 }
-
-.magicCardBody {
-    font-size: 0.8rem;
+.font-yellow {
+    color: #ffbf00 !important;
 }
-
-#primaryNav {
-    height: 80px;
-    background-color: black;
-    color: rgb(10, 10, 10);
-    margin-bottom: 50px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+.font-white {
+    color: #ffffff !important;
 }
+.font-black {
+    color: #000000 !important;
+}
+/* end conlogo color palette */
 
-/* footer {
-    background-color: black;
-    color: #f8f7f7;
-    padding: 2%;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-} */
+
+
+/* start font sizes */
+.fs4p0 {
+    font-size: 4.0rem;
+}
+.fs3p75 {
+    font-size: 3.75rem;
+}
+.fs3p5 {
+    font-size: 3.5rem;
+}
+.fs3p25 {
+    font-size: 3.25rem;
+}
+.fs3p0 {
+    font-size: 3.0rem;
+}
+.fs2p75 {
+    font-size: 2.75rem;
+}
+.fs2p5 {
+    font-size: 2.5rem;
+}
+.fs2p25 {
+    font-size: 2.25rem;
+}
+.fs2p0 {
+    font-size: 2.0rem;
+}
+.fs1p75 {
+    font-size: 1.75rem;
+}
+.fs1p5 {
+    font-size: 1.5rem;
+}
+.fs1p25 {
+    font-size: 1.25rem;
+}
+.fs1p0 {
+    font-size: 1.0rem;
+}
+.fs0p75 {
+    font-size: 0.75rem;
+}
+.fs0p5 {
+    font-size: 0.5rem;
+}
+/* end font sizes */
