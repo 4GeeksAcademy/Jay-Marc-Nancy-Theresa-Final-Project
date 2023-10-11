@@ -202,7 +202,7 @@ def favorite_event():
     
     newFavorite = Favorites(
         user_id = user.id,
-        # favorite_type = request.json.get("favoriteType"), 
+        favorite_type = request.json.get("favoriteType"), 
         event_id = request.json.get("eventId"),
     )
     db.session.add(newFavorite)

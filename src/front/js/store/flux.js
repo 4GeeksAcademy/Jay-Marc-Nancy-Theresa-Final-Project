@@ -240,7 +240,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify({
 						eventId: event.id,
-						// favoriteType: "event"
+						favoriteType: "event"
 					})
 				}
 				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
