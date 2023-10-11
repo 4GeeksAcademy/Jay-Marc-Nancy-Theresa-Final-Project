@@ -279,6 +279,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// favorites.push(event)
 				// setStore({user.favorites: data.user.favorites})
 			}
+			// deleteFavorite: (event) => {
+			// 	const store = getStore()
+			// 	const favorites = getStore().favorites
+			// 	const options = {
+			// 		method: 'DELETE',
+			// 		headers: {
+			// 			"Content-Type": "application/json",
+			// 			"Authorization": "Bearer " + store.token
+			// 		},
+			// 		body: JSON.stringify({
+			// 			eventId: event.id,
+			// 			favoriteType: "event"
+			// 		})
+			// 	}
+			// 	fetch(`${process.env.BACKEND_URL}api/delete-favorite`, options)
+			// 		.then((response) => response.json())
+			// 		.then((data) => {
+			// 			console.log(data)
+			// 		})
+			// }
+			//@NC, review this and filling in the heart SVG is not working
 		},
 	};
 };
