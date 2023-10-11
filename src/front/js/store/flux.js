@@ -43,6 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getComics: () => {
 				setStore({ comics: data.comics })
 			},
+
 			login: async (email, password) => {
 				const options = {
 					method: 'POST',
@@ -182,9 +183,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 				catch (error) {
 					console.log("login error!")
 				}
-				//reset the global store
-				setStore({ demo: demo });
 			},
+
+			resetPassword: async (email, newPassword, confirmPassword) => {
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(
+						{
+							email: email,
+							newPassword: newPassword,
+							confirmPassword: confirmPassword
+						}
+					)
+				}
+				try {
+					const response = await fetch(process.env.BACKEND_URL + "api/reset-password", options)
+					if (response.status !== 200) {
+						alert("Error!  Response Code: ", response.status)
+						return false;
+					}
+					const data = await response.json()
+					console.log("from backend", data)
+					return true;
+				}
+				catch (error) {
+					console.log("login error!")
+				}
+			},
+
 
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)

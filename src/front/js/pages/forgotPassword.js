@@ -1,31 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
 import { Context } from "../store/appContext";
 
 export const ForgotPassword = () => {
+    const form = useRef();
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
-    // const location = useLocation();
-    const searchParams = new URLSearchParams(window.location.search);
 
-    const handleForgotPassword = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        actions.forgotPassword(searchParams.get("email", "token"))
+
+        emailjs.sendForm('service_okvibjm', 'reset_password', form.current, 'UfJOkgaaOPu1K3y_Q')
+            .then((result) => {
+                console.log(result.text);
+                form.current.reset();
+            }, (error) => {
+                console.log(error.text);
+            });
     };
+
 
     return (
         <>
-            <div className="container">
+            <form ref={form} onSubmit={sendEmail}>
+                <label>Email</label>
+                <input type="email" name="user_email" />
+                <input type="submit" value="Send" />
+            </form>
+            {/* <div className="container">
                 <div align="center">
                     <h1>Forgot Password?</h1>
                     <input
                         type="text"
                         placeholder="enter email"></input>
-                    <button onClick={handleForgotPassword}>Reset Password</button>
+                    <button type="submit" value="Send" onClick={sendEmail}>Reset Password</button>
                     <button onClick={() => navigate("/login")}>Login</button>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
+

@@ -1,0 +1,34 @@
+#newComicsImg {
+
+    position: relative;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+#cardComics {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    row-gap: 10px;
+}
+
+.newComicsContainer {
+    margin: auto;
+    width: 90%;
+    padding: 3%;
+    text-align: center;
+    background-color: #f7d281;
+    margin-top: 70px;
+}
+
+.newComicsContainer h1 {
+    font-family: 'BadaBoom BB', sans-serif;
+    color: #0d0d0c;
+    font-size: 4rem;
+}
+
+#newComicsText {
+    padding: 5% 9% 5% 3%;
+    text-align: left;
+}
