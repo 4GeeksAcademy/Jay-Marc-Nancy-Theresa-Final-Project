@@ -89,7 +89,7 @@
 }
 .accordion-button:not(.collapsed)::after {
     content: "\02C5";
-    color: #1a323e;
+    color: white;
     background: none;
     justify-content: center;
     font-size: 1.5rem;
@@ -98,9 +98,9 @@
 }
 .accordion-button:focus {
     z-index: 3;
-    border-color: #105c83;
+    border-color: #0b5174 !important;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem #0a4e7083;
+    box-shadow: 0 0 0 0.25rem #0a4e7083 !important;
 }
 /* .accordion-body {
     background-color: #1b729f;
@@ -179,3 +179,6 @@
       font-size: 1.25rem;
     }
 }
+/* .preFooterPadding {
+    height: 1rem;
+} */

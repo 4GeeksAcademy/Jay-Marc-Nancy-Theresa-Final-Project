@@ -131,6 +131,7 @@ export const Schedule = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="preFooterPadding"></div>
                                     </div>
                                 </div>
                             </div>
