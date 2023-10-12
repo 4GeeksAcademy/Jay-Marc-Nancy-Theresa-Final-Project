@@ -14,7 +14,7 @@ export const FAQ = () => {
         <div className="container">
             {/* make jumbotron a component for this file, schedule, and vendors */}
             <div className="FAQJumbotron bg-light p-5 rounded-lg m-3">
-                <img src="https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80"></img>
+                <img src="https://images.unsplash.com/photo-1562613528-4d0856802a04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"></img>
                 <div className="jumbotronContent">
                     <h1 className="display-4" id="FAQJumbotronTitle">FAQ</h1>
                     <p className="lead">Have Questions? We Have Answers!</p>

@@ -13,7 +13,7 @@ export const Schedule = () => {
         <div className="container">
             {/* make jumbotron a component for this file and for vendors */}
             <div className="vendorJumbotron bg-light p-5 rounded-lg m-3">
-                <img src="https://images.unsplash.com/photo-1555725305-e823b44548de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"></img>
+                <img src="https://images.unsplash.com/photo-1613376023733-0a73315d9b06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"></img>
                 <div className="jumbotronContent">
                     <h1 className="display-4" id="scheduleJumbotronTitle">Schedule</h1>
                     <p className="lead">Learn and Grow</p>
