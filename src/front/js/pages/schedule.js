@@ -60,7 +60,8 @@ export const Schedule = () => {
                                                 <div className="event-description"><b>Description:</b> {event.description}</div>
                                             </div>
                                             <div className="favoritesButtonContainer">
-                                                { isFavorite ? (
+                                            {store.token && store.token !== "" && store.token !== undefined ?
+                                                 isFavorite ? (
                                                     <button className="eventFavoriteButton button-53" onClick={() => actions.deleteFavorite(event.id)}>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-heart-fill font-spidey-darkBlue" viewBox="0 0 16 16">
                                                             <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
@@ -73,6 +74,8 @@ export const Schedule = () => {
                                                         </svg>
                                                     </button>
                                                 )
+                                                :
+                                                <>&nbsp;</>
                                                 }
                                             </div>
                                         </div>
