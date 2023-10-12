@@ -34,6 +34,59 @@
 
 
 
+/* start link color overrides */
+.darkRedLinks {
+    color: #902724 !important;
+    text-decoration: none;
+}
+.darkRedLinks:hover {
+    color: #f23c27 !important;
+    text-decoration: none;
+}
+.lightRedLinks {
+    color: #f23c27 !important;
+    text-decoration: none;
+}
+.lightRedLinks:hover {
+    color: #902724 !important;
+    text-decoration: none;
+}
+.lightBlueLinks {
+    color: #1b729f !important;
+    text-decoration: none;
+}
+.lightBlueLinks:hover {
+    color: #1a323e !important;
+    text-decoration: none;
+}
+.darkBlueLinks {
+    color: #1a323e !important;
+    text-decoration: none;
+}
+.darkBlueLinks:hover {
+    color: #1b729f !important;
+    text-decoration: none;
+}
+.lightYellowLinks {
+    color: #f1d18c !important;
+    text-decoration: none;
+}
+.lightYellowLinks:hover {
+    color: #f7b21f !important;
+    text-decoration: none;
+}
+.darkYellowLinks {
+    color: #f7b21f !important;
+    text-decoration: none;
+}
+.darkYellowLinks:hover {
+    color: #f1d18c !important;
+    text-decoration: none;
+}
+/* end link color overrides */
+
+
+
 /* start background color override */
 .bgDarkRed {
     background-color: #902724 !important;
@@ -43,6 +96,12 @@
 }
 .bgYellow {
     background-color: #f7d281 !important;
+}
+.bgLightYellow {
+    background-color: #f1d18c !important;
+}
+.bgLightestYellow {
+    background-color: #f0e5cc !important;
 }
 .bgLightBlue {
     background-color: #1b729f !important;
@@ -95,6 +154,31 @@
 }
 /* end conlogo color palette */
 
+
+
+/* start border color override */
+.borderDarkRed {
+    border-color:  #902724 !important;
+}
+.borderLightRed {
+    border-color:  #f23c27 !important;
+}
+.borderYellow {
+    border-color:  #f7d281 !important;
+}
+.borderLightBlue {
+    border-color:  #1b729f !important;
+}
+.borderDarkBlue {
+    border-color:  #1a323e !important;
+}
+.borderBlack {
+    border-color:  #000000 !important;
+}
+.borderWhite {
+    border-color:  #ffffff !important;
+}
+/* end border color override */
 
 
 /* start font sizes */
