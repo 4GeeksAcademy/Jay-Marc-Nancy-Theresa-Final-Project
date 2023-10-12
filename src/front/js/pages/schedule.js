@@ -87,17 +87,17 @@ export const Schedule = () => {
                 </div>
                 {/* Table View */}
                 <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
-                    <div className="row row-key text-secondary">
-                        <div className="col-3 accordion-element-spacing table-head">
+                    <div className="row row-key">
+                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Date
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head">
+                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Start
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head">
+                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             End
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head">
+                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Event
                         </div>
                     </div>
@@ -107,18 +107,18 @@ export const Schedule = () => {
                                 <div className="accordion" id="accordionExample">
                                     <div className="accordion-item">
                                         <h2 className="accordion-header" id={event.id}>
-                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
+                                            <button className="accordion-button scheduleAccordionButton collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}>
                                                 <div className="row">
-                                                    <div className="col-3 accordion-element-spacing">
+                                                    <div className="col-3 accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
                                                         {event.date}
                                                     </div>
-                                                    <div className="col-3 accordion-element-spacing">
+                                                    <div className="col-3 accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
                                                         {event.start_time}
                                                     </div>
-                                                    <div className="col-3 accordion-element-spacing">
+                                                    <div className="col-3 accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
                                                         {event.end_time}
                                                     </div>
-                                                    <div className="col-3 accordion-element-spacing">
+                                                    <div className="col-3 accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
                                                         {event.event_name}
                                                     </div>
                                                 </div>

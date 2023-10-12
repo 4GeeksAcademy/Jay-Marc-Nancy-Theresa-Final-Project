@@ -58,8 +58,14 @@
 .event:hover {
 	background-color: #0a4e70;
 }
+/* .row-key {
+    display: flex;
+    justify-content: normal;
+} */
 .table-head {
-    padding-left: 3rem;
+    padding-left: 4.7rem;
+    letter-spacing: .25rem;
+    /* margin-left: 3rem; */
 }
 .accordion-element-spacing {
     display: inline-block;
@@ -78,9 +84,12 @@
 .accordion-item {
     margin-top: 1rem;
 }
+.scheduleAccordionButton {
+    letter-spacing: .1rem;
+}
 .accordion-button.collapsed {
     background-color: #1b729f;
-    color: white;
+    /* color: #f7d281; */
 }
 .accordion-button.collapsed:hover {
     background-color: #074768;
