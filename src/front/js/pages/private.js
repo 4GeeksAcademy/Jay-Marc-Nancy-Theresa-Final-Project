@@ -21,14 +21,15 @@ export const Private = () => {
             <p>From your account dashboard you can view your bookmarked favorites.</p>
             <h2>My Favorites</h2>
             <div className="row">
-                {store.favorites.map((item, index) => {
+                {store.favorites.map((index, item) => {
                     return (
                         <div className="card col-3" key={index}>
-                            <img src={item.image} className="card-img-top" alt="..." />
+                            <h1>{item.index}</h1>
+                            {/* <img src={item.image} className="card-img-top" alt="..." /> */}
                             <div className="card-body">
-                                <h5 className="card-title">{item.name}</h5>
-                                <p className="card-text">{item.description}</p>
-                                <a href={item.url} className="btn btn-primary">Go to website</a>
+                                {/* <h5 className="card-title">{item.name}</h5>
+                                <p className="card-text">{item.description}</p> */}
+                                {/* <a href={item.url} className="btn btn-primary">Go to website</a> */}
                             </div>
                         </div>
                     )

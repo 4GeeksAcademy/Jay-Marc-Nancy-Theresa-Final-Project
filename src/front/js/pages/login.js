@@ -31,7 +31,7 @@ export const Login = () => {
                             <img src={deadpool} className="loginImg" alt="avatar" />
                         </div>
                         <div className="col-6">
-                            {(store.token && store.token !== "" && store.token !== undefined) ? "You are logged in with token"
+                            {(store.token && store.token !== "" && store.token !== undefined) ? "You are logged in."
                                 :
                                 <div align="center">
                                     <h1>Login</h1>

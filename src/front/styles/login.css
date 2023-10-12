@@ -22,7 +22,6 @@
     background: #f7d281;
 }
 
-
 .login-box {
     border-radius: 5%;
     background: #f7d281;
@@ -45,7 +44,8 @@
 
 .loginImg {
     position: relative;
-    border-radius: 5%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
     width: 100%;
     height: auto;
     object-fit: cover;

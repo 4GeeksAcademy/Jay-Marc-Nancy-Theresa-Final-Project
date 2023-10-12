@@ -12,7 +12,7 @@ export const NewReleases = () => {
     return (
         <div className="newComicsContainer">
             <div className="col">
-                <h1>New Releases</h1>
+                <h1>Comic New Releases</h1>
             </div>
 
             <div>
@@ -25,13 +25,13 @@ export const NewReleases = () => {
                                 </div>
 
                                 <div className="col my-3" id="newComicsText">
-                                    <h5 className=""> {item.title}</h5>
-                                    <p className="text">Publisher: {item.publisher}</p>
-                                    <p className="text">Description: {item.description}</p>
-                                    <p className="text">Price: {item.price}</p>
-                                    <p className="text">Creators: {item.creators}</p>
-                                    <p className="text">Release date: {item.release_date}</p>
-                                    <p className="text">Diamond Id: {item.diamond_id}</p>
+                                    <h5 className="comicTitle"> {item.title}</h5>
+                                    <p className="text">Publisher: <span>{item.publisher}</span> </p>
+                                    <p className="text">Description: <span>{item.description}</span></p>
+                                    <p className="text">Price: <span>{item.price}</span></p>
+                                    <p className="text">Creators: <span>{item.creators}</span></p>
+                                    <p className="text">Release date: <span>{item.release_date}</span></p>
+                                    <p className="text">Diamond Id: <span>{item.diamond_id}</span> </p>
                                 </div>
                             </div>
                         </div>
