@@ -19,20 +19,15 @@
 #vendorJumbotronTitle {
     font-family: 'BadaBoom BB', sans-serif;
 }
-.accordion-button.collapsed:hover {
-    /* background-color: #E8F0E4; */ /* green colorway */
-    /* @NC: why are these new hashes not taking? */
+/* .accordion-button.collapsed:hover {
     background-color: #d8e2e7;
 }
 .accordion-button:not(.collapsed) {
-    /* color: #37472f; */ /*green colorway */
     color: #2c3a41;
-    /* background-color: #c9dac1; */ /*green colorway */
     background-color: #c1d6e0;
 }
 .accordion-button:not(.collapsed)::after {
     content: "\02C5";
-    /* color: #37472f; */ /*green colorway */
     color: #2c3a41;
     background: none;
     display: flex;
@@ -43,14 +38,19 @@
 }
 .accordion-button:focus {
     z-index: 3;
-    /* border-color: #d8e4d2; */ /* green colorway */
     border-color: #cdd9df;
     outline: 0;
-    /* box-shadow: 0 0 0 0.25rem #9aaf90b6; */ /* green colorway */
     box-shadow: 0 0 0 0.25rem #8fa3ad;
 }
 .accordion-body {
-    /* background-color: #f6fcf4; */ /* green colorway */
     background-color: #f4fafd;
     columns: 3 auto;
-}
+} */
+
+/* background-color: #E8F0E4; */ /* green colorway */
+/* color: #37472f; */ /*green colorway */
+/* background-color: #c9dac1; */ /*green colorway */
+/* color: #37472f; */ /*green colorway */
+/* border-color: #d8e4d2; */ /* green colorway */
+/* box-shadow: 0 0 0 0.25rem #9aaf90b6; */ /* green colorway */
+/* background-color: #f6fcf4; */ /* green colorway */

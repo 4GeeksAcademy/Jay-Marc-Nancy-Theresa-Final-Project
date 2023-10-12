@@ -79,15 +79,15 @@
     margin-top: 1rem;
 }
 .accordion-button.collapsed {
-    background-color: #1b729f !important;
+    background-color: #1b729f;
     color: white;
 }
 .accordion-button.collapsed:hover {
-    background-color: #074768 !important;
+    background-color: #074768;
 }
 .accordion-button:not(.collapsed) {
-    background-color: #12658f !important;
-    color: white !important;
+    background-color: #12658f;
+    color: white;
 }
 .accordion-button:not(.collapsed)::after {
     content: "\02C5";
@@ -100,9 +100,9 @@
 }
 .accordion-button:focus {
     z-index: 3;
-    border-color: #0b5174 !important;
+    border-color: #0b5174;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem #0a4e7083 !important;
+    box-shadow: 0 0 0 0.25rem #0a4e7083;
 }
 /* .accordion-body {
     background-color: #1b729f;

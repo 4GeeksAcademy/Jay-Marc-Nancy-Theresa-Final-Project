@@ -21,7 +21,7 @@
 #FAQJumbotronTitle {
     font-family: 'BadaBoom BB', sans-serif;
 }
-.accordion-element-spacing {
+/* .accordion-element-spacing {
     display: inline-block;
     width: auto;
 }
@@ -58,7 +58,4 @@
     border-color: #d8e4d2;
     outline: 0;
     box-shadow: 0 0 0 0.25rem #9aaf90b6;
-}
-.accordion-body {
-    background-color: #f6fcf4;
-}
+} */
