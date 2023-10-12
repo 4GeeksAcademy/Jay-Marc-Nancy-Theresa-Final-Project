@@ -19,6 +19,9 @@
 #vendorJumbotronTitle {
     font-family: 'BadaBoom BB', sans-serif;
 }
+.accordion-body-overflow {
+    columns: 3 auto;
+}
 /* .accordion-button.collapsed:hover {
     background-color: #d8e2e7;
 }
@@ -43,9 +46,6 @@
     box-shadow: 0 0 0 0.25rem #8fa3ad;
 }
 */
-.accordion-body-overflow {
-    columns: 3 auto;
-}
 
 /* background-color: #E8F0E4; */ /* green colorway */
 /* color: #37472f; */ /*green colorway */
