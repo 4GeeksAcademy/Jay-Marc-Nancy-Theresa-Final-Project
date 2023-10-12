@@ -33,7 +33,7 @@ export const Vendors = props => {
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div className="accordion-body">
+                        <div className="accordion-body accordion-body-overflow">
                             <ul className="list-group">
                                 {store.comicVendors.map((vendor, idx) =>
                                     <a key={idx} href={vendor.site_url} target="_blank">
