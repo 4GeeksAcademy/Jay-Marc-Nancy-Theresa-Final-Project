@@ -275,9 +275,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then((response) => response.json())
 					.then((data) => {
 						console.log(data)
+						// favorites.push(event)
+						// setStore({ user.favorites: data.user.favorites })
 					})
-				// favorites.push(event)
-				// setStore({user.favorites: data.user.favorites})
+				
 			}
 			// deleteFavorite: (event) => {
 			// 	const store = getStore()
