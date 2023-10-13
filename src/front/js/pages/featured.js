@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/featured.css";
 import { MagicCard } from "../component/magicCard";
-
+ 
 import saga01 from "../../img/saga01.jpg";
 import saga02 from "../../img/saga02.jpg";
 import saga03 from "../../img/saga03.jpg";
