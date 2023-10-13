@@ -268,16 +268,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify({
 						eventId: event.id,
-						favoriteType: "event"
+						favoriteType: "event",
+						event_name: event.name,
 					})
 				}
 				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
 					.then((response) => response.json())
 					.then((data) => {
+						favorites.push(event)
+						setStore({ favorites: data.user.favorites })
 						console.log(data)
 					})
-				// favorites.push(event)
+
 				// setStore({user.favorites: data.user.favorites})
+			},
+			getFavorites: () => {
+				const store = getStore()
+				const options = {
+					method: 'GET',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + store.token
+					},
+
+				}
+				fetch(`${process.env.BACKEND_URL}api/get-favorite-events`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ favorites: data.favorites })
+						console.log("getFavorites: ", data)
+					})
 			}
 		},
 	};

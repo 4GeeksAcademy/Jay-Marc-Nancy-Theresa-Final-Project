@@ -69,19 +69,6 @@ def create_token():
     user_id = user.id
     return jsonify(access_token=access_token, user=user.serialize())
 
-# Protect a route with jwt_required, which will kick out requests
-# without a valid JWT present.
-
-# @api.route("/hello", methods=["GET"])
-# @jwt_required()
-# def get_hello():
-#     msg = {"message": "Hello from the backend!"}
-#     # return jsonify(msg)
-#     # Access the identity of the current user with get_jwt_identity
-#     current_user = get_jwt_identity()
-#     return jsonify(logged_in_as=current_user), 200
-
-
 @api.route("/hello", methods=["GET"])
 @jwt_required()
 def get_hello():
@@ -187,9 +174,6 @@ def forgot_password():
 #     db.session.commit()
 #     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
-
-
-
 @api.route('/reset-password', methods=['POST'])
 def reset_password():
 
@@ -208,7 +192,7 @@ def reset_password():
 
     # return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
-@api.route('/favorite-events', methods=['POST'])
+@api.route('/favorite-events', methods=['GET','POST'])
 @jwt_required()
 def favorite_event():
     userEmail = get_jwt_identity()
@@ -222,6 +206,15 @@ def favorite_event():
     db.session.add(newFavorite)
     db.session.commit()
     return jsonify("Successfully saved favorite: ", user.serialize()), 200
+
+@api.route('/get-favorite-events', methods=['GET'])
+@jwt_required()
+def get_favorite_events():
+    userEmail = get_jwt_identity()
+    user = User.query.filter_by(email=userEmail).first()
+    favorites = Favorites.query.filter_by(user_id=user.id).all()
+    all_favorites = list(map(lambda x: x.serialize(), favorites))
+    return jsonify(all_favorites), 200
 
 @api.route('/delete-favorite', methods=['DELETE'])
 @jwt_required()
@@ -284,3 +277,14 @@ def delete_event():
 #             "site_url": pub.site_url
 #         })
 #     return jsonify(results=publishers), 200
+# Protect a route with jwt_required, which will kick out requests
+# without a valid JWT present.
+
+# @api.route("/hello", methods=["GET"])
+# @jwt_required()
+# def get_hello():
+#     msg = {"message": "Hello from the backend!"}
+#     # return jsonify(msg)
+#     # Access the identity of the current user with get_jwt_identity
+#     current_user = get_jwt_identity()
+#     return jsonify(logged_in_as=current_user), 200

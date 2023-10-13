@@ -39,6 +39,7 @@ const injectContext = PassedComponent => {
 			state.actions.fetchGetAllComicVendors();
 			state.actions.getArtVendors();
 			state.actions.getMerchVendors();
+			state.actions.getFavorites();
 
 		}, []);
 
