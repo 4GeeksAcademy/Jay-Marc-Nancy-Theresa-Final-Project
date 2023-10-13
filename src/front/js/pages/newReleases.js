@@ -31,7 +31,7 @@ export const NewReleases = () => {
                                     <p className="text">Price: <span>{item.price}</span></p>
                                     <p className="text">Creators: <span>{item.creators}</span></p>
                                     <p className="text">Release date: <span>{item.release_date}</span></p>
-                                    <p className="text">Diamond Id: <span>{item.diamond_id}</span> </p>
+                                    <p className="text">Diamond Id: <span>{item.diamond_id}</span></p>
                                 </div>
                             </div>
                         </div>
