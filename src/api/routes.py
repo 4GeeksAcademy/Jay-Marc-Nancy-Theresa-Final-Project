@@ -22,13 +22,11 @@ import app
 # from dotenv import load_dotenv
 
 
+api = Blueprint('api', __name__)
 
-api = Blueprint('api', __name__)   
 
-from flask_cors import CORS 
-from flask_cors import cross_origin
- 
-# Setup the Flask-JWT-Extended extension  
+# Setup the Flask-JWT-Extended extension
+
 
 @api.route("/api/comics/publishers", methods=["GET"])
 def get_publishers():
@@ -156,9 +154,9 @@ def delete_user(id):
 @api.route('/private', methods=['GET'])
 @jwt_required()
 def get_private():
-    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200 
+    return jsonify({"msg": "This is a private endpoint, you need to be logged in to see it"}), 200
 
-   
+
 @api.route('/forgot-password', methods=['POST'])
 def forgot_password():
     email = request.json.get("email", None)
@@ -188,8 +186,6 @@ def forgot_password():
 #     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
 
-
-
 @api.route('/reset-password', methods=['POST'])
 def reset_password():
 
@@ -208,20 +204,22 @@ def reset_password():
 
     # return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
+
 @api.route('/favorite-events', methods=['POST'])
 @jwt_required()
 def favorite_event():
     userEmail = get_jwt_identity()
     user = User.query.filter_by(email=userEmail).first()
-    
+
     newFavorite = Favorites(
-        user_id = user.id,
-        favorite_type = request.json.get("favoriteType"), 
-        event_id = request.json.get("eventId"),
+        user_id=user.id,
+        favorite_type = request.json.get("favoriteType"),
+        event_id=request.json.get("eventId"),
     )
     db.session.add(newFavorite)
     db.session.commit()
     return jsonify("Successfully saved favorite: ", user.serialize()), 200
+
 
 @api.route('/delete-favorite', methods=['DELETE'])
 @jwt_required()
@@ -229,7 +227,8 @@ def delete_event():
     userEmail = get_jwt_identity()
     user = User.query.filter_by(email=userEmail).first()
     favoriteId = request.json.get("favoriteId")
-    favorite = Favorites.query.filter_by(id=favoriteId, user_id=user.id).first()
+    favorite = Favorites.query.filter_by(
+        id=favoriteId, user_id=user.id).first()
     db.session.delete(favorite)
     db.session.commit()
     return jsonify("Successfully deleted favorite: ", favorite.serialize()), 200
