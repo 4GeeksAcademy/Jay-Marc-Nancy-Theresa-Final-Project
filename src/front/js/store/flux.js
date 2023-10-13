@@ -67,6 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("from backend", data)
 					sessionStorage.setItem("token", data.access_token);
 					setStore({ token: data.access_token, currentUser: data.user })
+					// getActions().getFavorites();
 					return true;
 				}
 				catch (error) {
@@ -219,7 +220,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
 					.then((response) => response.json())
 					.then((data) => {
-						console.log(data);
+
 						setStore({ comicVendors: data.results });
 					})
 			},
@@ -275,29 +276,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
 					.then((response) => response.json())
 					.then((data) => {
-						favorites.push(event)
-						setStore({ favorites: data.user.favorites })
-						console.log(data)
+						// favorites.push(event)
+						setStore({ favorites: data.favorites })
+						console.log("hello from addFavorite() ",data)
 					})
 
 				// setStore({user.favorites: data.user.favorites})
 			},
-			getFavorites: () => {
-				const store = getStore()
+			getFavorites: async () => {
+				const store = getStore();
 				const options = {
 					method: 'GET',
 					headers: {
 						"Content-Type": "application/json",
 						"Authorization": "Bearer " + store.token
 					},
-
 				}
-				fetch(`${process.env.BACKEND_URL}api/get-favorite-events`, options)
-					.then((response) => response.json())
-					.then((data) => {
-						setStore({ favorites: data.favorites })
-						console.log("getFavorites: ", data)
-					})
+				const response = await fetch(`${process.env.BACKEND_URL}api/get-favorite-events`, options);
+				const data = await response.json();
+				console.log("getFavorites() raw data :",data)
+				setStore({ favorites: data })
 			}
 		},
 	};
