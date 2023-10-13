@@ -1,0 +1,21 @@
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 20px auto;
+    background-color: #f7d281;
+}
+
+.dashboard-wrapper {
+    color: #f7d281;
+    margin: auto;
+
+}
+
+.favorite-items {
+    font-family: 'BadaBoom BB', sans-serif;
+    font-size: 2rem;
+    color: black;
+}

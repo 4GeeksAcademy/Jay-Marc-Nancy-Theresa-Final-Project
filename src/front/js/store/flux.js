@@ -278,11 +278,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then((data) => {
 						// favorites.push(event)
 						setStore({ favorites: data.favorites })
-						console.log("hello from addFavorite() ",data)
+						console.log("hello from addFavorite() ", data)
 					})
 
 				// setStore({user.favorites: data.user.favorites})
 			},
+
+			deleteFavorite: (eventId) => {
+				const token = sessionStorage.getItem("token");
+
+				const options = {
+					method: 'DELETE',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + token
+					},
+					body: JSON.stringify({
+						eventId: eventId,
+						// favoriteType: favorite.favoriteType,
+					})
+				}
+				fetch(`${process.env.BACKEND_URL}api/delete-favorite`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.msg === "Successfully deleted favorite") {
+							let user = getStore().currentUser
+							user.favorites = data.newFavorites
+							setStore({ currentUser: user })
+						}
+
+					})
+
+			},
+
+
 			getFavorites: async () => {
 				const store = getStore();
 				const options = {
@@ -294,7 +323,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				const response = await fetch(`${process.env.BACKEND_URL}api/get-favorite-events`, options);
 				const data = await response.json();
-				console.log("getFavorites() raw data :",data)
+				console.log("getFavorites() raw data :", data)
 				setStore({ favorites: data })
 			}
 		},

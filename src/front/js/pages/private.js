@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
+import "../../styles/private.css";
 
 
 export const Private = () => {
@@ -13,25 +14,32 @@ export const Private = () => {
             : navigate("/login"));
     }, [store.token]);
 
-    useEffect(() => {
-        actions.getFavorites();
-    }, []);
+    // useEffect(() => {
+    //     // actions.getFavorites();
+    //     // actions.deleteFavorite();
+    // }, []);
 
     return (
-        <div className="text-center mt-5">
+        <div className="dashboard-wrapper text-center mt-5">
             <h1>Welcome to your account dashboard!</h1>
             <p>From your account dashboard you can view your bookmarked favorites.</p>
             <h2>My Favorites</h2>
-            <div className="row">
+            <div className="favorites-container">
 
-                {store.favorites && store.favorites.map && store.favorites.map((item, index) =>
+                {store.currentUser?.favorites.map((item, index) =>
                     <div key={index} className="font-white bgYellow m-3">
-                        {item.event_id}<br />
-                        {item.favorite_type}<br />
-                        {item.user_id}<br />
-                    </div> 
+                        <div className="favorite-items">
+                            {item.event_name}<br />
+                            {/* {item.event_id}<br /> */}
+
+                            {/* {item.favorite_type}<br /> */}
+                            {/* {item.user_id}<br /> */}
+                        </div>
+                        <button className="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Delete</button>
+                    </div>
+
                 )}
-                
+
             </div>
         </div>
     )
