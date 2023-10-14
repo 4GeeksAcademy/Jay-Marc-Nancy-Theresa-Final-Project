@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../../styles/private.css";
 
 
 export const Private = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
+    const { event_id } = useParams();
+    const parsedEventId = parseInt(event_id);
 
     useEffect(() => {
         if (store.token && store.token !== "" && store.token !== undefined ?
@@ -14,40 +16,36 @@ export const Private = () => {
             : navigate("/login"));
     }, [store.token]);
 
-    // useEffect(() => {
-    //     // actions.getFavorites();
-    //     // actions.deleteFavorite();
-    // }, []);
+    useEffect(() => {
+        actions.getFavorites();
+    }, [store.token]);
+
+    const getEventName = (eventId) => {
+        const event = store.events.find(event => event.id === eventId);
+        return event ? event.event_name : '';
+    };
 
     return (
         <div className="dashboard-wrapper text-center mt-5">
-            <h1>Welcome to your account dashboard!</h1>
-            <p>From your account dashboard you can view your bookmarked favorites.</p>
-            <h2>My Favorites</h2>
+            <h1 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">Welcome to your account dashboard!</h1>
+            <p>From your account dashboard you can view and edit your bookmarked favorites.</p>
+            <h2 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">My Favorites</h2>
             <div className="favorites-container">
-
-                {store.currentUser?.favorites.map((item, index) =>
+                {store.currentUser?.favorites.map((item, index) => (
                     <div key={index} className="font-white bgYellow m-3">
-                        <div className="favorite-items">
-                            {item.event_name}<br />
-                            {/* {item.event_id}<br /> */}
-
-                            {/* {item.favorite_type}<br /> */}
-                            {/* {item.user_id}<br /> */}
+                        <div className="row favorite-items">
+                            <div className="col-8">
+                                {getEventName(item.event_id)}<br />
+                                <hr className="favesDivider"></hr>
+                            </div>
+                            <div className="col-4">
+                                {/* {item.event_id}<br /> */}
+                                <button className="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Delete</button>
+                            </div>
                         </div>
-                        <button className="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Delete</button>
                     </div>
-
-                )}
-
+                ))}
             </div>
         </div>
-    )
+    );
 };
-
-// {item.event_id}<br />
-// {item.event_name}<br />
-// {item.favorite_type}<br />
-// {item.magic_id}<br />
-// {item.magic_name}<br />
-// {item.user_id}<br />

@@ -208,9 +208,35 @@ def favorite_event():
     return jsonify("Successfully saved favorite: ", user.serialize()), 200
 
 
+@api.route('/favorite-magic', methods=['GET', 'POST'])
+@jwt_required()
+def favorite_magic():
+    userEmail = get_jwt_identity()
+    user = User.query.filter_by(email=userEmail).first()
+
+    newFavorite = Favorites(
+        user_id=user.id,
+        favorite_type=request.json.get("favoriteType"),
+        magic_id=request.json.get("magic_id"),
+    )
+    db.session.add(newFavorite)
+    db.session.commit()
+    return jsonify("Successfully saved favorite: ", user.serialize()), 200
+
+
 @api.route('/get-favorite-events', methods=['GET'])
 @jwt_required()
 def get_favorite_events():
+    userEmail = get_jwt_identity()
+    user = User.query.filter_by(email=userEmail).first()
+    favorites = Favorites.query.filter_by(user_id=user.id).all()
+    all_favorites = list(map(lambda x: x.serialize(), favorites))
+    return jsonify(all_favorites), 200
+
+
+@api.route('/get-favorite-magic', methods=['GET'])
+@jwt_required()
+def get_favorite_magic():
     userEmail = get_jwt_identity()
     user = User.query.filter_by(email=userEmail).first()
     favorites = Favorites.query.filter_by(user_id=user.id).all()

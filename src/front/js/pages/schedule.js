@@ -7,7 +7,7 @@ export const Schedule = () => {
 
     useEffect(() => {
         actions.getEvents();
-    })
+    }, [])
 
     return (
         <div className="container">

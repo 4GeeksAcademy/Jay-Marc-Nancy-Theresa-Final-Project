@@ -66,7 +66,8 @@ export const Navbar = () => {
 								<ul className="dropdown-menu">
 									<li><Link to="/signup" className="dropdown-item" style={{ color: "black" }}>Signup</Link></li>
 									<li><Link to="/login" className="dropdown-item" style={{ color: "black" }}>Login</Link></li>
-									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
+									<li><Link to="/private" className="dropdown-item" style={{ color: "black" }}>Account Dashboard</Link></li>
+
 								</ul>
 							</li>
 							<li className="nav-item dropdown">
