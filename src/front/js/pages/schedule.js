@@ -35,7 +35,7 @@ export const Schedule = () => {
             </ul>
             <div className="tab-content" id="myTabContent">
                 <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabIndex="0">
-                    {/* Page View */}
+                    {/* Favorites View */}
                     <div className="container">
                         <div className="row-odd">
                             <div className="col-12">
@@ -88,21 +88,21 @@ export const Schedule = () => {
                 {/* Table View */}
                 <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabIndex="0">
                     <div className="row row-key">
-                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
+                        <div className="col-2 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Date
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
+                        <div className="col-2 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Start
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
+                        <div className="col-2 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             End
                         </div>
-                        <div className="col-3 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
+                        <div className="col-6 accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center">
                             Event
                         </div>
                     </div>
                     <div className="table-wrapper">
-                        {store.events.map((event, index) =>
+                        {/* {store.events.map((event, index) =>
                             <div className="row accordion-event" key={index}>
                                 <div className="accordion" id="accordionExample">
                                     <div className="accordion-item">
@@ -138,7 +138,52 @@ export const Schedule = () => {
                                     </div>
                                 </div>
                             </div>
+                        )} */}
+                        {store.events.map((event, index) =>
+                            <div className="row" key={index}>
+                                <a  className="container button-55 bgLightBlue borderYellow mt-3 yellowBorder" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + event.id)} aria-expanded="false" aria-controls={event.id}  id={event.id}>
+                                    <div className="container text-start">
+                                        <div className="row">
+                                            <div className="row">
+                                                <div className="col-2 eventAccordionLabel accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
+                                                    {event.date}
+                                                </div>
+                                                <div className="col-2 eventAccordionLabel accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
+                                                    {event.start_time}
+                                                </div>
+                                                <div className="col-2 eventAccordionLabel accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
+                                                    {event.end_time}
+                                                </div>
+                                                <div className="col-6 eventNameAccordionLabel accordion-element-spacing fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
+                                                    {event.event_name}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div className="container-fluid">
+                                    <div className="row">
+                                        <div className="col scheduleDropdownSpacer">
+                                        </div>
+                                        <div className="col m-0 p-0">
+                                            <div className="collapse mb-3" id={String('collapsebox' + event.id)}>
+                                                <div className="accordion-body">
+                                                    <div className="col-2 full-accordion accordion-location">
+                                                        {event.location}
+                                                    </div>
+                                                    <div className="col-6 full-accordion full-accordion-description">
+                                                        {event.description}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col scheduleDropdownSpacer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         )}
+
                     </div>
                 </div>
             </div>

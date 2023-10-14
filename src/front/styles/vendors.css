@@ -25,7 +25,15 @@
 .accordion-body-overflow {
     columns: 3 auto;
 }
-/* .accordion-item.button-55 {
+
+
+
+
+.yellowBorder {
+    border: #f7d281 solid 2px;
+}
+/* Jay's Styling */
+.accordion-item.button-55 {
     align-self: center;
     background-color: #f7d281;
     background-image: none;
@@ -61,12 +69,10 @@
   }
   .button-55:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-  } */
-
-/* background-color: #E8F0E4; */ /* green colorway */
-/* color: #37472f; */ /*green colorway */
-/* background-color: #c9dac1; */ /*green colorway */
-/* color: #37472f; */ /*green colorway */
-/* border-color: #d8e4d2; */ /* green colorway */
-/* box-shadow: 0 0 0 0.25rem #9aaf90b6; */ /* green colorway */
-/* background-color: #f6fcf4; */ /* green colorway */
+  }
+  .vendorDropdownSpacer {
+    min-width: 2px;
+    max-width: 2px;
+    margin: 0px;
+    padding: 0px;
+    }

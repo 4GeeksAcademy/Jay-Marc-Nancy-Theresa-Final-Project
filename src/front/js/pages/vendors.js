@@ -28,7 +28,7 @@ export const Vendors = props => {
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item ">
                     <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button vendorAccordionButton collapsed fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button className="accordion-button accordion-element-spacing table-head fs2p0 badaboom font-white textBorderBlack align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Comics
                         </button>
                     </h2>
@@ -46,7 +46,7 @@ export const Vendors = props => {
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button vendorAccordionButton collapsed fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button className="accordion-button collapsed fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Art
                         </button>
                     </h2>
@@ -54,9 +54,11 @@ export const Vendors = props => {
                         <div className="accordion-body">
                             <ul className="list-group">
                                 {data.art_vendors.map((artVendor, index) =>
+                                <div className="yellowBorder">
                                     <a key={index}>
                                         {artVendor.vendor_name}
-                                    </a>)
+                                    </a>
+                                </div>)
                                 }
                             </ul>
                         </div>
