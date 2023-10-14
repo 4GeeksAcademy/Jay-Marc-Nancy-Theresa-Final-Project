@@ -12,7 +12,7 @@ export const MagicCard =(props) => {
                 <img className="mtgCardImg" src={props.imageUrl} alt={props.name} />
                 <br /><br />
                 {store.token && store.token != "" && store.token != undefined ? 
-                    <button className="button-55 bgLightRed">
+                    <button className="button-55 bgLightRed"  onClick={() => actions.addFavoriteMagic()}>
                         Add to Favorites!
                     </button>
                 :

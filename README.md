@@ -17,9 +17,23 @@
 - npm cache clean --force
 - npm install
 
-// make your ports visible!!
+// make ports 3000 & 3001 visible (public)
 
-//optional step
+// new bash terminal
+- pipenv shell
+- pipenv run start
+- copy address and update .env
+
+// optional step
 - git add .
 - git commit -m "resolved pulling from main"
 - git push (edited) 
+
+// close all open terminals/npm/python
+
+// open new terminal
+- pipenv shell
+- pipenv run start
+
+// open new terminal
+- npm run start
