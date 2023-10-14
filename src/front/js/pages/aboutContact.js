@@ -13,7 +13,7 @@ export const AboutContact = () => {
     return (
         <>
             <div className="container text-center"> 
-                <div className="row spawnBackground">
+                <div className="row">
                     <div className="aboutJumbotron bg-light p-4 rounded-lg m-3">
                         <img src={spawn} />
                         <div className="jumbotronContent text-start">

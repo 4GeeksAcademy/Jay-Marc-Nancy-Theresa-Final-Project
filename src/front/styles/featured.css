@@ -90,11 +90,7 @@ a:active {
     transform: scale(1.05);
 }
 .featuredCardBody {
-    /* background-color: #902724; */
-    /* background-color: #f23c27; */
-    /* background-color: #f7d281; */
     background-color: #1b729f;
-    /* background-color: #1a323e; */
     border: solid 2px #f7d281;
 }
 
