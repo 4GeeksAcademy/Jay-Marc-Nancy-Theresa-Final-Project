@@ -88,8 +88,14 @@ class Favorites(db.Model):
     event_name = db.relationship(Events)
 
     # user = db.relationship(User)
+
+    event_id = db.Column(db.Integer, unique=False, nullable=True)
+    event_name = db.Column(db.String(80), unique=False, nullable=True)
+    favorite_type = db.Column(db.String(80))
+
     # event_id = db.Column(db.Integer, unique=False, nullable=True)
     # favorite_type = db.Column(db.String(80))
+
     # userFavorites = db.relationship("User", backref="favorites", lazy=True)
 
     def __repr__(self):
