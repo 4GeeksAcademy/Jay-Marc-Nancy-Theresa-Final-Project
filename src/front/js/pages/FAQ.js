@@ -26,7 +26,6 @@ export const FAQ = () => {
             <div className="col-12 text-start mt-3">
             {/* div link header to open/close collapsable content */}                
             {data.faq_data.map((faq_data, index) => 
-            <div>
                 <a type="button" className="container button-55 bgLightBlue borderYellow mt-3" data-bs-toggle="collapse" href="#how-we-got-started-collapse-component" role="button" aria-expanded="false" aria-controls="how-we-got-started-collapse-component">
                 <div className="container text-start">
                     <div className="row">
@@ -41,10 +40,10 @@ export const FAQ = () => {
                     </div>
                 </div>
             </a>
-                // )}
+                )}
              {/* collapsable content */}
              <div className="container-fluid">
-             {/* {data.faq_data.map((faq_data, index) =>  */}
+             {data.faq_data.map((faq_data, index) => 
              <div className="row">
                  <div className="col aboutDropdownSpacer">                                    
                  </div>
@@ -58,7 +57,6 @@ export const FAQ = () => {
                  <div className="col aboutDropdownSpacer">                                                                  
                  </div>
              </div>
-             </div>
              )}
          </div>
 
@@ -67,24 +65,24 @@ export const FAQ = () => {
 
 
 
-                    {/* // <div className="row accordion-event" key={index}>
-                    //     <div className="accordion" id="accordionExample">
-                    //         <div className="accordion-item">
-                    //             <h2 className="accordion-header" id={faq_data.id}>
-                    //             <button className="accordion-button FAQAccordionButton collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + faq_data.id)} aria-expanded="false" aria-controls={faq_data.id}>
-                    //                 {faq_data.question}
-                    //             </button>
-                    //             </h2>
-                    //             <div id={String('collapsebox' + faq_data.id)} className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    //                 <div className="accordion-body">
-                    //                     <div className="full-accordion">
-                    //                         {faq_data.answer}
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // </div> */}
+                    {/* <div className="row accordion-event" key={index}>
+                         <div className="accordion" id="accordionExample">
+                             <div className="accordion-item">
+                                 <h2 className="accordion-header" id={faq_data.id}>
+                                 <button className="accordion-button FAQAccordionButton collapsed" type="button" data-bs-toggle="collapse" data-bs-target={String('#collapsebox' + faq_data.id)} aria-expanded="false" aria-controls={faq_data.id}>
+                                     {faq_data.question}
+                                 </button>
+                                 </h2>
+                                 <div id={String('collapsebox' + faq_data.id)} className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                     <div className="accordion-body">
+                                         <div className="full-accordion">
+                                             {faq_data.answer}
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div> */}
         </div>
     </div>
     )
