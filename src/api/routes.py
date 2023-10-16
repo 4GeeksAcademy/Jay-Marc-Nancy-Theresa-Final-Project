@@ -173,6 +173,7 @@ def forgot_password():
 #     db.session.commit()
 #     return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
+
 @api.route('/reset-password', methods=['POST'])
 def reset_password():
 
@@ -192,20 +193,26 @@ def reset_password():
     # return jsonify({'msg': 'your password changes successfully, please return to login'}), 200
 
 
-@api.route('/favorite-events', methods=['GET', 'POST'])
+
+
+@api.route('/favorite-events', methods=['POST'])
+
 @jwt_required()
 def favorite_event():
     userEmail = get_jwt_identity()
     user = User.query.filter_by(email=userEmail).first()
 
     newFavorite = Favorites(
-        user_id=user.id,
-        favorite_type=request.json.get("favoriteType"),
+        user_id=user.id,       
+
+        favorite_type = request.json.get("favoriteType"),
+
         event_id=request.json.get("eventId"),
     )
     db.session.add(newFavorite)
     db.session.commit()
     return jsonify("Successfully saved favorite: ", user.serialize()), 200
+
 
 
 @api.route('/favorite-magic', methods=['GET', 'POST'])
@@ -244,12 +251,17 @@ def get_favorite_magic():
     return jsonify(all_favorites), 200
 
 
+
 @api.route('/delete-favorite', methods=['DELETE'])
 @jwt_required()
 def delete_event():
     userEmail = get_jwt_identity()
     user = User.query.filter_by(email=userEmail).first()
+
     favoriteId = request.json.get("eventId")
+
+    favoriteId = request.json.get("favoriteId")
+
     favorite = Favorites.query.filter_by(
         id=favoriteId, user_id=user.id).first()
     db.session.delete(favorite)

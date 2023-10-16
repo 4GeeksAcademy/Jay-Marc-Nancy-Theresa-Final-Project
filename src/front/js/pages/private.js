@@ -35,6 +35,7 @@ export const Private = () => {
         return event ? event.date : '';
     };
     return (
+
         <div className="dashboard-wrapper text-center mt-5">
             <h1 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">Welcome to your account dashboard!</h1>
             <p>From your account dashboard you can view and edit your bookmarked favorites.</p>
@@ -60,6 +61,22 @@ export const Private = () => {
                                     <button className="button-55" id="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Remove</button>
                                 </div>
                                 <hr className="favesDivider"></hr>
+
+        <div className="text-center mt-5">
+            <h1>Welcome to your account dashboard!</h1>
+            <p>From your account dashboard you can view your bookmarked favorites.</p>
+            <h2>My Favorites</h2>
+            <div className="row">
+                {store.favorites.map((index, item) => {
+                    return (
+                        <div className="card col-3" key={index}>
+                            <h1>{item.index}</h1>
+                            {/* <img src={item.image} className="card-img-top" alt="..." /> */}
+                            <div className="card-body">
+                                {/* <h5 className="card-title">{item.name}</h5>
+                                <p className="card-text">{item.description}</p> */}
+                                {/* <a href={item.url} className="btn btn-primary">Go to website</a> */}
+
                             </div>
                         </div>
                     </div>

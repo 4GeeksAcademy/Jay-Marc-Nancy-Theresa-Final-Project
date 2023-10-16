@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/badaboom-bb');
 
 .signup-wrapper {
-  border-radius: 4%;
+  border-radius: 6%;
   margin: 100px auto;
   padding: 0px 10px;
   display: flex;
@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
   width: 70%;
   background: #1b729f;
 }
@@ -47,7 +48,7 @@
 } */
 
 .groot {
-  width: 70%;
+  width: 80%;
   height: auto;
 }
 

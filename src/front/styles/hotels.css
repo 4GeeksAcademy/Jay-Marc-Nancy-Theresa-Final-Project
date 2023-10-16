@@ -10,3 +10,27 @@
 .hotelCardHeader {
     text-transform: capitalize !important;
 }
+.aboutDropdownSpacer {
+    min-width: 2px;
+    max-width: 2px;
+    margin: 0px;
+    padding: 0px;
+}
+.aboutJumbotron {
+    position: relative;
+    border: solid 3px #000000;
+    border-radius: 5px;
+}
+.aboutJumbotron img {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.aboutJumbotron .jumbotronContent {
+    position: relative;
+    z-index: 10;
+}
