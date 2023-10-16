@@ -51,7 +51,7 @@ export const Vendors = props => {
                     </div>
                     <div className="m-0 p-0">
                         <div className="collapse mb-3" id="comic-book-vendors-accordion-component">
-                            <div className="card card-body bgYellow mt-2 font-spidey-darkBlue">
+                            <div className="card card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                 <ul className="list-group comicAccordionContent mt-2 font-spidey-darkBlue">
                                     {store.comicVendors.map((vendor, idx) =>
                                         <a key={idx} href={vendor.site_url} target="_blank">
@@ -88,10 +88,10 @@ export const Vendors = props => {
                     </div>
                     <div className="m-0 p-0">
                         <div className="collapse mb-3" id="art-vendors-accordion-component">
-                            <div className="card card-body bgYellow mt-2 font-spidey-darkBlue">
+                            <div className="card card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                 <ul className="list-group">
                                     {data.art_vendors.map((artVendor, index) =>
-                                    <div className="yellowBorder">
+                                    <div className="font-spidey-darkBlue">
                                         <a key={index}>
                                             {artVendor.vendor_name}
                                         </a>
@@ -127,7 +127,7 @@ export const Vendors = props => {
                             </div>
                             <div className="m-0 p-0">
                                 <div className="collapse mb-3" id="how-we-got-started-collapse-component">
-                                    <div className="card card-body bgYellow mt-2 font-spidey-darkBlue">
+                                    <div className="card card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                         <ul className="list-group">
                                             {data.merch_vendors.map((merchVendor, index) =>
                                                 <a key={index}>
