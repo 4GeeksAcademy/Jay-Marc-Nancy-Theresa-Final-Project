@@ -8,7 +8,7 @@ export const FAQ = () => {
     
     useEffect(() => {
         actions.getFAQData();   
-    })
+    },[])
 
 	return (
         <div className="container">
@@ -26,10 +26,10 @@ export const FAQ = () => {
             <div className="col-12 text-start mt-3">
             {/* div link header to open/close collapsable content */}                
             {data.faq_data.map((faq_data, index) => 
-                <a type="button" className="container button-55 bgLightBlue borderYellow mt-3" data-bs-toggle="collapse" href="#how-we-got-started-collapse-component" role="button" aria-expanded="false" aria-controls="how-we-got-started-collapse-component">
+                <a type="button" key={index} className="container button-55 bgLightBlue borderYellow mt-3" data-bs-toggle="collapse" href={String('#collapsebox' + faq_data.id)} role="button" aria-expanded="false" aria-controls={faq_data.id}>
                 <div className="container text-start">
                     <div className="row">
-                        <div className="col-9 text-start text-uppercase fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
+                        <div id={faq_data.id} className="col-9 text-start text-uppercase fs2p0 badaboom font-spidey-yellow textBorderBlack align-self-center">
                             {faq_data.question}
                         </div>
                         {/* <div className="col-3 text-end font-spidey-yellow">
@@ -48,7 +48,7 @@ export const FAQ = () => {
                  <div className="col aboutDropdownSpacer">                                    
                  </div>
                  <div className="m-0 p-0">
-                     <div className="collapse mb-3" id="how-we-got-started-collapse-component">
+                     <div className="collapse mb-3" id={String('collapsebox' + faq_data.id)}>
                          <div className="card card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                              {faq_data.answer}
                          </div>
