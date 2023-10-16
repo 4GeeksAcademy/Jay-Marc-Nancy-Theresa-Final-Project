@@ -87,8 +87,8 @@ export const Navbar = () => {
 						</ul>
 						<div className="ml-auto">
 							{!store.token ?
-								<Link to="/">
-									<button className="btn" style={{ color: "#f7d281" }}>Logout</button>
+								<Link to="/login">
+									<button className="btn" style={{ color: "#f7d281" }}>Login</button>
 								</Link>
 								:
 								<Link to="/">
