@@ -28,7 +28,9 @@
 
 
 
-
+.vendor-card-body {
+    background-color: #f7d281;
+}
 .yellowBorder {
     border: #f7d281 solid 2px;
 }

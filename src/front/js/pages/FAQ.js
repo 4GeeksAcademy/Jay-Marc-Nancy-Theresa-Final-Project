@@ -26,6 +26,7 @@ export const FAQ = () => {
             <div className="col-12 text-start mt-3">
             {/* div link header to open/close collapsable content */}                
             {data.faq_data.map((faq_data, index) => 
+            <div>
                 <a type="button" className="container button-55 bgLightBlue borderYellow mt-3" data-bs-toggle="collapse" href="#how-we-got-started-collapse-component" role="button" aria-expanded="false" aria-controls="how-we-got-started-collapse-component">
                 <div className="container text-start">
                     <div className="row">
@@ -40,10 +41,10 @@ export const FAQ = () => {
                     </div>
                 </div>
             </a>
-                )}
+                // )}
              {/* collapsable content */}
              <div className="container-fluid">
-             {data.faq_data.map((faq_data, index) => 
+             {/* {data.faq_data.map((faq_data, index) =>  */}
              <div className="row">
                  <div className="col aboutDropdownSpacer">                                    
                  </div>
@@ -56,6 +57,7 @@ export const FAQ = () => {
                  </div>
                  <div className="col aboutDropdownSpacer">                                                                  
                  </div>
+             </div>
              </div>
              )}
          </div>
