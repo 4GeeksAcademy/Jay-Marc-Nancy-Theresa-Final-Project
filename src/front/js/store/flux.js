@@ -286,8 +286,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
 					.then((response) => response.json())
 					.then((data) => {
-						// favorites.push(event)
-						setStore({ favorites: data.favorites })
+						favorites.push(event)
+						setStore({ currentUser: data.favorites })
 						console.log("hello from addFavorite() ", data)
 					})
 			},

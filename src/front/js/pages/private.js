@@ -18,13 +18,22 @@ export const Private = () => {
 
     useEffect(() => {
         actions.getFavorites();
-    }, [store.token]);
+    }, []);
 
     const getEventName = (eventId) => {
         const event = store.events.find(event => event.id === eventId);
         return event ? event.event_name : '';
     };
 
+    const getEventTime = (eventId) => {
+        const event = store.events.find(event => event.id === eventId);
+        return event ? event.start_time : '';
+    };
+
+    const getEventDate = (eventId) => {
+        const event = store.events.find(event => event.id === eventId);
+        return event ? event.date : '';
+    };
     return (
         <div className="dashboard-wrapper text-center mt-5">
             <h1 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">Welcome to your account dashboard!</h1>
@@ -34,13 +43,23 @@ export const Private = () => {
                 {store.currentUser?.favorites.map((item, index) => (
                     <div key={index} className="font-white bgYellow m-3">
                         <div className="row favorite-items">
-                            <div className="col-8">
+                            <div className="col-12">
                                 {getEventName(item.event_id)}<br />
-                                <hr className="favesDivider"></hr>
+                                {getEventDate(item.event_id)}<br />
+                                {getEventTime(item.event_id)}
+
                             </div>
-                            <div className="col-4">
-                                {/* {item.event_id}<br /> */}
-                                <button className="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Delete</button>
+                            <div>
+
+                            </div>
+                            <div className="row">
+                                <div className="col-12 my-2">
+                                    {/* {item.event_id}<br /> */}
+                                    <p>Reserve your spot!</p>
+                                    <button className="button-55 mx-3" id="reserveButton">Buy</button>
+                                    <button className="button-55" id="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Remove</button>
+                                </div>
+                                <hr className="favesDivider"></hr>
                             </div>
                         </div>
                     </div>
