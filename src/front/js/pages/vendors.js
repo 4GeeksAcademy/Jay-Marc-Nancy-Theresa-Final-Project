@@ -27,7 +27,7 @@ export const Vendors = props => {
                 </div>
             </div>
             {/* accordion for comic book vendors */}
-            <div className="col-10 text-start mt-3">
+            <div className="col-12 text-start mt-3">
             {/* div link header to open/close collapsable content */}
             <a type="button" className="container button-55 bgLightBlue borderYellow mt-3 vendorAccordionButton" data-bs-toggle="collapse" href="#comic-book-vendors-accordion-component" role="button" aria-expanded="false" aria-controls="comic-book-vendors-accordion-component">
                 <div className="container text-start">
