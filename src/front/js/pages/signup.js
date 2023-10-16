@@ -29,7 +29,7 @@ export const Signup = () => {
         <div className="signup-wrapper">
             <div className="row" id="signup-box">
                 <div className="col-6" id="signup-form">
-                    <h1 className="my-3">Create Account</h1>
+                    <h1 className="fs2p0 badaboom font-spidey-yellow textBorderBlack my-3">Create Account</h1>
                     <div className="mb-3 row">
                         {/* <label htmlFor="first_name" className="col-sm-2 col-form-label" >First Name:</label> */}
                         <div className="col-sm-10">
@@ -93,12 +93,12 @@ export const Signup = () => {
                     <div className="row" id="signup-buttons">
                         <div className="col">
                             <Link to="/login">
-                                <button onClick={submitRequest}>Submit</button>
+                                <button className="button-53" onClick={submitRequest}>Submit</button>
                             </Link>
                         </div>
                         <div className="col">
                             <Link to="/login">
-                                <button>Cancel</button>
+                                <button className="button-53">Cancel</button>
                             </Link>
                         </div>
                         <div>

@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: [],
 			currentUser: null,
 			events: [],
+			eventDetails: [],
 			hotels: [],
 			rkPostCards: [],
 			favorites: [],
@@ -67,6 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("from backend", data)
 					sessionStorage.setItem("token", data.access_token);
 					setStore({ token: data.access_token, currentUser: data.user })
+					// getActions().getFavorites();
 					return true;
 				}
 				catch (error) {
@@ -96,6 +98,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("ERROR MESSAGE @ fetchRkPostCards()", error))
 			},
+
 			getMessage: async () => {
 				const store = getStore();
 				const options = {
@@ -113,6 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
+
 			getFAQData: () => {
 				fetch("../../../../data.json")
 					.then((resp) => resp.json())
@@ -120,8 +124,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("myString: ", data)
 						setStore({ faq_data: data.faq_data })
 					})
-				//console log data
 			},
+
 			getUserAdded: async (email, password, first_name, last_name, phone) => {
 				const store = getStore();
 				const options = {
@@ -157,6 +161,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("login error!")
 				}
 			},
+
 			forgotPassword: async (email, token) => {
 				const options = {
 					method: 'POST',
@@ -214,15 +219,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
 					.then((response) => response.json())
 					.then((data) => {
-						console.log(data);
 						setStore({ comicVendors: data.results });
 					})
 			},
+
 			getArtVendors: () => {
 				fetch("../../../../data.json")
 					.then((resp) => resp.json())
@@ -230,8 +234,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						// console.log("getArtVendors: ", data)
 						setStore({ artVendors: data.artVendors })
 					})
-				//console.log(data);
 			},
+
 			getMerchVendors: () => {
 				fetch("../../../../data.json")
 					.then((resp) => resp.json())
@@ -239,9 +243,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						// console.log("getMerchVendors: ", data)
 						setStore({ merchVendors: data.merchVendors })
 					})
-				//console.log(data);
-
 			},
+
 			getEvents: () => {
 				fetch("../../../../data.json") 
 					.then((resp) => resp.json())
@@ -249,14 +252,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("myString: ", data)
 						setStore({ events: data.events })
 					})
-				//console log data
 			},
+
+			fetchEventDetails: async (event_id) => {
+				const response = await fetch(`../../../../data.json/${event_id}`); //need to edit the link
+				let eventData = await response.json();
+				console.log(eventData)
+				getActions().fetchEventDetails({ data: eventData });
+			},
+
 			getNerdFact: async () => {
 				const response = await fetch("https://thesimpsonsquoteapi.glitch.me/quotes");
 				const data = await response.json();
 				setStore({ nerdFact: data[0] })
 				return data[0]
 			},
+
 			addFavorite: (event) => {
 				const store = getStore()
 				const favorites = getStore().favorites
@@ -268,17 +279,106 @@ const getState = ({ getStore, getActions, setStore }) => {
 					},
 					body: JSON.stringify({
 						eventId: event.id,
-						favoriteType: "event"
+						favoriteType: "event",
+						event_name: event.name,
 					})
 				}
 				fetch(`${process.env.BACKEND_URL}api/favorite-events`, options)
 					.then((response) => response.json())
 					.then((data) => {
-						console.log(data)
-						// favorites.push(event)
-						// setStore({ user.favorites: data.user.favorites })
+						favorites.push(event)
+						setStore({ currentUser: data.favorites })
+						console.log("hello from addFavorite() ", data)
 					})
-				
+			},
+
+			addFavoriteMagic: (magic) => {
+				const store = getStore()
+				const favorites = getStore().favorites
+				const options = {
+					method: 'POST',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + store.token
+					},
+					body: JSON.stringify({
+						eventId: magic.id,
+						favoriteType: "magic",
+						magic_name: magic.name,
+					})
+				}
+				fetch(`${process.env.BACKEND_URL}api/favorite-magic`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						// favorites.push(event)
+						setStore({ favorites: data.favorites })
+						console.log("hello from addFavorite() ", data)
+					})
+			},
+
+			deleteFavorite: (eventId) => {
+				const token = sessionStorage.getItem("token");
+				const options = {
+					method: 'DELETE',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + token
+					},
+					body: JSON.stringify({
+						eventId: eventId,
+					})
+				}
+				fetch(`${process.env.BACKEND_URL}api/delete-favorite`, options)
+					.then((response) => response.json())
+					.then((data) => {
+						if (data.msg === "Successfully deleted favorite") {
+							let user = getStore().currentUser
+							user.favorites = data.newFavorites
+							setStore({ currentUser: user })
+						}
+					})
+			},
+			// deleteFavorite: (magic_id) => {
+			// 	const token = sessionStorage.getItem("token");
+
+			// 	const options = {
+			// 		method: 'DELETE',
+			// 		headers: {
+			// 			"Content-Type": "application/json",
+			// 			"Authorization": "Bearer " + token
+			// 		},
+			// 		body: JSON.stringify({
+			// 			magic_id: magic_id,
+
+			// 		})
+			// 	}
+			// 	fetch(`${process.env.BACKEND_URL}api/delete-favorite`, options)
+			// 		.then((response) => response.json())
+			// 		.then((data) => {
+			// 			if (data.msg === "Successfully deleted favorite") {
+			// 				let user = getStore().currentUser
+			// 				user.favorites = data.newFavorites
+			// 				setStore({ currentUser: user })
+			// 			}
+
+			// 		})
+
+			// },
+
+
+			getFavorites: async () => {
+				const store = getStore();
+				const options = {
+					method: 'GET',
+					headers: {
+						"Content-Type": "application/json",
+						"Authorization": "Bearer " + store.token
+					},
+				}
+				const response = await fetch(`${process.env.BACKEND_URL}api/get-favorite-events`, options);
+				const data = await response.json();
+				console.log("getFavorites() raw data :", data)
+				setStore({ favorites: data })
 			}
 			// deleteFavorite: (event) => {
 			// 	const store = getStore()

@@ -1,8 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/badaboom-bb');
 
-
 .signup-wrapper {
-  border-radius: 4%;
+  border-radius: 6%;
   margin: 100px auto;
   padding: 0px 10px;
   display: flex;
@@ -10,8 +9,9 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+
   width: 70%;
-  background: #f7d281;
+  background: #1b729f;
 }
 
 #signup-box h1 {
@@ -20,9 +20,9 @@
   justify-content: center;
   align-items: center;
   font-family: 'BadaBoom BB', sans-serif;
-  font-size: 40px;
+  font-size: 4rem;
   border-bottom: 6px solid #0c0c0c;
-  margin: 95px 0px;
+  margin: 95px 15px;
   padding: 13px 0;
 }
 
@@ -34,19 +34,69 @@
 }
 
 #signup-buttons {
+  margin-top: 5%;
   display: inline-flex;
   flex-direction: row;
 }
 
-#signup-buttons button {
+/* #signup-buttons button {
   margin: 10px;
   border-radius: 10%;
   background: #1b729f;
   padding: 2px 10px;
   color: white;
-}
+} */
 
 .groot {
-  width: 70%;
+  width: 80%;
   height: auto;
+}
+
+.button-53 {
+  color: #000000 !important;
+  /* background-color: #3DD1E7; */
+  background: #f7d281 url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsimple-repeat.com%2Fimg%2Fpngimg%2Fbasic%2Fdot%2Fyellow%2FSolid256dot2_8_yellow.png&f=1&nofb=1&ipt=613ef9eda539cf7b865d41fba8fee56e6e6907b72697133b1700a4b598d59089&ipo=images");
+  /* background: yellow url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.digitalscrapbook.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F456_scale%2Fpublic%2Fs3fs-user-content%2Fgraphic-image%2Fuser-2%2Fnode-1135%2Fpolka-dots-23-overlay-graphic-pattern-template-black.png&f=1&nofb=1&ipt=65f44971ea57738a678a67404de83d9da284d1eb03234f48415e713876217e19&ipo=images"); */
+  background-size: 100px 100px;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #1a323e;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #1a323e solid;
+  text-decoration-thickness: auto;
+  width: auto;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #1a323e;
+  bottom: 6px;
+  left: 6px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
 }

@@ -4,33 +4,94 @@
 .badaboom {
     font-family: 'BadaBoom BB', sans-serif;
 }
+
 /* end badaboom font */
 
 
 
 /* start text borders */
-.textBorderDarkRed{
+.textBorderDarkRed {
     text-shadow: -2px 0 #902724, 0 2px #902724, 2px 0 #902724, 0 -2px #902724;
 }
+
 .textBorderLightRed {
     text-shadow: -2px 0 #f23c27, 0 2px #f23c27, 2px 0 #f23c27, 0 -2px #f23c27;
 }
-.textBorderYellow{
+
+.textBorderYellow {
     text-shadow: -2px 0 #f7d281, 0 2px #f7d281, 2px 0 #f7d281, 0 -2px #f7d281;
 }
+
 .textBorderLightBlue {
     text-shadow: -2px 0 #1b729f, 0 2px #1b729f, 2px 0 #1b729f, 0 -2px #1b729f;
 }
+
 .textBorderDarkBlue {
     text-shadow: -2px 0 #1a323e, 0 2px #1a323e, 2px 0 #1a323e, 0 -2px #1a323e;
 }
-.textBorderWhite{
+
+.textBorderWhite {
     text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
 }
-.textBorderBlack{
+
+.textBorderBlack {
     text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 }
+
 /* end text borders */
+
+
+
+/* start link color overrides */
+.darkRedLinks {
+    color: #902724 !important;
+    text-decoration: none;
+}
+.darkRedLinks:hover {
+    color: #f23c27 !important;
+    text-decoration: none;
+}
+.lightRedLinks {
+    color: #f23c27 !important;
+    text-decoration: none;
+}
+.lightRedLinks:hover {
+    color: #902724 !important;
+    text-decoration: none;
+}
+.lightBlueLinks {
+    color: #1b729f !important;
+    text-decoration: none;
+}
+.lightBlueLinks:hover {
+    color: #1a323e !important;
+    text-decoration: none;
+}
+.darkBlueLinks {
+    color: #1a323e !important;
+    text-decoration: none;
+}
+.darkBlueLinks:hover {
+    color: #1b729f !important;
+    text-decoration: none;
+}
+.lightYellowLinks {
+    color: #f1d18c !important;
+    text-decoration: none;
+}
+.lightYellowLinks:hover {
+    color: #f7b21f !important;
+    text-decoration: none;
+}
+.darkYellowLinks {
+    color: #f7b21f !important;
+    text-decoration: none;
+}
+.darkYellowLinks:hover {
+    color: #f1d18c !important;
+    text-decoration: none;
+}
+/* end link color overrides */
 
 
 
@@ -38,24 +99,40 @@
 .bgDarkRed {
     background-color: #902724 !important;
 }
+
 .bgLightRed {
     background-color: #f23c27 !important;
 }
+
 .bgYellow {
-    background-color: #f7d281 !important;
+    background-color: yellow !important;
 }
+
+
+
+.bgLightYellow {
+    background-color: #f1d18c !important;
+}
+.bgLightestYellow {
+    background-color: #f0e5cc !important;
+}
+
 .bgLightBlue {
     background-color: #1b729f !important;
 }
+
 .bgDarkBlue {
     background-color: #1a323e !important;
 }
+
 .bgBlack {
     background-color: #000000 !important;
 }
+
 .bgWhite {
     background-color: #ffffff !important;
 }
+
 /* end background color override */
 
 
@@ -64,18 +141,23 @@
 .font-spidey-darkRed {
     color: #902724 !important;
 }
+
 .font-spidey-lightRed {
     color: #f23c27 !important;
 }
+
 .font-spidey-yellow {
     color: #f7d281 !important;
 }
+
 .font-spidey-lightBlue {
     color: #1b729f !important;
 }
+
 .font-spidey-darkBlue {
     color: #1a323e !important;
 }
+
 /* end spidey color palette */
 
 
@@ -84,63 +166,107 @@
 .font-red {
     color: #ff2626 !important;
 }
+
 .font-yellow {
     color: #ffbf00 !important;
 }
+
 .font-white {
     color: #ffffff !important;
 }
+
 .font-black {
     color: #000000 !important;
 }
+
 /* end conlogo color palette */
 
+
+
+/* start border color override */
+.borderDarkRed {
+    border-color:  #902724 !important;
+}
+.borderLightRed {
+    border-color:  #f23c27 !important;
+}
+.borderYellow {
+    border-color:  #f7d281 !important;
+}
+.borderLightBlue {
+    border-color:  #1b729f !important;
+}
+.borderDarkBlue {
+    border-color:  #1a323e !important;
+}
+.borderBlack {
+    border-color:  #000000 !important;
+}
+.borderWhite {
+    border-color:  #ffffff !important;
+}
+/* end border color override */
 
 
 /* start font sizes */
 .fs4p0 {
     font-size: 4.0rem;
 }
+
 .fs3p75 {
     font-size: 3.75rem;
 }
+
 .fs3p5 {
     font-size: 3.5rem;
 }
+
 .fs3p25 {
     font-size: 3.25rem;
 }
+
 .fs3p0 {
     font-size: 3.0rem;
 }
+
 .fs2p75 {
     font-size: 2.75rem;
 }
+
 .fs2p5 {
     font-size: 2.5rem;
 }
+
 .fs2p25 {
     font-size: 2.25rem;
 }
+
 .fs2p0 {
     font-size: 2.0rem;
 }
+
 .fs1p75 {
     font-size: 1.75rem;
 }
+
 .fs1p5 {
     font-size: 1.5rem;
 }
+
 .fs1p25 {
     font-size: 1.25rem;
 }
+
 .fs1p0 {
     font-size: 1.0rem;
 }
+
 .fs0p75 {
     font-size: 0.75rem;
 }
+
 .fs0p5 {
     font-size: 0.5rem;
 }
+
 /* end font sizes */

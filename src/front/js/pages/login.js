@@ -31,10 +31,10 @@ export const Login = () => {
                             <img src={deadpool} className="loginImg" alt="avatar" />
                         </div>
                         <div className="col-6">
-                            {(store.token && store.token !== "" && store.token !== undefined) ? "You are logged in with token"
+                            {(store.token && store.token !== "" && store.token !== undefined) ? "You are logged in."
                                 :
                                 <div align="center">
-                                    <h1>Login</h1>
+                                    <h1 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">Login</h1>
                                     <div className="user-box my-3">
                                         <input
                                             type="text"
@@ -47,13 +47,14 @@ export const Login = () => {
                                             value={password}
                                             placeholder="Password" onChange={e => setPassword(e.target.value)}></input>
                                     </div>
-                                    <button className="loginPageButton" onClick={handleLogin}>Login
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
+                                    <div className="row loginButtonRow">
+                                        <button className="button-53 loginPageButton mx-3" onClick={handleLogin}>Login
 
+                                        </button>
+                                        <button className="button-53 loginPageButton" onClick={() => navigate("/signup")}>Signup
+
+                                        </button>
+                                    </div>
 
 
                                     {/* <button onClick={() => navigate("/signup")}>Signup</button> */}
