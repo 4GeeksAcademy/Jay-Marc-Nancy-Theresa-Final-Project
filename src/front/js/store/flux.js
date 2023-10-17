@@ -118,12 +118,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getFAQData: () => {
-				fetch("../../../../data.json")
-					.then((resp) => resp.json())
-					.then((data) => {
-						console.log("myString: ", data)
-						setStore({ faq_data: data.faq_data })
-					})
+				setStore({ faq_data: data.faq_data })
+				// fetch("../../../../data.json")
+				// 	.then((resp) => resp.json())
+				// 	.then((data) => {
+				// 		console.log("myString: ", data)
+				// 		setStore({ faq_data: data.faq_data })
+				// 	})
 			},
 
 			getUserAdded: async (email, password, first_name, last_name, phone) => {
@@ -228,30 +229,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getArtVendors: () => {
-				fetch("../../../../data.json")
-					.then((resp) => resp.json())
-					.then((data) => {
-						// console.log("getArtVendors: ", data)
-						setStore({ artVendors: data.artVendors })
-					})
+				setStore({ artVendors: data.artVendors })
+				// fetch("../../../../data.json")
+				// 	.then((resp) => resp.json())
+				// 	.then((data) => {
+				// 		// console.log("getArtVendors: ", data)
+				// 		setStore({ artVendors: data.artVendors })
+				// 	})
 			},
 
 			getMerchVendors: () => {
-				fetch("../../../../data.json")
-					.then((resp) => resp.json())
-					.then((data) => {
-						// console.log("getMerchVendors: ", data)
-						setStore({ merchVendors: data.merchVendors })
-					})
+				setStore({ merchVendors: data.merchVendors })
+				// fetch("../../../../data.json")
+				// 	.then((resp) => resp.json())
+				// 	.then((data) => {
+				// 		// console.log("getMerchVendors: ", data)
+				// 		setStore({ merchVendors: data.merchVendors })
+				// 	})
 			},
 
 			getEvents: () => {
-				fetch("../../../../data.json") 
-					.then((resp) => resp.json())
-					.then((data) => {
-						console.log("myString: ", data)
-						setStore({ events: data.events })
-					})
+				setStore({ events: data.events })
+				// fetch("../../../../data.json") 
+				// 	.then((resp) => resp.json())
+				// 	.then((data) => {
+				// 		console.log("myString: ", data)
+				// 		setStore({ events: data.events })
+				// 	})
 			},
 
 			fetchEventDetails: async (event_id) => {
