@@ -11,7 +11,7 @@ export const Vendors = props => {
     useEffect(() => {
         actions.getArtVendors();
         actions.getMerchVendors();
-    })
+    },[])
     // const params = useParams();
 
     return (
@@ -53,11 +53,13 @@ export const Vendors = props => {
                         <div className="collapse mb-3" id="comic-book-vendors-accordion-component">
                             <div className="card vendor-card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                 <ul className="list-group comicAccordionContent mt-2 font-spidey-darkBlue">
-                                    {store.comicVendors.map((vendor, idx) =>
-                                        <a key={idx} href={vendor.site_url} target="_blank">
-                                            {vendor.name}
-                                        </a>)
-                                    }
+                                    {store.comicVendors && store.comicVendors.map && store.comicVendors.map((vendor, idx) =>
+                                        <li key={idx}>
+                                            <a href={vendor.site_url} target="_blank">
+                                                {vendor.name}
+                                            </a>
+                                        </li>
+                                    )}
                                 </ul>     
                             </div>
                         </div>
@@ -90,13 +92,11 @@ export const Vendors = props => {
                         <div className="collapse mb-3" id="art-vendors-accordion-component">
                             <div className="card vendor-card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                 <ul className="list-group">
-                                    {data.art_vendors.map((artVendor, index) =>
-                                    <div className="font-spidey-darkBlue">
-                                        <a key={index}>
+                                    {data.art_vendors && data.art_vendors.map && data.art_vendors.map((artVendor, index) =>
+                                        <li key={index} className="font-spidey-darkBlue">
                                             {artVendor.vendor_name}
-                                        </a>
-                                    </div>)
-                                    }
+                                        </li>
+                                    )}
                                 </ul>
                             </div>
                         </div>
@@ -129,11 +129,11 @@ export const Vendors = props => {
                                 <div className="collapse mb-3" id="how-we-got-started-collapse-component">
                                     <div className="card vendor-card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                         <ul className="list-group">
-                                            {data.merch_vendors.map((merchVendor, index) =>
-                                                <a key={index}>
+                                            {data.merch_vendors && data.merch_vendors.map && data.merch_vendors.map((merchVendor, index) =>
+                                                <li key={index}>
                                                     {merchVendor.vendor_name}
-                                                </a>)
-                                            }
+                                                </li>
+                                            )}
                                         </ul>
                                     </div>
                                 </div>
@@ -147,8 +147,4 @@ export const Vendors = props => {
     );
 }; 
 
-
 // API to Use in Comic Vendors Accordion: https://comicvine.gamespot.com/api/documentation#toc-0-26
-
-
-

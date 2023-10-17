@@ -25,7 +25,7 @@ export const Navbar = () => {
 								</a>
 								<ul className="dropdown-menu">
 									<li><Link to="/featured" className="dropdown-item" style={{ color: "black" }}>Featured</Link></li>
-									<li><Link to="/guests" className="dropdown-item" style={{ color: "black" }}>Guests</Link></li>
+									<li><Link className="dropdown-item font-grey" style={{ color: "black" }}>Guests <sup>Coming Soon!</sup></Link></li>
 									{/* <li><a className="dropdown-item" href="#"></a></li> */}
 								</ul>
 							</li>
@@ -34,7 +34,7 @@ export const Navbar = () => {
 									Things to Do
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/what-to-do" className="dropdown-item" style={{ color: "black" }}>What to do at Worst Convention EverCon</Link></li>
+									<li><Link className="dropdown-item font-grey" style={{ color: "black" }}>What to do at Worst Convention EverCon <sup>Coming Soon!</sup></Link></li>
 									<li><Link to="/schedule" className="dropdown-item" style={{ color: "black" }}>Schedule</Link></li>
 									<li><Link to="/vendors" className="dropdown-item" style={{ color: "black" }}>Vendors</Link></li>
 								</ul>
@@ -44,7 +44,7 @@ export const Navbar = () => {
 									Travel
 								</a>
 								<ul className="dropdown-menu">
-									<li><Link to="/transportation" className="dropdown-item" style={{ color: "black" }}>Transportation</Link></li>
+									<li><Link className="dropdown-item font-grey" style={{ color: "black" }}>Transportation <sup>Coming Soon!</sup></Link></li>
 									<li><Link to="/hotels" className="dropdown-item" style={{ color: "black" }}>Hotels</Link></li>
 									{/* <li><a className="dropdown-item" href="#">Something else here</a></li> */}
 								</ul>

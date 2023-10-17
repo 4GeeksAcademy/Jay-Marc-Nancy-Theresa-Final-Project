@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+import React from "react";
 import { ContactUs } from "../component/contactUs";
 import "../../styles/aboutContact.css";
 import spawn from "../../img/spawn.jpg";
 import rigobaby from "../../img/rigo-baby.jpg";
 
 export const AboutContact = () => {
-    const { store, actions } = useContext(Context);
-    const params = useParams();
 
     return (
         <>
@@ -37,7 +33,7 @@ export const AboutContact = () => {
                                     </div>
                                     <div className="col-3 text-end font-spidey-yellow">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-chevron-expand" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                            <path fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
                                         </svg>
                                     </div>
                                 </div>
@@ -53,7 +49,7 @@ export const AboutContact = () => {
                                         <div className="card card-body bgLightestYellow mt-2 font-spidey-darkBlue">
                                             <p>Once upon a time four totally disconnected nerds (<i>huge nerds</i>) all happened to stumble into the same Full Stack Web Developer Bootcamp (made with <i className="fa fa-heart text-danger" /> by 4Geeks). Four unique timelines merged to form perhaps the greatest, most influential, and most fantastic four person group of individuals ever known within the comic community (hey, maybe not but at least we aren't the fantastic four individuals responsible for <a href="https://www.rottentomatoes.com/m/fantastic_four_2015" className="darkRedLinks" target="_blank">this piece of cinema</a> right here.</p>
                                             <p>All kidding aside, we all met in a wonderful Coding Academy and really meshed well! We delved into out love for science fiction, art, pop culture, and more specifically, COMICS and decided to have our powers combine to <s>summon captain planet...</s> &nbsp;&nbsp; <s>morph into a megazord...</s> &nbsp;&nbsp; <s>make a funny pop culture reference...</s> &nbsp;&nbsp; provide an awesome resource to our friends and allies for the absolute, hands down, BEST comic convention on the planet made for nerds by nerds! And so, the Worst Convention EverCon was born.</p>
-                                            <p><h3>THIS IS THE WAY.</h3></p>
+                                            <p className="fs2p5">THIS IS THE WAY.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +66,7 @@ export const AboutContact = () => {
                                     </div>
                                     <div className="col-3 text-end font-spidey-yellow">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-chevron-expand" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                            <path fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
                                         </svg>
                                     </div>
                                 </div>
@@ -106,7 +102,7 @@ export const AboutContact = () => {
                                     </div>
                                     <div className="col-3 text-end font-spidey-yellow">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-chevron-expand" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                            <path fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
                                         </svg>
                                     </div>
                                 </div>
@@ -139,7 +135,7 @@ export const AboutContact = () => {
                                     </div>
                                     <div className="col-3 text-end font-spidey-yellow">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" className="bi bi-chevron-expand" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+                                            <path fillRule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
                                         </svg>
                                     </div>
                                 </div>

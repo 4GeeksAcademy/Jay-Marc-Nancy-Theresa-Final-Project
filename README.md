@@ -37,3 +37,14 @@
 
 // open new terminal
 - npm run start
+
+// housekeeping on this branch
+- added font-grey to index.css
+- updated navbar links (inactive pages greyed out and removed link functionality)
+- corrected console className type errors in contactUs.js component
+- removed fetchGetAllComicVendors() from home.js and placed in initialLoading() in flux
+- added data validation in mapping functions in vendors.js to prevent random crashes
+- added keys to mapped items in vendors.js to remove console warnings
+- removed unused imports and hooks from home.js
+- corrected react className requirements in svg tags (example: fill-rule should be fillRule, etc.)
+- removed unused react hooks and imports from aboutContact.js
