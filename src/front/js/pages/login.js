@@ -47,13 +47,17 @@ export const Login = () => {
                                             value={password}
                                             placeholder="Password" onChange={e => setPassword(e.target.value)}></input>
                                     </div>
-                                    <div className="row loginButtonRow">
-                                        <button className="button-53 loginPageButton mx-3" onClick={handleLogin}>Login
-
-                                        </button>
-                                        <button className="button-53 loginPageButton" onClick={() => navigate("/signup")}>Signup
-
-                                        </button>
+                                    <div className="row loginButtonRow pt-5">
+                                        <div className="col-6">
+                                            <button className="button-53 loginPageButton mx-3" onClick={handleLogin}>
+                                                Login
+                                            </button>
+                                        </div>
+                                        <div className="col-6">                                            
+                                            <button className="button-53 loginPageButton me-3" onClick={() => navigate("/signup")}>
+                                                Signup
+                                            </button>
+                                        </div>
                                     </div>
 
 
