@@ -1,0 +1,53 @@
+#newComicsImg {
+    padding-top: 40px;
+    position: relative;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+#cardComics {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    row-gap: 10px;
+}
+
+.comicTitle {
+    font-size: 3rem;
+    font-family: 'BadaBoom BB', sans-serif;
+    border-bottom: 6px solid #0c0c0c;
+
+}
+
+.newComicsContainer {
+    margin: 20px auto 30px;
+    width: 90%;
+    padding: 3%;
+    text-align: center;
+    background-color: #f7d281;
+    margin-top: 70px;
+    border-radius: 1%;
+}
+
+.newComicsContainer h1 {
+    font-family: 'BadaBoom BB', sans-serif;
+    color: #0d0d0c;
+    font-size: 4rem;
+
+}
+
+#newComicsText {
+    padding: 5% 9% 5% 3%;
+    text-align: left;
+    font-weight: 400;
+}
+
+#newComicsText p {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#newComicsText span {
+    font-weight: 400;
+}

@@ -1,0 +1,13 @@
+.condensedCard {
+    width: 275px;
+    transition: transform .2s;
+    background: none;
+}
+.condensedCard:hover {
+    transform: scale(1.05);
+}
+.mtgCardImg {
+    width: 223px;
+    height: auto;
+    border-radius: 10px;
+}

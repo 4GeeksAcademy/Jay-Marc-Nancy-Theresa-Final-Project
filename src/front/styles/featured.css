@@ -1,0 +1,208 @@
+.condensedCard {
+    width: 275px;
+    transition: transform .2s;
+}
+.condensedCard:hover {
+    transform: scale(1.05);
+}
+.condensedCardStaples {
+    width: 275px;
+    transition: transform .2s;
+    background: none;
+}
+.condensedCardStaples:hover {
+    transform: scale(1.05);
+}
+.featuredArtistCard {
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+    opacity: 0.7;
+    transition: .5s;
+}
+.featuredArtistCard:hover {
+    opacity: 1.0;
+    transition: .5s;
+}
+.featuredArtistCard img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+a.featuredArtistModalLink:link,
+a.featuredArtistModalLink:visited,
+a.featuredArtistModalLink:hover,
+a.featuredArtistModalLink:active {
+    text-decoration: none;
+}
+.copyrightOverlay a:link,
+a:visited {
+    color: #cdd832;
+    text-decoration: none;
+    font-weight: 300;
+}
+.copyrightOverlay a:hover,
+a:active {
+    color: #f7fcb6;
+    text-decoration: none;
+    font-weight: 500;
+}
+.cardScrollBars::-webkit-scrollbar {
+    width: 6px;
+}
+.cardScrollBars::-webkit-scrollbar-track {
+    background: rgb(214, 182, 113);
+}
+.cardScrollBars::-webkit-scrollbar-thumb {
+    background: #1b729f;
+    border: solid 2px #1a323e;
+    border-radius: 5px;
+}
+.cardScrollBars::-webkit-scrollbar-thumb:hover {
+    background: #902724;
+    border: solid 2px #6e1e1c;
+}
+.copyrightOverlay {
+    position: relative;
+    bottom: 20px;
+    right: 0px;
+    font-size: 10px;
+    color: #eeff00;
+    background: rgba(0, 0, 0, 0.5);
+}
+.staplesCardImg {
+    height: 344px;
+    width: auto;
+    border-radius: 10px;
+    border: solid 2px #1a323e;
+}
+.burchIframe {
+    width: 325px;
+    height: 250px;
+    border: none;
+    overflow: hidden;
+    transition: transform .2s;
+}
+.burchIframe:hover {
+    transform: scale(1.05);
+}
+.featuredCardBody {
+    background-color: #1b729f;
+    border: solid 2px #f7d281;
+}
+
+.featuredModalHeader {
+    background-color: #1b729f !important;
+    border-bottom: solid 2px #1a323e !important;
+}
+.featuredModalBody {
+    background-color: rgb(247, 210, 129) !important;
+}
+.featuredModalFooter {
+    background-color: #1b729f !important;
+    border-top: solid 2px #1a323e !important;
+}
+.exitButton {
+    border: none;
+    background-color: transparent;
+}
+.exitButtonImg {
+    height: 45px;
+    width: 45px;
+}
+
+
+.button-53 {
+    color: #000000 !important;
+    /* background-color: #3DD1E7; */
+    background: #fff6c1 url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsimple-repeat.com%2Fimg%2Fpngimg%2Fbasic%2Fdot%2Fyellow%2FSolid256dot2_8_yellow.png&f=1&nofb=1&ipt=613ef9eda539cf7b865d41fba8fee56e6e6907b72697133b1700a4b598d59089&ipo=images");
+    /* background: yellow url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.digitalscrapbook.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F456_scale%2Fpublic%2Fs3fs-user-content%2Fgraphic-image%2Fuser-2%2Fnode-1135%2Fpolka-dots-23-overlay-graphic-pattern-template-black.png&f=1&nofb=1&ipt=65f44971ea57738a678a67404de83d9da284d1eb03234f48415e713876217e19&ipo=images"); */
+    background-size: 100px 100px;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: auto;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.button-53:focus {
+    outline: 0;
+}
+.button-53:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 6px;
+    left: 6px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+} 
+.button-53:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+@media (min-width: 768px) {
+    .button-53 {
+      padding: .75rem 3rem;
+      font-size: 1.25rem;
+    }
+}
+
+
+
+.button-55 {
+  align-self: center;
+  background-color: #f7d281;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
