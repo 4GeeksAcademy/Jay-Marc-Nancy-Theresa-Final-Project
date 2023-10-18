@@ -54,10 +54,10 @@
     float: left;
 }
 
-.loginButtonRow {
+/* .loginButtonRow {
     margin-left: 15%;
     margin-top: 10%;
-}
+} */
 
 .button-53 {
     color: #000000 !important;
@@ -70,11 +70,11 @@
     color: #1a323e;
     display: flex;
     font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
+    font-size: 1.0rem;
     font-weight: 700;
     justify-content: center;
-    line-height: 1.75rem;
-    padding: .75rem 1.65rem;
+    line-height: 1rem;
+    padding: 1.0rem 2rem !important;
     position: relative;
     text-align: center;
     text-decoration: none #1a323e solid;
@@ -127,7 +127,7 @@
     font-size: 1rem;
     line-height: 23px;
     outline: none;
-    padding: 0.5rem;
+    padding: 0.1rem;
     text-decoration: none;
     transition: all 235ms ease-in-out;
     border-bottom-left-radius: 15px 255px;

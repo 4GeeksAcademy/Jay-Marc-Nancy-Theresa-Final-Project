@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-
 export const ContactUs = () => {
   const form = useRef();
 
@@ -20,28 +19,14 @@ export const ContactUs = () => {
 
   return (
     <>
-{/* start nancy's original form */}
-
-      {/* <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-      </form> */}
-
-{/* end nancy's original form */}
-
-      <form form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={sendEmail}>
         <div className="container-fluid p-4">
           <div className="row">
             <div className="col-12">
               <font className="badaboom fs3p5 font-white textBorderDarkBlue">Contact Us through this Email Form!</font>
             </div>
             <div className="col-12 mt-3">
-              <label for="exampleFormControlInput1" className="form-label">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 <font className="fs1p25 font-spidey-lightBlue textBorderWhite">
                   <b>
                     Enter Your Name:
@@ -51,7 +36,7 @@ export const ContactUs = () => {
               <input type="text" name="user_name" aria-label="First name" className="form-control borderLightBlue" placeholder="First and Last Name" />
             </div>
             <div className="col-12 mt-3">
-              <label for="exampleFormControlInput1" className="form-label">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 <font className="fs1p25 font-spidey-lightBlue textBorderWhite">
                   <b>
                     Enter Your Email address:
@@ -61,7 +46,7 @@ export const ContactUs = () => {
               <input type="email" name="user_email" className="form-control borderLightBlue" id="exampleFormControlInput1" placeholder="name@example.com" />
             </div>
             <div className="col-12 mt-3">              
-              <label for="exampleFormControlTextarea1" className="form-label">
+              <label htmlFor="exampleFormControlTextarea1" className="form-label">
                 <font className="fs1p25 font-spidey-lightBlue textBorderWhite">
                   <b>
                     Enter your message below:

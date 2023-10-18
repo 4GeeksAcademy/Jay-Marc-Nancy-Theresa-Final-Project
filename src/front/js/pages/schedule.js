@@ -42,7 +42,7 @@ export const Schedule = () => {
                                 {store.events.map((event, index) => {
                                     let isFavorite = false
                                     if (store.token !== null && store.token !== undefined && store.token !== "") {
-                                        store.currentUser?.favorites.forEach((fav, idx) => {
+                                        store.currentUser?.favorites && store.currentUser?.favorites.forEach && store.currentUser?.favorites.forEach((fav, idx) => {
                                             if (event.id === fav.event_id) {
                                                 isFavorite = true
                                                 return true

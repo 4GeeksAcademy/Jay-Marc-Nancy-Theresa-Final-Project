@@ -1,20 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import "../../styles/home.css";
-import { Link } from "react-router-dom";
 import stormtroopers from "../../img/stormtroopers.jpg";
 import conlogo_transparent from "../../img/conlogo_transparent.png";
 import CountdownTimer from "../component/countdownTimer";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-
-	useEffect(() => {
-		actions.fetchGetAllComicVendors()
-	}, [])
-
 	return (
-
 		<div className="text-center">
 			<div className="wrapper" style={{ textAlign: "center" }}>
 				<div className="row">
